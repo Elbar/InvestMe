@@ -1,22 +1,12 @@
 language: php
 
-sudo: false
-
-
-
 php:
-  - 5.3
-  - 5.4
   - 5.5
   - 5.6
-  - 7.0
   - hhvm
-  - nightly
 
+before_script:
+  - curl -s http://getcomposer.org/installer | php
+  - php composer.phar install --dev
 
-install:
-- if [[ $setup = 'basic' ]]; then travis_retry composer install --no-interaction --prefer-source; fi
-- if [[ $setup = 'stable' ]]; then travis_retry composer update --prefer-source --no-interaction --prefer-stable; fi
-- if [[ $setup = 'lowest' ]]; then travis_retry composer update --prefer-source --no-interaction --prefer-lowest --prefer-stable; fi
-
-script: vendor/bin/phpunit
+script: ./vendor/bin/phpunit
