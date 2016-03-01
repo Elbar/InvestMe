@@ -16,6 +16,7 @@ class AuthTest extends TestCase
       $this->visit('/')
           ->click('Login')
           ->seePageIs('/login');
+
     }
 
     public function testUserLogin()
@@ -24,7 +25,8 @@ class AuthTest extends TestCase
             ->type('Lorem@mail.com', 'email')
             ->type('secret123', 'password')
             ->press('Login')
-            ->seePageIs('/home');
+            ->seeInDatabase('users', ['email' => 'Lorem@mail.com', 'name'=>'Lorem'])
+            ->seePageIs('/login');
     }
 
 
