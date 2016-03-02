@@ -14,7 +14,7 @@ class AuthTest extends TestCase
     public function testLinkLogin()
     {
       $this->visit('/')
-          ->click('Login')
+          ->click('Вход')
           ->seePageIs('/login');
 
     }

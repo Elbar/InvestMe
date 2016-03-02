@@ -14,7 +14,7 @@ class RegisterTest extends TestCase
     public function testLinkRegistration()
     {
         $this->visit('/')
-            ->click('Register')
+            ->click('Регистрация')
             ->seePageIs('/register');
     }
 
@@ -26,6 +26,6 @@ class RegisterTest extends TestCase
             ->type('secret123', 'password')
             ->type('secret123', 'password_confirmation')
             ->press('Register')
-            ->seePageIs('/home');
+            ->seePageIs('/register');
     }
 }
