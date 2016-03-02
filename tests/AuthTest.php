@@ -26,8 +26,11 @@ class AuthTest extends TestCase
             ->type('secret123', 'password')
             ->press('Login')
             ->seeInDatabase('users', ['email' => 'Lorem@mail.com', 'name'=>'Lorem'])
-            ->seePageIs('/login');
+            ->seePageIs('/login')
+            ->dontSeeIsAuthenticated('Login');
     }
+
+
 
 
 
