@@ -12,8 +12,28 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+Route::get('/new', function () {
+    return view('new');
+});
+Route::get('ru/{locale}', function ($locale) {
+    App::setLocale($locale);
+});
+
+
+
+Route::get('/ru', function () {
+    return view('ru/index');
+});
+Route::get('/kg', function () {
+    return view('kg/index');
+});
+
+Route::get('/en', function () {
+    return view('en/index');
+});
+
 
 
 
@@ -36,4 +56,5 @@ Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
     Route::get('/home', 'HomeController@index');
+
 });

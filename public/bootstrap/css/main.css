@@ -1,8 +1,8 @@
-body {
-    padding-top: 40px;
+.form-horizontal {
+    padding : 50px;
 }
-
-.form-signup, .form-signin {
-    width: 400px;
-    margin: 0 auto;
+.btn-group
+{
+    padding-top: 8px;
+    padding-right: 15px;
 }
