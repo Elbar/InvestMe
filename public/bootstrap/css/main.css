@@ -1,3 +1,8 @@
 .form-horizontal {
     padding : 50px;
 }
+.btn-group
+{
+    padding-top: 8px;
+    padding-right: 15px;
+}
