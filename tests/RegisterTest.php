@@ -25,7 +25,7 @@ class RegisterTest extends TestCase
             ->type('Lorem@mail.com', 'email')
             ->type('secret123', 'password')
             ->type('secret123', 'password_confirmation')
-            ->press('Register')
+            ->press('Регистрация')
             ->seePageIs('/register');
     }
 }
