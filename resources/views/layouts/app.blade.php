@@ -50,7 +50,7 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/home') }}">Создать проект</a></li>
+                    <li><a href="{{ url('/new') }}">Создать проект</a></li>
                     <li><a href="{{ url('/home') }}">Архив проектов</a></li>
                     <li><a href="{{ url('/home') }}">О нас</a></li>
                 </ul>
@@ -66,6 +66,19 @@
 
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
+                    <!-- Split button -->
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-primary">RU</button>
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="caret"></span>
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{url('/en')}}">EN</a></li>
+                            <li><a href="{{ url('/kg')}}">KG</a></li>
+                        </ul>
+                    </div>
+
                     <!-- Authentication Links -->
                     @if (Auth::guest())
                         <li><a href="{{ url('/login') }}">Вход</a></li>
