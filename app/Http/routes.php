@@ -11,29 +11,21 @@
 |
 */
 
+/** Main routes */
+
 Route::get('/', function () {
     return view('index');
 });
 Route::get('/new', function () {
     return view('new');
 });
-Route::get('ru/{locale}', function ($locale) {
-    App::setLocale($locale);
+Route::get('/archive', function () {
+    return view('archive');
 });
 
-
-
-Route::get('/ru', function () {
-    return view('ru/index');
+Route::get('/about', function () {
+    return view('about');
 });
-Route::get('/kg', function () {
-    return view('kg/index');
-});
-
-Route::get('/en', function () {
-    return view('en/index');
-});
-
 
 
 
