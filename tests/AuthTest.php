@@ -14,7 +14,7 @@ class AuthTest extends TestCase
     public function testLinkLogin()
     {
       $this->visit('/')
-          ->click('Login')
+          ->click('Вход')
           ->seePageIs('/login');
 
     }
@@ -26,8 +26,11 @@ class AuthTest extends TestCase
             ->type('secret123', 'password')
             ->press('Login')
             ->seeInDatabase('users', ['email' => 'Lorem@mail.com', 'name'=>'Lorem'])
-            ->seePageIs('/login');
+            ->seePageIs('/login')
+            ->dontSeeIsAuthenticated('Login');
     }
+
+
 
 
 

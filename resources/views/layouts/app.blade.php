@@ -14,9 +14,8 @@
     <!-- Styles -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" rel="stylesheet">
     {{--<link href="{{ elixir('css/app.css') }}" rel="stylesheet">--}}
-
-
-
+    <link rel="stylesheet" type="text/css" href="<?=asset('bootstrap/css/full-slider.css')?>" />
+    <link rel="stylesheet" type="text/css" href="<?=asset('bootstrap/css/main.css')?>" />
 
     <style>
         body {
@@ -51,9 +50,9 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/home') }}">Создать проект</a></li>
-                    <li><a href="{{ url('/home') }}">Архив проектов</a></li>
-                    <li><a href="{{ url('/home') }}">О нас</a></li>
+                    <li><a href="{{ url('/new') }}">Создать проект</a></li>
+                    <li><a href="{{ url('/archive') }}">Архив проектов</a></li>
+                    <li><a href="{{ url('/about') }}">О нас</a></li>
                 </ul>
                 <!-- Search -->
                 <form class="navbar-form navbar-left" role="search">
@@ -99,6 +98,5 @@
             interval: 5000 //changes the speed
         })
     </script>
-    {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
 </body>
 </html>

@@ -11,8 +11,20 @@
 |
 */
 
+/** Main routes */
+
 Route::get('/', function () {
     return view('index');
+});
+Route::get('/new', function () {
+    return view('new');
+});
+Route::get('/archive', function () {
+    return view('archive');
+});
+
+Route::get('/about', function () {
+    return view('about');
 });
 
 
@@ -36,4 +48,5 @@ Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
     Route::get('/home', 'HomeController@index');
+
 });
