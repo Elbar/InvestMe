@@ -1,10 +1,10 @@
 ## Welcome to InvestMe Service
 ### Getting started
 
-**First all, you have to clone project from remote repository by following command:**
+**First of  all, you have to clone project from remote repository by following command:**
 ```
 git  clone https://github.com/Elbar/InvestMe.git
-git  fetch [some_branch]
+git  fetch [some_branch] 
 ```
 
 **After this, type**
@@ -19,7 +19,7 @@ composer install
 php artisan serve
 
 ```
-**command.**
+**command**
 
 
 
