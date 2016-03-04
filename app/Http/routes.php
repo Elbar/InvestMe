@@ -27,6 +27,14 @@ Route::get('/about', function () {
     return view('about');
 });
 
+Route::get('/settings', function () {
+    return view('settings');
+});
+
+Route::get('/profile', function () {
+    return view('profile');
+});
+
 
 
 /*
