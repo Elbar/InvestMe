@@ -3,10 +3,9 @@
 @section('content')
 
     <div class="container">
-        <!--   Popular SP -->
-        <div id="pop-sp"> <!-- popular sp-->
+        <div id="pop-sp">
             <br>
-            <h2>Архив проектов</h2>
+            <h2><i class="fa fa-archive fa-lg"></i> Архив проектов</h2>
             <br>
 
             <div class="row">

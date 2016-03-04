@@ -78,7 +78,10 @@
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Выйти</a></li>
+                                <li><a href="{{ url('/profile') }}"><i class="fa fa-btn fa-suitcase"></i> Личный кабинет</a></li>
+                                <li><a href="{{ url('/notification') }}"><i class="fa fa-btn fa-bolt"></i> Уведомления</a></li>
+                                <li><a href="{{ url('/settings') }}"> <i class="fa fa-wrench"></i></i> Настройки</a></li>
+                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i> Выйти</a></li>
                             </ul>
                         </li>
                     @endif
