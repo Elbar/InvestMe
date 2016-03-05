@@ -21,11 +21,14 @@ footer{
 	width: 100%;
 }
 .carousel-caption{
-	padding-bottom: 50px;
+	/*padding-bottom: 50px;*/
 	bottom: 0;
 	top:30%;
 	
 }
 body{
 	/*background-color: #2aabd2;*/
+}
+.navbar{
+	margin-bottom: 0;
 }
