@@ -10,7 +10,7 @@ body {
 }
 
 .carousel{
-    height: 96%;
+    height: 95%;
 }
 .item,
 .active {
@@ -33,6 +33,4 @@ body {
     -o-background-size: cover;
 }
 
-/*footer {
-    margin: 50px 0;
-}*/
+/* footer { margin: 50px 0;  }*/
