@@ -1,11 +1,12 @@
 .thumbnail{
-	padding: 9px;
-}
-
-.thumbnail .caption{
 	padding: 0;
 }
-#pop-sp, #new-sp{
+
+.caption,  .ratings{
+	padding: 5px;
+}
+
+#pop-sp, #new-sp, #sp-description{
 	margin-top: 30px;
 }
 
@@ -24,11 +25,20 @@ footer{
 	/*padding-bottom: 50px;*/
 	bottom: 0;
 	top:30%;
-	
-}
-body{
-	/*background-color: #2aabd2;*/
 }
 .navbar{
 	margin-bottom: 0;
+}
+.progress, .progress-bar{
+	line-height: 10px;
+	height: 10px;
+}
+.present-sp-header{
+	margin-top:100px;
+}
+.container-fluid{
+	height: 100%;
+}
+.cases{
+	background-color: rgb(180, 240, 180);
 }
