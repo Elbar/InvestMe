@@ -6,3 +6,12 @@
     padding-top: 8px;
     padding-right: 15px;
 }
+.btn-success.btn-md {
+    width: 100px;
+}
+.col-sm-8.project-form {
+    padding-top: 35px;
+}
+.panel-heading {
+    text-align: center;
+}
