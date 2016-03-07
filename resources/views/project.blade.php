@@ -5,19 +5,16 @@
     @if(Auth::check()){
     <main>
         <div class="container-fluid sp-header">
-            <div class="fill" style="http://pre02.deviantart.net/d9f2/th/pre/f/2016/066/2/c/the_good_die_young_by_nanomortis-d9ua12s.png');"></div>
             <div class="present-sp-header">
-                <p>
                 <h2 class="text-center">Заглавие 1</h2>
                 <h4 class="text-center">Подназвание</h4>
-                </p>
             </div>
             <br>
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6 col-lg-6 col-md-6">
                         <div class="thumbnail">
-                            <img src="images/01.jpg" alt="">
+                            <img src="http://pre02.deviantart.net/d9f2/th/pre/f/2016/066/2/c/the_good_die_young_by_nanomortis-d9ua12s.png" alt="">
                         </div>
                     </div>
                     <div class="col-sm-6 col-lg-6 col-md-6">
