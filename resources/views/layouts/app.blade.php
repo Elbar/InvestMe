@@ -14,9 +14,11 @@
     <!-- Styles -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" rel="stylesheet">
     {{--<link href="{{ elixir('css/app.css') }}" rel="stylesheet">--}}
+    <link rel="stylesheet" type="text/css" href="<?=asset('bootstrap/css/font-awesome.min.css')?>" />
     <link rel="stylesheet" type="text/css" href="<?=asset('bootstrap/css/full-slider.css')?>" />
     <link rel="stylesheet" type="text/css" href="<?=asset('bootstrap/css/main.css')?>" />
     <link rel="stylesheet" type="text/css" href="<?=asset('bootstrap/css/style.css')?>" />
+
 
     <style>
         body {
