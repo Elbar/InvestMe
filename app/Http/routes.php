@@ -15,6 +15,7 @@
 
 Route::get('/', function () {
     return view('index');
+
 });
 Route::get('/new', function () {
     return view('new');
