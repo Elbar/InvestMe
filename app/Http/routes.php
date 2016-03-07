@@ -27,10 +27,19 @@ Route::get('/about', function () {
     return view('about');
 });
 
+
 Route::get('/project', function () {
     return view('project');
 });
 
+
+Route::get('/settings', function () {
+    return view('settings');
+});
+
+Route::get('/profile', function () {
+    return view('profile');
+});
 
 
 
@@ -53,6 +62,6 @@ Route::group(['middleware' => ['web']], function () {
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
-    Route::get('/home', 'HomeController@index');
+    Route::get('/', 'HomeController@index');
 
 });
