@@ -42,3 +42,22 @@ footer{
 .cases{
 	background-color: rgb(180, 240, 180);
 }
+.icon-styled{
+
+}
+.cases:hover{
+	background-color: rgb(220, 255, 220);
+}
+
+.sp-header{
+	background-color: rgb(220, 220, 240);
+}
+.cases hr {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	border: 0;
+	border-top: 1px solid rgb(100, 180, 100);
+}
+.badge-color{
+	background-color:rgb(200, 100, 130);
+}
