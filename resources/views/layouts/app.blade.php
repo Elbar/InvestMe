@@ -14,9 +14,11 @@
     <!-- Styles -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" rel="stylesheet">
     {{--<link href="{{ elixir('css/app.css') }}" rel="stylesheet">--}}
+    <link rel="stylesheet" type="text/css" href="<?=asset('bootstrap/css/font-awesome.min.css')?>" />
     <link rel="stylesheet" type="text/css" href="<?=asset('bootstrap/css/full-slider.css')?>" />
     <link rel="stylesheet" type="text/css" href="<?=asset('bootstrap/css/main.css')?>" />
     <link rel="stylesheet" type="text/css" href="<?=asset('bootstrap/css/style.css')?>" />
+
 
     <style>
         body {
@@ -57,12 +59,14 @@
                 </ul>
                 <!-- Search -->
                 <form class="navbar-form navbar-left" role="search">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Поиск">
-                    </div>
-                    <button type="submit" class="btn btn-default">
-                        <span class="glyphicon glyphicon-search"></span>
-                    </button>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Искать">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button">
+                                        <span class="glyphicon glyphicon-search"></span>
+                                    </button>
+                                </span>
+                    </div><!-- /input-group -->
                 </form>
 
                 <!-- Right Side Of Navbar -->
