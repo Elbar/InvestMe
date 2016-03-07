@@ -51,9 +51,9 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/home') }}">Создать проект</a></li>
-                    <li><a href="{{ url('/home') }}">Архив проектов</a></li>
-                    <li><a href="{{ url('/home') }}">О нас</a></li>
+                    <li><a href="{{ url('/new') }}">Создать проект</a></li>
+                    <li><a href="{{ url('/archive') }}">Архив проектов</a></li>
+                    <li><a href="{{ url('/about') }}">О нас</a></li>
                 </ul>
                 <!-- Search -->
                 <form class="navbar-form navbar-left" role="search">
