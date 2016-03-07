@@ -3,6 +3,7 @@
 
 
 @section('content')
+    @if(Auth::check())
     <div class="container">
         <section style="padding-bottom: 50px; padding-top: 50px;">
             <div class="row">
@@ -58,5 +59,10 @@
 
         </section>
     </div>
+
+    @else
+        <?php echo  '<h1>', "You are unauthorized",'</h1>'?>
+        <?php echo  '<a href = "login">', "Please log in", '</a>' ?>
+    @endif
 
 @endsection

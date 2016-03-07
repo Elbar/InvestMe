@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-
 @section('content')
+    @if(Auth::check())
   <div class="col-sm-2"></div>
   <div class="col-sm-8 project-form">
     <div class="panel panel-default">
@@ -67,4 +67,8 @@
   <div class="col-sm-2">
 
   </div>
+       @else
+            <?php echo  '<h1>', "You are unauthorized",'</h1>'?>
+            <?php echo  '<a href = "login">', "Please log in", '</a>' ?>
+        @endif
 @endsection
