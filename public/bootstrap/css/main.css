@@ -6,3 +6,14 @@
     padding-top: 8px;
     padding-right: 15px;
 }
+.btn-success.btn-md {
+    width: 100px;
+}
+
+/* registration,login and  project form */
+.col-sm-8.project-form,.col-md-8.col-md-offset-2.reg-form, .col-md-8.col-md-offset-2.login-form {
+    padding-top: 35px;
+}
+.panel-heading {
+    text-align: center;
+}

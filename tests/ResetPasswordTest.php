@@ -14,7 +14,7 @@ class ResetPasswordTest extends TestCase
     public function testLinkResetPassword()
     {
         $this->visit('/login')
-            ->click('Forgot Your Password?')
+            ->click('Забыли пароль?')
             ->seePageIs('/password/reset');
     }
 
@@ -24,6 +24,7 @@ class ResetPasswordTest extends TestCase
             ->type('Lorem@mail.com', 'email')
             ->press('Send Password Reset Link')
             ->seePageIs('/password/reset');
+
     }
 
 }
