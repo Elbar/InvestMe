@@ -67,7 +67,13 @@
 
   </div>
        @else
-            <?php echo  '<h1>', "You are unauthorized",'</h1>'?>
-            <?php echo  '<a href = "login">', "Please log in", '</a>' ?>
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="alert alert-warning">
+                    <strong>You're not authorized.<a href="/login"> Please log in  </a></strong>
+                </div>
+            </div>
+        </div>
         @endif
 @endsection
