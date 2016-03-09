@@ -11,38 +11,6 @@
 |
 */
 
-/** Main routes */
-
-Route::get('/', function () {
-    return view('index');
-
-});
-Route::get('/new', function () {
-    return view('new');
-});
-Route::get('/archive', function () {
-    return view('archive');
-});
-
-Route::get('/about', function () {
-    return view('about');
-});
-
-
-Route::get('/project', function () {
-    return view('project');
-});
-
-
-Route::get('/settings', function () {
-    return view('settings');
-});
-
-Route::get('/profile', function () {
-    return view('profile');
-});
-
-
 
 
 /*
@@ -56,13 +24,43 @@ Route::get('/profile', function () {
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
-    //
-});
-
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
     Route::get('/', 'HomeController@index');
 
+
+    Route::get('/', function () {
+        return view('index');
+
+    });
+    Route::get('/new', function () {
+        return view('project.new');
+    });
+    Route::get('/archive', function () {
+        return view('project.archive');
+    });
+
+    Route::get('/about', function () {
+        return view('about');
+    });
+
+
+    Route::get('/project', function () {
+        return view('project.info');
+    });
+
+
+    Route::get('/settings', function () {
+        return view('settings');
+    });
+
+    Route::get('/profile', function () {
+        return view('profile');
+    });
+
+
+
+
 });
+

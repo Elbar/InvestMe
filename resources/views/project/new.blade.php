@@ -15,7 +15,6 @@
                         <label class="col-md-4 control-label" for="textinput">Название проекта</label>
                         <div class="col-md-4">
                             <input id="textinput" name="textinput" type="text" placeholder="" class="form-control input-md" required="">
-
                         </div>
                     </div>
 
