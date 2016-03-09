@@ -27,8 +27,6 @@
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
-    Route::get('/', 'HomeController@index');
-
 
     Route::get('/', function () {
         return view('index');
@@ -45,10 +43,13 @@ Route::group(['middleware' => 'web'], function () {
         return view('about');
     });
 
-
-    Route::get('/project', function () {
-        return view('project.info');
-    });
+    Route::get('/project','ProjectController@index');
+    Route::get('/create','ProjectController@create');
+    Route::get('/edit/{id}','ProjectController@edit');
+    Route::post('/update/{id}','ProjectController@update');
+    Route::get('/delete/{id}','ProjectController@delete');
+    Route::post('/store','ProjectController@store');
+    Route::get('/show/{id}','ProjectController@show');
 
 
     Route::get('/settings', function () {
@@ -58,6 +59,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/profile', function () {
         return view('profile');
     });
+
 
 
 
