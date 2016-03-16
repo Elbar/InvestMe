@@ -25,8 +25,7 @@ class AuthTest extends TestCase
             ->type('Lorem@mail.com', 'email')
             ->type('secret123', 'password')
             ->press('Войти')
-            ->seeInDatabase('users', ['email' => 'Lorem@mail.com', 'name'=>'Lorem'])
-            ->seePageIs('/login');
+            ->seeInDatabase('users', ['email' => 'Lorem@mail.com', 'name'=>'Lorem']);
     }
 
 

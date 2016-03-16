@@ -11,22 +11,6 @@
 |
 */
 
-/** Main routes */
-
-Route::get('/', function () {
-    return view('index');
-});
-Route::get('/new', function () {
-    return view('new');
-});
-Route::get('/archive', function () {
-    return view('archive');
-});
-
-Route::get('/about', function () {
-    return view('about');
-});
-
 
 
 /*
@@ -40,13 +24,45 @@ Route::get('/about', function () {
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
-    //
-});
-
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
-    Route::get('/home', 'HomeController@index');
+
+    Route::get('/', function () {
+        return view('index');
+
+    });
+    Route::get('/new', function () {
+        return view('project.new');
+    });
+    Route::get('/archive', function () {
+        return view('project.archive');
+    });
+
+    Route::get('/about', function () {
+        return view('about');
+    });
+
+    Route::get('/project','ProjectController@index');
+    Route::get('/create','ProjectController@create');
+    Route::get('/edit/{id}','ProjectController@edit');
+    Route::post('/update/{id}','ProjectController@update');
+    Route::get('/delete/{id}','ProjectController@delete');
+    Route::post('/store','ProjectController@store');
+    Route::get('/show/{id}','ProjectController@show');
+
+
+    Route::get('/settings', function () {
+        return view('settings');
+    });
+
+    Route::get('/profile', function () {
+        return view('profile');
+    });
+
+
+
+
 
 });
+

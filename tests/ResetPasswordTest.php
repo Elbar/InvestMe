@@ -24,6 +24,7 @@ class ResetPasswordTest extends TestCase
             ->type('Lorem@mail.com', 'email')
             ->press('Send Password Reset Link')
             ->seePageIs('/password/reset');
+
     }
 
 }

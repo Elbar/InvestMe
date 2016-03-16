@@ -9,3 +9,5 @@ Homestead.json
 .idea
 .gitattributes
 
+
+tests/_output/*

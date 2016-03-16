@@ -1,0 +1,63 @@
+.thumbnail{
+	padding: 0;
+}
+
+.caption,  .ratings{
+	padding: 5px;
+}
+
+#pop-sp, #new-sp, #sp-description{
+	margin-top: 30px;
+}
+
+.carousel-control.right{
+	background-image: none;
+}
+
+.carousel-control.left{
+	background-image: none;
+}
+
+footer{
+	width: 100%;
+}
+.carousel-caption{
+	/*padding-bottom: 50px;*/
+	bottom: 0;
+	top:30%;
+}
+.navbar{
+	margin-bottom: 0;
+}
+.progress, .progress-bar{
+	line-height: 10px;
+	height: 10px;
+}
+.present-sp-header{
+	margin-top:100px;
+}
+.container-fluid{
+	height: 100%;
+}
+.cases{
+	background-color: rgb(180, 240, 180);
+}
+.icon-styled{
+	color:hotpink;
+}
+.cases:hover{
+	background-color: rgb(220, 255, 220);
+}
+
+.sp-header{
+	background-color: rgb(220, 220, 240);
+}
+.cases hr {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	border: 0;
+	border-top: 1px solid rgb(100, 180, 100);
+}
+.badge-color{
+	background-color:rgb(200, 100, 130);
+}
