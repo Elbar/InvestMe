@@ -1,13 +1,13 @@
 .thumbnail{
-	padding: 0;
+	padding: 0px;
 }
 
 .caption,  .ratings{
-	padding: 5px;
+	padding: 9px;
 }
 
 #pop-sp, #new-sp, #sp-description{
-	margin-top: 30px;
+	margin-top: 20px;
 }
 
 .carousel-control.right{
@@ -25,7 +25,9 @@ footer{
 	/*padding-bottom: 50px;*/
 	bottom: 0;
 	top:30%;
+	
 }
+
 .navbar{
 	margin-bottom: 0;
 }
@@ -34,30 +36,145 @@ footer{
 	height: 10px;
 }
 .present-sp-header{
-	margin-top:100px;
+	margin-top:40px;
+	
 }
 .container-fluid{
 	height: 100%;
 }
 .cases{
-	background-color: rgb(180, 240, 180);
-}
-.icon-styled{
-	color:hotpink;
+	background-color: #A4DAEB;
+
 }
 .cases:hover{
-	background-color: rgb(220, 255, 220);
+	background-color: #67ACC1;
 }
 
 .sp-header{
-	background-color: rgb(220, 220, 240);
+	background-color: rgb(230, 230, 235);
+	padding-bottom:20px;
 }
 .cases hr {
-	margin-top: 10px;
-	margin-bottom: 10px;
-	border: 0;
-	border-top: 1px solid rgb(100, 180, 100);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 0;
+  border-top: 1px solid rgb(100, 180, 100);
 }
 .badge-color{
 	background-color:rgb(200, 100, 130);
 }
+.fa-twitter{
+	color:#04B4AE;
+}
+.fa-facebook{
+	color:#0174DF;
+}
+.fa-pinterest{
+	color:#B40431;
+}
+
+
+
+
+footer 
+{
+	text-decoration: none;
+	border-top: 1px solid #1485CC;
+	background: #d9d9d9;
+	
+
+}
+a:link
+{
+	color: #5890ff;
+	text-decoration: none;
+}
+.top-footer
+{
+	height: 170px;
+	padding-top: 5px;
+	color: #5890ff;
+	text-decoration: none;
+
+}
+footer top-footer .row
+{
+	padding-top: 25px;
+	padding-bottom: 32px;
+
+}
+
+
+ul
+{
+	list-style-type: none;
+	margin:0;
+	padding: 0;
+	text-decoration: none;
+}
+.r 
+{
+	text-shadow: 1px 1px 1px black;	
+}
+.b
+{
+	text-shadow: 1px 1px 1px yellow;
+}
+
+.zag
+{
+	font-family: 'Freight Sans Bold', helvetica, arial, sans-serif !important;
+	font-weight: bold !important;
+	text-rendering: optimizelegibility;
+}
+
+.bott-footer
+{
+	border-top: 1px dashed #5890ff;
+	background: #404050;
+	margin: auto;
+	color: #5890ff;
+}
+
+bott-footer img
+{
+	padding-left: 9px;
+}
+.inl
+{
+	float: left;
+	color: #686875;
+}
+
+.bott-logo
+{
+	float: left;
+    height: 50px;
+    padding: 15px 0px;
+    font-size: 18px;
+    line-height: 20px;
+}
+
+a.bott-logo
+{
+	color: #686875;	
+}
+.bot-logo 
+{
+	position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+}
+
+ .aza
+{
+	padding-top:  15px;
+}
+
+footer bot-footer p
+{
+	text-align: right;
+}
+
+
+

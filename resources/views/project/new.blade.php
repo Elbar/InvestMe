@@ -14,7 +14,7 @@
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="textinput">Название проекта</label>
                         <div class="col-md-4">
-                            <input id="textinput" name="textinput" type="text" placeholder="" class="form-control input-md" required="">
+                            <input id="textinput" name="name" type="text" placeholder="" class="form-control input-md" required="">
                         </div>
                     </div>
 
@@ -22,7 +22,7 @@
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="selectcategory ">Категория</label>
                         <div class="col-md-4">
-                            <select id="selectcategory " name="selectcategory " class="form-control">
+                            <select id="selectcategory " name="category " class="form-control">
                                 <option value="1">Еда</option>
                                 <option value="2">Комиксы</option>
                                 <option value="3">Развлечения</option>
@@ -44,7 +44,7 @@
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="filebutton">Загрузить файл</label>
                         <div class="col-md-4">
-                            <input id="filebutton" name="filebutton" class="input-file" type="file">
+                            <input id="filebutton" name="file" class="input-file" type="file">
                             <span class="help-block">Размер файла не должен превышать 2 Мб.</span>
                         </div>
 
