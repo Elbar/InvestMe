@@ -64,8 +64,14 @@
             </div> <!-- /.sp-description -->
         </div> <!-- /.container -->
     </main>
-    @elseif(Auth::guest() && Auth::logout())
-        <?php echo 1; ?>
+    @else
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="alert alert-warning">
+                    <strong>You're not authorized.<a href="/login"> Please log in  </a></strong>
+                </div>
+            </div>
+        </div>
    @endif
 
 @endsection

@@ -9,6 +9,7 @@ class Project extends Model
 
     protected $table='projects';
     protected $fillable=['title','content'];
+<<<<<<< HEAD
 
     public function category(){
         return $this->belongsTo('App\Category');
@@ -33,4 +34,6 @@ class Project extends Model
     public function backer(){
         return $this->hasMany('App\Backer');
     }
+=======
+>>>>>>> 6b420789e4911c0cd3c54f4998f6747ac91026e6
 }

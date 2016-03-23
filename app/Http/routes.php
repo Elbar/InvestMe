@@ -23,6 +23,7 @@
 | kernel and includes session state, CSRF protection, and more.
 |
 */
+<<<<<<< HEAD
 Route::group(['middleware' => 'web'],function(){
     Route::get('admin1',['middleware'=>'auth','uses'=>'AdminController@index']);
     Route::get('admin1/users',['middleware'=>'auth','as' => 'users', 'uses'=>'AdminController@users']);
@@ -39,6 +40,13 @@ Route::group(array('before' => 'admin1'), function(){
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
+=======
+
+Route::group(['middleware' => 'web'], function () {
+    Route::auth();
+
+
+>>>>>>> 6b420789e4911c0cd3c54f4998f6747ac91026e6
     Route::get('/', function () {
         return view('index');
 
