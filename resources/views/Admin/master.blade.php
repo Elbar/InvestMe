@@ -245,7 +245,7 @@
                     <ul class="dropdown-menu">
                         <!-- User image -->
                         <li class="user-header bg-light-blue">
-                            <img src="admin/img/logo.jpeg" class="img-circle" alt="User Image" />
+                            <img src="<?=asset('admin/img/logo.jpeg')?>" class="img-circle" alt="User Image" />
                             <p>
                                 {!! Auth::user()->name!!} - Web Developer
                                 <small>Member since Nov. 2012</small>
