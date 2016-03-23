@@ -1,8 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
-<<<<<<< HEAD
 use App\Creator;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
@@ -10,12 +8,6 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
-=======
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
->>>>>>> 6b420789e4911c0cd3c54f4998f6747ac91026e6
-
 class UserController extends Controller
 {
     /**
@@ -25,14 +17,10 @@ class UserController extends Controller
      */
     public function index()
     {
-<<<<<<< HEAD
         $user = Auth::user();
         $creator = $user->creator;
         $backer = $user->backer;
         return view('user.index',compact('creator','backer'));
-=======
-        //
->>>>>>> 6b420789e4911c0cd3c54f4998f6747ac91026e6
     }
 
     /**
@@ -48,7 +36,7 @@ class UserController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \App\Http\Controllers\Request|Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -82,8 +70,8 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \App\Http\Controllers\Request|Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -101,8 +89,6 @@ class UserController extends Controller
     {
         //
     }
-<<<<<<< HEAD
-
     public function change(Request $request){
         $pass = bcrypt($request['password']);
         dd($pass);
@@ -114,7 +100,7 @@ class UserController extends Controller
     }
 
     /**
-     * @param Request $request
+     * @param \App\Http\Controllers\Request|Request $request
      * @param $id
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
@@ -126,6 +112,4 @@ class UserController extends Controller
         Session::flash('message','Successfully updated!');
         return redirect('prof');
     }
-=======
->>>>>>> 6b420789e4911c0cd3c54f4998f6747ac91026e6
 }
