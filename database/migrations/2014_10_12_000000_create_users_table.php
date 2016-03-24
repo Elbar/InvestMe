@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->boolean('isAdmin')->nullable();
             $table->boolean('isModer')->nullable();
             $table->boolean('isActive')->nullable();
+            $table->string('avatar',100);
             $table->rememberToken();
             $table->timestamps();
         });

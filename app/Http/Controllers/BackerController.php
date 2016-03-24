@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Category;
-use App\User;
+use App\Backer;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use Illuminate\Support\Facades\Session;
 
-class CategoryController extends Controller
+class BackerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,8 +17,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
-        return view('Admin.category.index',compact('categories'));
+        $backers = Backer::all();
+        return view('Admin.backer.index',compact('backers'));
     }
 
     /**
@@ -40,7 +39,7 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-
+        //
     }
 
     /**
@@ -62,9 +61,9 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        $categories = Category::all();
-        $category = Category::find($id);
-        return view('Admin.category.edit',compact('category','categories'));
+        $backers = Backer::all();
+        $backer = Backer::find($id);
+        return view('Admin.backer.edit',compact('backers','backer'));
     }
 
     /**
@@ -76,16 +75,16 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $category = Category::find($id);
-        $category->update(
-            [
-                'title' => $request['title'],
-            ]
-        );
-        $category->save();
+        $backer = Backer::find($id);
+        $backer->update([
+            'reward' => $request['reward'],
+            'method_of_pay' => $request['method_of_pay'],
+            'amount' => $request['amount'],
+            'funds' => $request['funds']
+        ]);
+        $backer->save();
         Session::flash('message','Successfully updated');
-
-        return redirect('category');
+        return redirect(route('backer'));
     }
 
     /**
@@ -96,9 +95,9 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        $category = Category::find($id);
-        $category->delete();
+        $backer = Backer::find($id);
+        $backer->delete();
         Session::flash('message','Successfully deleted');
-        return redirect('category');
+        return redirect(route('backer'));
     }
 }

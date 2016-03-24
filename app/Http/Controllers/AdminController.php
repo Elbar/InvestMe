@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class AdminController extends Controller
 {
@@ -130,11 +131,13 @@ class AdminController extends Controller
             'isActive' => $request['isActive']
         ];
         $i = DB::table('users')->where('id',$id)->update($data);
+        Session::flash('message','Successfully updated');
         return redirect(route('users'));
     }
 
     public function users_delete($id){
         User::destroy($id);
+        Session::flash('message','Successfully deleted');
         return redirect(route('users'));
     }
 }

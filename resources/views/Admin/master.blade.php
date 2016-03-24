@@ -269,7 +269,7 @@
                                 <a href="#" class="btn btn-default btn-flat">Profile</a>
                             </div>
                             <div class="pull-right">
-                                <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                                <a href="{{ url('logout') }}" class="btn btn-default btn-flat">Sign out</a>
                             </div>
                         </li>
                     </ul>
@@ -286,7 +286,7 @@
             <!-- Sidebar user panel -->
             <div class="user-panel">
                 <div class="pull-left image">
-                    <img src="admin/img/logo.jpeg" class="img-circle" alt="User Image" />
+                    <img src="{{asset('admin/img/logo.jpeg')}}" class="img-circle" alt="User Image" />
                 </div>
                 <div class="pull-left info">
                     <p>Hello,{{ Auth::user()->name }} </p>
@@ -311,7 +311,13 @@
                         <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                     </a>
                     <a href="{{ route('users') }}">
-                        <i class="fa  fa-user"></i> <span>Users</span>
+                        <i class="fa  fa-users"></i> <span>Users</span>
+                    </a>
+                    <a href="{{ url('category') }}">
+                        <i class="fa   fa-tags"></i> <span>Categories</span>
+                    </a>
+                    <a href="{{ url('backer') }}">
+                        <i class="fa   fa-money"></i> <span>Backers</span>
                     </a>
                 </li>
 

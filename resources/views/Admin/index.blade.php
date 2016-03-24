@@ -77,7 +77,7 @@
                                 <div class="icon">
                                     <i class="ion ion-person-add"></i>
                                 </div>
-                                <a href="{{ url('admin',['id' => 1]) }}" class="small-box-footer">
+                                <a href="{{ route('users') }}" class="small-box-footer">
                                     More info <i class="fa fa-arrow-circle-right"></i>
                                 </a>
                             </div>
@@ -114,64 +114,6 @@
                     <div class="row">
                         <!-- Left col -->
                         <section class="col-lg-10 connectedSortable">
-                            <div class="box">
-                                <div class="box-header">
-                                    <h3 class="box-title">Categories</h3>
-                                </div><!-- /.box-header -->
-                                <div class="box-body no-padding">
-                                    <table class="table table-striped">
-                                        <tr>
-                                            <th style="width: 10px">#</th>
-                                            <th>Title</th>
-                                            <th>created at</th>
-                                            <th></th>
-                                            <th></th>
-                                        </tr>
-                                        @foreach($categories as $category)
-                                            <tr>
-                                                <td>{{ $category->id }}</td>
-                                                <td>{{ $category->title }}</td>
-                                                <td>{{ $category->created_at }}</td>
-                                                <td style="width: 50px;"><input type="button" class="btn btn-success" value="edit"></td>
-                                                <td style="width: 50px;"><input type="button" class="btn btn-danger" value="delete"></td>
-                                            </tr>
-                                        @endforeach
-                                    </table>
-                                </div><!-- /.box-body -->
-                            </div><!-- /.box -->
-                            <div class="box">
-                                <div class="box-header">
-                                    <h3 class="box-title">Backers</h3>
-                                </div><!-- /.box-header -->
-                                <div class="box-body no-padding">
-                                    <table class="table table-striped">
-                                        <tr>
-                                            <th style="width: 10px">#</th>
-                                            <th>Name</th>
-                                            <th>Reward</th>
-                                            <th>Method of pay</th>
-                                            <th>Amount</th>
-                                            <th>Funds</th>
-                                            <th>Created at</th>
-                                            <th></th>
-                                            <th></th>
-                                        </tr>
-                                        @foreach($backers as $backer)
-                                            <tr>
-                                                <td>{{ $backer->id }}</td>
-                                                <td>{{ $backer->user->name }}</td>
-                                                <td>{{ $backer->reward }}</td>
-                                                <td>{{ $backer->method_of_pay }}</td>
-                                                <td>{{ $backer->amount }}</td>
-                                                <td>{{ $backer->funds }}</td>
-                                                <td>{{ $backer->created_at }}</td>
-                                                <td style="width: 50px;"><input type="button" class="btn btn-success" value="edit"></td>
-                                                <td style="width: 50px;"><input type="button" class="btn btn-danger" value="delete"></td>
-                                            </tr>
-                                        @endforeach
-                                    </table>
-                                </div><!-- /.box-body -->
-                            </div><!-- /.box -->
                             <div class="box">
                                 <div class="box-header">
                                     <h3 class="box-title">Creators</h3>

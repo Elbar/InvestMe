@@ -6,6 +6,11 @@ Categories
     <aside class="right-side">
         <section class="content">
             <section class="col-lg-10 connectedSortable">
+                <div class="row">
+                    @if (Session::has('message'))
+                        <div class="alert alert-success"> {{ Session::get('message') }} </div>
+                    @endif
+                </div>
                  <div class="box">
                 <div class="box-header">
                     <h3 class="box-title">Categories</h3>
@@ -24,11 +29,20 @@ Categories
                                 <td>{{ $category->id }}</td>
                                 <td>{{ $category->title }}</td>
                                 <td>{{ $category->created_at }}</td>
-                                <td style="width: 50px;"><input type="button" class="btn btn-success" value="edit"></td>
-                                <td style="width: 50px;"><input type="button" class="btn btn-danger" value="delete"></td>
+                                <td style="width: 50px;">
+                                    <a href="{{ url('category/edit',$category->id) }}">
+                                        <input type="button" class="btn btn-success" value="edit">
+                                    </a>
+                                </td>
+                                <td style="width: 50px;">
+                                    <a href="{{ url('category/delete',$category->id) }}">
+                                        <input type="button" class="btn btn-danger" value="delete">
+                                    </a>
+                                </td>
                             </tr>
                         @endforeach
                     </table>
+                    @yield('edit')
                 </div><!-- /.box-body -->
             </div><!-- /.box -->
             </section>

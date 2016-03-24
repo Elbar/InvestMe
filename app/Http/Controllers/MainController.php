@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Http\Requests;
+use App\User;
 use Illuminate\Http\Request;
 
 class MainController extends Controller
@@ -10,7 +12,6 @@ class MainController extends Controller
     /**
      * Create a new controller instance.
      *
-     * @return void
      */
     public function __construct()
     {
@@ -25,6 +26,15 @@ class MainController extends Controller
     public function index()
     {
         return view('index');
+    }
+
+    public function empty1(){
+        return view('Admin.empty');
+    }
+
+    public function category(){
+        $categories = Category::all();
+        return view('Admin.categories',compact('categories'));
     }
 
 }
