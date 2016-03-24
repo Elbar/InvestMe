@@ -14,7 +14,7 @@
     <div class="carousel-inner">
         <div class="item active">
             <!-- Set the first background image using inline CSS below. -->
-            <div class="fill" style="background-image:url('img/3_slider.jpg');"></div>
+            <div class="fill" style="background-image:url('http://pre02.deviantart.net/d9f2/th/pre/f/2016/066/2/c/the_good_die_young_by_nanomortis-d9ua12s.png');"></div>
             <div class="carousel-caption">
                 <h1>Заглавие 1</h1>
                 <h1><small>Краткое описание</small></h1>
@@ -23,7 +23,7 @@
         </div>
         <div class="item">
             <!-- Set the second background image using inline CSS below. -->
-            <div class="fill" style="background-image:url('img/1_slider.jpg');"></div>
+            <div class="fill" style="background-image:url('http://pre02.deviantart.net/d9f2/th/pre/f/2016/066/2/c/the_good_die_young_by_nanomortis-d9ua12s.png');"></div>
             <div class="carousel-caption">
                 <h1>Заглавие 2</h1>
                 <h1><small>Краткое описание</small></h1>
@@ -32,7 +32,7 @@
         </div>
         <div class="item">
             <!-- Set the third background image using inline CSS below. -->
-            <div class="fill" style="background-image:url('img/2_slider.jpg');"></div>
+            <div class="fill" style="background-image:url('http://pre02.deviantart.net/d9f2/th/pre/f/2016/066/2/c/the_good_die_young_by_nanomortis-d9ua12s.png');"></div>
             <div class="carousel-caption">
                 <h1>Заглавие 3</h1>
                 <h1><small>Краткое описание</small></h1>
