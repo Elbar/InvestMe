@@ -188,17 +188,9 @@
 </main>
 
 
-<!-- jQuery -->
-<script src="js/jquery.js"></script>
-<script>
-    var cloneCount = 2;;
-    $(document).ready(function(){
-        $(".create").click(function(){
-            $("#case1").clone().attr('id', 'case'+ cloneCount++).appendTo(".cas");
-        });
-    });
-</script>
-       @else
+
+
+      @else
 
         <div class="panel panel-default">
             <div class="panel-body">
@@ -209,3 +201,13 @@
         </div>
         @endif
 @endsection
+
+<!-- jQuery -->
+<script>
+    var cloneCount = 2;;
+    $(document).ready(function(){
+        $(".create").click(function(){
+            $("#case1").clone().attr('id', 'case'+ cloneCount++).appendTo(".cas");
+        });
+    });
+</script>
