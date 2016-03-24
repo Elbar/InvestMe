@@ -249,7 +249,7 @@
         <!--   Newest SP -->
         <div id="new-sp">
             <br>
-            <p><h3>Новые</h3></p>
+            <h3>Новые</h3>
             <ul class="nav nav-tabs">
                 <li class="active"><a href="#">Категория 1</a></li>
                 <li><a href="#">Категория 2</a></li>
