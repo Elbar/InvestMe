@@ -33,7 +33,7 @@
 <body class="skin-blue">
 <!-- header logo: style can be found in header.less -->
 <header class="header">
-    <a href="{{ url('admin1') }}" class="logo">
+    <a href="{{ url('admin') }}" class="logo">
         <!-- Add the class icon to your logo image or logo icon to add the margining -->
         AdminLTE
     </a>
@@ -308,7 +308,7 @@
             <!-- sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu">
                 <li class="active">
-                    <a href="{{ url('admin1') }}">
+                    <a href="{{ url('admin') }}">
                         <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                     </a>
                     <a href="{{ route('users') }}">
