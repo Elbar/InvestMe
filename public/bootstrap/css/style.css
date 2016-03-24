@@ -1,7 +1,12 @@
+@import url(https://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic);
 .thumbnail{
-	padding: 0px;
+	padding: 0;
 }
-
+.invest-nav{
+	font-family: 'Lobster', cursive;;
+	color: #01DFD7;
+	font-size: 30px;
+}
 .caption,  .ratings{
 	padding: 9px;
 }
