@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Validator;
 use App\Http\Requests;
 use App\Project;
@@ -50,8 +51,8 @@ class ProjectController extends Controller
             $new_project = new Project();
             $new_project->title = $Project->name;
             //dd($Project->category);
-            $new_project->creator_id = 1;
-            $new_project->category_id = rand(1,5);
+            $new_project->creator_id = Auth::User()->id;
+            $new_project->category_id = 1;
             $new_project->image =$fileName;
             $new_project->risk = $Project->textarea;
             $new_project->save();
