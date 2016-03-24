@@ -51,14 +51,17 @@ footer{
 }
 
 .sp-header{
-	background-color: rgb(230, 230, 235);
+	background-color: rgb(240, 240, 250);
 	padding-bottom:20px;
 }
+.autor-hr hr{
+	border-top:1px solid #BDBDBD;
+}
 .cases hr {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border: 0;
-  border-top: 1px solid rgb(100, 180, 100);
+	margin-top: 10px;
+	margin-bottom: 10px;
+	border: 0;
+	border-top: 1px solid #0080FF;
 }
 .badge-color{
 	background-color:rgb(200, 100, 130);
@@ -72,7 +75,9 @@ footer{
 .fa-pinterest{
 	color:#B40431;
 }
-
+.form-cover{
+	padding: 10px;
+}
 
 
 
@@ -84,20 +89,16 @@ footer
 	
 
 }
-a:link
-{
-	color: #5890ff;
-	text-decoration: none;
-}
+
 .top-footer
 {
-	height: 170px;
+	min-height: 170px;
 	padding-top: 5px;
 	color: #5890ff;
 	text-decoration: none;
 
 }
-footer top-footer .row
+footer .top-footer .row
 {
 	padding-top: 25px;
 	padding-bottom: 32px;
@@ -105,25 +106,17 @@ footer top-footer .row
 }
 
 
-ul
+.ul-footer
 {
 	list-style-type: none;
 	margin:0;
-	padding: 0;
+	padding-top: 10px;
 	text-decoration: none;
 }
-.r 
-{
-	text-shadow: 1px 1px 1px black;	
-}
-.b
-{
-	text-shadow: 1px 1px 1px yellow;
-}
+
 
 .zag
 {
-	font-family: 'Freight Sans Bold', helvetica, arial, sans-serif !important;
 	font-weight: bold !important;
 	text-rendering: optimizelegibility;
 }
@@ -136,7 +129,7 @@ ul
 	color: #5890ff;
 }
 
-bott-footer img
+.bott-footer img
 {
 	padding-left: 9px;
 }
@@ -150,7 +143,7 @@ bott-footer img
 {
 	float: left;
     height: 50px;
-    padding: 15px 0px;
+    padding: 15px 0;
     font-size: 18px;
     line-height: 20px;
 }
@@ -171,7 +164,7 @@ a.bott-logo
 	padding-top:  15px;
 }
 
-footer bot-footer p
+footer .bott-footer p
 {
 	text-align: right;
 }
