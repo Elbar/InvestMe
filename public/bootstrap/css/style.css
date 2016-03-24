@@ -78,34 +78,19 @@ footer{
 .form-cover{
 	padding: 10px;
 }
-
-
-
 footer 
 {
-	text-decoration: none;
 	border-top: 1px solid #1485CC;
 	background: #d9d9d9;
-	
-
+	margin-top: 30px;
 }
-
 .top-footer
 {
-	min-height: 170px;
-	padding-top: 5px;
+	min-height: 100px;
+	padding-top: 10px;
+	padding-bottom: 20px;
 	color: #5890ff;
-	text-decoration: none;
-
 }
-footer .top-footer .row
-{
-	padding-top: 25px;
-	padding-bottom: 32px;
-
-}
-
-
 .ul-footer
 {
 	list-style-type: none;
@@ -113,61 +98,22 @@ footer .top-footer .row
 	padding-top: 10px;
 	text-decoration: none;
 }
-
-
-.zag
-{
-	font-weight: bold !important;
-	text-rendering: optimizelegibility;
-}
-
 .bott-footer
 {
 	border-top: 1px dashed #5890ff;
 	background: #404050;
 	margin: auto;
 	color: #5890ff;
-}
-
-.bott-footer img
-{
-	padding-left: 9px;
+	padding-top: 10px;
 }
 .inl
 {
-	float: left;
 	color: #686875;
 }
-
-.bott-logo
-{
-	float: left;
-    height: 50px;
-    padding: 15px 0;
-    font-size: 18px;
-    line-height: 20px;
+.inl a:hover{
+	color:#00BFFF;
 }
 
-a.bott-logo
-{
-	color: #686875;	
-}
-.bot-logo 
-{
-	position: relative;
-    min-height: 1px;
-    padding-right: 15px;
-}
-
- .aza
-{
-	padding-top:  15px;
-}
-
-footer .bott-footer p
-{
-	text-align: right;
-}
 
 
 
