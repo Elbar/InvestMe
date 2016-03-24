@@ -105,8 +105,6 @@
         $('.carousel').carousel({
             interval: 5000 //changes the speed
         })
-    </script>
-    <script>
         var cloneCount = 2;;
         $(document).ready(function(){
             $(".create").click(function(){
@@ -114,5 +112,6 @@
             });
         });
     </script>
+
 </body>
 </html>
