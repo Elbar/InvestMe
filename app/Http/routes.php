@@ -47,6 +47,7 @@ Route::group(['middleware' => 'web'], function () {
 
 
     Route::get('/', function () {
+        return (dd());
         return view('index');
 
     });

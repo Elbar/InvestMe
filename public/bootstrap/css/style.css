@@ -78,21 +78,20 @@ footer{
 
 footer 
 {
+	margin-top: 50px;
 	text-decoration: none;
-	border-top: 1px solid #1485CC;
-	background: #d9d9d9;
-	
+	border-top: 1px solid blue;
 
 }
 a:link
 {
-	color: #5890ff;
+	color: #686875;
 	text-decoration: none;
 }
 .top-footer
 {
 	height: 170px;
-	padding-top: 5px;
+	padding-top: 10px;
 	color: #5890ff;
 	text-decoration: none;
 
@@ -100,7 +99,7 @@ a:link
 footer top-footer .row
 {
 	padding-top: 25px;
-	padding-bottom: 32px;
+	padding-bottom: 15px;
 
 }
 
@@ -130,15 +129,14 @@ ul
 
 .bott-footer
 {
-	border-top: 1px dashed #5890ff;
-	background: #404050;
+	padding-top: 5px;
+
 	margin: auto;
-	color: #5890ff;
 }
 
 bott-footer img
 {
-	padding-left: 9px;
+	padding-left: 10px;
 }
 .inl
 {
@@ -149,26 +147,27 @@ bott-footer img
 .bott-logo
 {
 	float: left;
-    height: 50px;
-    padding: 15px 0px;
-    font-size: 18px;
-    line-height: 20px;
+	padding-left: 0px;
+
 }
 
 a.bott-logo
 {
+	padding-top: 3px;
 	color: #686875;	
 }
-.bot-logo 
+.bot-logo
 {
+	padding-top: 10px;
 	position: relative;
     min-height: 1px;
     padding-right: 15px;
+	border-top: 1px groove #9acfea;
 }
 
  .aza
 {
-	padding-top:  15px;
+	padding-top:  3px;
 }
 
 footer bot-footer p

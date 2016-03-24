@@ -28,6 +28,12 @@ class ProjectController extends Controller
      */
     public function create(Request $Project)
     {
+        //dd(Auth::User()->isCreator);
+       // if (Auth::User()->isCreator)
+       // {
+
+      //  }
+
         $error_msg = [
             'name.required' => 'Проектин атын созсуз толтуруш керек.',
         ];
@@ -51,7 +57,7 @@ class ProjectController extends Controller
             $new_project = new Project();
             $new_project->title = $Project->name;
             //dd($Project->category);
-            $new_project->creator_id = Auth::User()->id;
+            $new_project->creator_id =1 ;// Auth::User()->id;
             $new_project->category_id = 1;
             $new_project->image =$fileName;
             $new_project->risk = $Project->textarea;
