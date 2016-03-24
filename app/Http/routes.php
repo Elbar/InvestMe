@@ -24,7 +24,7 @@
 |
 */
 Route::group(['middleware' => 'web'],function(){
-    Route::get('admin',['middleware'=>'auth','uses'=>'AdminController@index']);
+    Route::get('admin',['middleware'=>['auth','admin'],'uses'=>'AdminController@index']);
     Route::get('admin/users',['middleware'=>'auth','as' => 'users', 'uses'=>'AdminController@users']);
     Route::get('admin/users/{id}',['middleware'=>'auth','as' => 'users_id', 'uses'=>'AdminController@users_id']);
     Route::post('admin/users/{id}',['middleware'=>'auth','as' => 'users_id_post', 'uses'=>'AdminController@users_id_post']);
