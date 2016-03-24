@@ -7,14 +7,28 @@
     <div class="panel panel-default">
         <div class="panel-heading">Опишите ваш проект</div>
         <div class="panel-body">
-            <form class="form-horizontal">
-                <fieldset>
+            @if (count($errors) > 0)
+                    <!-- Form Error List -->
+            <div class="alert alert-danger">
+                <strong>Whoops! Something went wrong!</strong>
 
+                <br><br>
+
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
+            <form class="form-horizontal" method="post" action="/create" enctype="multipart/form-data">
+                <fieldset>
                     <!-- Text input-->
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="textinput">Название проекта</label>
                         <div class="col-md-4">
                             <input id="textinput" name="name" type="text" placeholder="" class="form-control input-md" required="">
+                            <input type="hidden" name="_token" value="{{ csrf_token()}}">
                         </div>
                     </div>
 

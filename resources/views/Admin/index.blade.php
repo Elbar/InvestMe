@@ -197,7 +197,7 @@
                                     <!-- chat item -->
                                     @foreach($comments as $comment)
                                     <div class="item">
-                                        <img src="admin/img/avatar.png" alt="user image" class="online"/>
+                                        <img src="admin_bootstrap/img/avatar.png" alt="user image" class="online"/>
                                         <p class="message">
                                             <a href="#" class="name">
                                                 <small class="text-muted pull-right"><i class="fa fa-clock-o"></i> 2:15</small>

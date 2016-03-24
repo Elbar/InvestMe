@@ -6,7 +6,7 @@
     <main>
         <div class="container-fluid sp-header">
             <div class="present-sp-header">
-                <h2 class="text-center">Заглавие 1</h2>
+                <h2 class="text-center">{{$pr->title}}</h2>
                 <h4 class="text-center">Подназвание</h4>
             </div>
             <br>
@@ -14,7 +14,7 @@
                 <div class="row">
                     <div class="col-sm-6 col-lg-6 col-md-6">
                         <div class="thumbnail">
-                            <img src="http://pre02.deviantart.net/d9f2/th/pre/f/2016/066/2/c/the_good_die_young_by_nanomortis-d9ua12s.png" alt="">
+                            <img src="{{asset('/images').'/'.$pr->image}}" alt="">
                         </div>
                     </div>
                     <div class="col-sm-6 col-lg-6 col-md-6">
@@ -59,7 +59,7 @@
                 <!-- Описание сюда -->
                 <div class="article">
                     <h3>Название абзаца</h3>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.
+                    {{$pr->risk}}
                 </div>
             </div> <!-- /.sp-description -->
         </div> <!-- /.container -->
