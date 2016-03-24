@@ -2,81 +2,80 @@
     <top-footer>
         <div class="container top-footer">
             <div class="row">
-                <div class="col-sm-3 col-lg-3 col-md-3">
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                     <ul>
-                        <li class="r zag">FOOTER</li>
+                        <li class="zag">О нас</li>
                         <li>
-                            <a href="#">birinci</a>
+                            <a href="#">Что такое Investme?</a>
                         </li>
                         <li>
-                            <a href="#">ekinci</a>
+                            <a href="#"></a>
                         </li>
                     </ul>
                 </div>
-                <div class="col-sm-3 col-lg-3 col-md-3">
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                     <ul>
-                        <li class="r zag">FOOTER</li>
+                        <li class="zag">Помощь</li>
                         <li>
-                            <a href="#">birinci</a>
+                            <a href="#">Правила</a>
                         </li>
                         <li>
-                            <a href="#">ekinci</a>
+                            <a href="#">Как добавить проект</a>
                         </li>
                         <li>
-                            <a href="#">ekinci</a>
+                            <a href="#">бла бла </a>
                         </li>
                     </ul>
                 </div>
-                <div class="col-sm-3 col-lg-3 col-md-3">
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                     <ul>
-                        <li class="r zag">FOOTER</li>
+                        <li class="zag">Праводателям</li>
                         <li>
-                            <a href="#">birinci</a>
+                            <a href="#">123</a>
                         </li>
                         <li>
                             <a href="#">ekinci</a>
+                        </li>
+                        <li>
+                            <a href="#">123</a>
+                        </li>
+                        <li>
+                            <a href="#">123</a>
                         </li>
                     </ul>
                 </div>
-                <div class="col-sm-3 col-lg-3 col-md-3">
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                     <ul>
-                        <li class="r zag">FOOTER</li>
+                        <li class="zag">Новости</li>
                         <li>
-                            <a href="#">birinci</a>
+                            <a href="#">1</a>
                         </li>
                         <li>
-                            <a href="#">ekinci</a>
+                            <a href="#">12345</a>
                         </li>
                         <li>
-                            <a href="#">ekinci</a>
+                            <a href="#">Блок</a>
                         </li>
                     </ul>
                 </div>
-
             </div>
         </div> <!-- /.container -->
     </top-footer>
 
     <bott-footer>
         <div class="bott-footer">
-
             <div class="container">
                 <div class="bot-logo">
-                    <a class="bott-logo" href="#">INVESTME</a>
+                    <a class="bott-logo col-md-6 " href="#">investme © 2016</a>
                 </div>
-                <div class="col-sm-6 col-lg-6 col-md-6">
 
-                </div>
-                <div class="aza col-sm-3 col-lg-3 col-md-3">
+                <div class="aza col-md-offset-9">
                     <p class="inl">Мы в социальных сетях:
                         <a href="https://www.facebook.com"><img  src="img/fb.png"></a>
                         <a href="https://vk.com"><img src="img/vk.png"></a>
                         <a href="https://instagram.com"><img src="img/inst.png"></a>
                     </p>
-
                 </div>
-
             </div>
     </bott-footer>
 </footer>
-

@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Routes File
@@ -44,10 +45,7 @@ Route::group(array('before' => 'admin'), function(){
 });
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
-
-
     Route::get('/', function () {
-        return (dd());
         return view('index');
 
     });
