@@ -8,7 +8,7 @@ class Project extends Model
 {
 
     protected $table='projects';
-    protected $fillable=['title','content'];
+    protected $fillable=['title','content','risk','image','category_id','creator_id'];
 
     public function category(){
         return $this->belongsTo('App\Category');

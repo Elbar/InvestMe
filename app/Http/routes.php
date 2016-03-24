@@ -33,7 +33,7 @@ Route::group(['middleware' => 'web'],function(){
     Route::post('password','UserController@change');
     Route::post('information/{id}','UserController@info');
 });
-Route::group(array('before' => 'admin1'), function(){
+Route::group(array('before' => 'admin'), function(){
     Route::resource('categories','CategoryController');
 });
 Route::group(['middleware' => 'web'], function () {
@@ -56,12 +56,12 @@ Route::group(['middleware' => 'web'], function () {
     });
 
     Route::get('/project','ProjectController@index');
-    Route::get('/create','ProjectController@create');
+    Route::post('/create','ProjectController@create');
     Route::get('/edit/{id}','ProjectController@edit');
     Route::post('/update/{id}','ProjectController@update');
     Route::get('/delete/{id}','ProjectController@delete');
     Route::post('/store','ProjectController@store');
-    Route::get('/show/{id}','ProjectController@show');
+    Route::get('/show/{id}','ProjectController@show')->where(['id'=>'[0-9]+']);
 
 
     Route::get('/settings', function () {

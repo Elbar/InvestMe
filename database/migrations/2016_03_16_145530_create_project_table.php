@@ -18,6 +18,7 @@ class CreateProjectTable extends Migration
             $table->string('video_link',100);
             $table->string('title',50);
             $table->text('risk');
+            $table->string('image');
             $table->date('duration');
             $table->integer('category_id')->unsigned();
             $table->integer('creator_id')->unsigned();

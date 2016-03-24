@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Validator;
 use App\Http\Requests;
+use App\Project;
 
 class ProjectController extends Controller
 {
@@ -24,8 +25,43 @@ class ProjectController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $Project)
     {
+        $error_msg = [
+            'name.required' => 'Проектин атын созсуз толтуруш керек.',
+        ];
+
+        $validator = Validator::make($Project->all(), [
+            'name' => 'required|max:25',
+            'textarea' => 'required|max:255',
+            'file' => 'required|max:2048|mimes:jpeg,bmp,png',
+        ],$error_msg);
+
+        if ($validator->fails()) {
+            return redirect('/new')
+                ->withInput()
+                ->withErrors($validator);
+        }
+        if ($Project->hasFile('file')) {
+
+            $fileType = $Project->file('file')->getClientOriginalExtension();
+            $fileName = rand(11111,99999).'.'.$fileType;
+            $documentRoot = 'images/';
+            $new_project = new Project();
+            $new_project->title = $Project->name;
+            //dd($Project->category);
+            $new_project->creator_id = 1;
+            $new_project->category_id = rand(1,5);
+            $new_project->image =$fileName;
+            $new_project->risk = $Project->textarea;
+            $new_project->save();
+            $Project->file('file')->move($documentRoot,$fileName);
+            $number= $new_project->id;
+
+            return redirect ('/show/'.$number);
+        }
+
+        return redirect ('/new');
 
     }
 
@@ -48,7 +84,9 @@ class ProjectController extends Controller
      */
     public function show($id)
     {
+        $data = ['pr' => Project::findOrFail($id),];
 
+        return view('project.info')->with($data);
     }
 
     /**
