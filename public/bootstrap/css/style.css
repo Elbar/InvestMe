@@ -1,7 +1,12 @@
+@import url(https://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic);
 .thumbnail{
-	padding: 0px;
+	padding: 0;
 }
-
+.invest-nav{
+	font-family: 'Lobster', cursive;;
+	color: #01DFD7;
+	font-size: 30px;
+}
 .caption,  .ratings{
 	padding: 9px;
 }
@@ -54,11 +59,14 @@ footer{
 	background-color: rgb(230, 230, 235);
 	padding-bottom:20px;
 }
+.autor-hr hr{
+	border-top:1px solid #BDBDBD;
+}
 .cases hr {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border: 0;
-  border-top: 1px solid rgb(100, 180, 100);
+	margin-top: 10px;
+	margin-bottom: 10px;
+	border: 0;
+	border-top: 1px solid #0080FF;
 }
 .badge-color{
 	background-color:rgb(200, 100, 130);
@@ -72,108 +80,47 @@ footer{
 .fa-pinterest{
 	color:#B40431;
 }
-
-
-
-
-footer 
-{
-	margin-top: 50px;
-	text-decoration: none;
-	border-top: 1px solid blue;
-
+.form-cover{
+	padding: 10px;
 }
-a:link
+
+
+
+/* */
+footer
 {
-	color: #686875;
-	text-decoration: none;
+	border-top: 1px solid blue;
+	margin-top: 30px;
 }
 .top-footer
 {
-	height: 170px;
+	min-height: 100px;
 	padding-top: 10px;
+	padding-bottom: 20px;
 	color: #5890ff;
-	text-decoration: none;
-
 }
-footer top-footer .row
-{
-	padding-top: 25px;
-	padding-bottom: 15px;
-
-}
-
-
-ul
+.ul-footer
 {
 	list-style-type: none;
 	margin:0;
-	padding: 0;
+	padding-top: 10px;
 	text-decoration: none;
 }
-.r 
-{
-	text-shadow: 1px 1px 1px black;	
-}
-.b
-{
-	text-shadow: 1px 1px 1px yellow;
-}
-
-.zag
-{
-	font-family: 'Freight Sans Bold', helvetica, arial, sans-serif !important;
-	font-weight: bold !important;
-	text-rendering: optimizelegibility;
-}
-
 .bott-footer
 {
-	padding-top: 5px;
 
 	margin: auto;
+	color: #5890ff;
+	padding-top: 10px;
 }
-
-bott-footer img
-{
-	padding-left: 10px;
-}
-.inl
-{
-	float: left;
+.inl {
 	color: #686875;
 }
-
-.bott-logo
-{
-	float: left;
-	padding-left: 0px;
-
+.inl a:hover{
+	color:#00BFFF;
 }
 
-a.bott-logo
-{
-	padding-top: 3px;
-	color: #686875;	
-}
-.bot-logo
-{
-	padding-top: 10px;
-	position: relative;
-    min-height: 1px;
-    padding-right: 15px;
+.bottom-footer{
 	border-top: 1px groove #9acfea;
+	padding-top: 10px;
 }
-
- .aza
-{
-	padding-top:  3px;
-}
-
-footer bot-footer p
-{
-	text-align: right;
-}
-
-
-
