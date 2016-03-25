@@ -2,6 +2,9 @@
 .thumbnail{
 	padding: 0;
 }
+.auth-form{
+	margin-top: 50px;
+}
 .invest-nav{
 	font-family: 'Lobster', cursive;;
 	color: #01DFD7;
@@ -27,7 +30,6 @@ footer{
 	width: 100%;
 }
 .carousel-caption{
-	/*padding-bottom: 50px;*/
 	bottom: 0;
 	top:30%;
 	
