@@ -28,11 +28,9 @@ class ProjectController extends Controller
      */
     public function create(Request $Project)
     {
-        //dd(Auth::User()->isCreator);
-       // if (Auth::User()->isCreator)
-       // {
+        return  view('project.new');
 
-      //  }
+        dd(Auth::user()->isCreator);
 
         $error_msg = [
             'name.required' => 'Проектин атын созсуз толтуруш керек.',
