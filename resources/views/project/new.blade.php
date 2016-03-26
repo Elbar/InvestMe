@@ -113,8 +113,8 @@
             <!--  Условия -->
             <h4>Условия:</h4>
             <div class="cas row">
-                <div class="col-sm-3 col-lg-3 col-md-3 create">
-                    <button type="button" class="btn btn-primary">Добавить еще условия</button>
+                <div class="col-sm-3 col-lg-3 col-md-3 ">
+                    <dev  class="btn btn-primary" id="create">Добавить еще условия</dev>
                 </div>
                 <!--  Условия  -->
                 <div id="case1" class="case col-sm-3 col-lg-3 col-md-3">
@@ -127,7 +127,7 @@
                                 <div class="form-group">
                                     <label class="control-label col-sm-3" for="text">От:</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="case-from" name="case-from" placeholder="От...">
+                                        <input type="text" class="form-control" id="case-from1" name="case-from1" placeholder="От...">
                                     </div>
                                 </div>
 
@@ -136,7 +136,7 @@
                                 <div class="form-group">
                                     <label class="control-label col-sm-3" for="text">До:</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="case-to" name="case-to" placeholder="До...">
+                                        <input type="text" class="form-control" id="case-to1" name="case-to1" placeholder="До...">
                                     </div>
                                 </div>
 
@@ -144,7 +144,7 @@
 
                                 <div class="form-group">
                                     <label for="text">Плюшки:</label>
-                                    <textarea class="form-control" rows="5" id="u_text" name="u_text"></textarea>
+                                    <textarea class="form-control" rows="5" id="u_text1" name="u_text1"></textarea>
                                 </div>
 
                             <hr>
@@ -153,7 +153,7 @@
                                 <div class="form-group">
                                     <label class="control-label col-sm-3" for="text">Предел:</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="predel" name="predel" placeholder="Предел...">
+                                        <input type="text" class="form-control" id="predel1" name="predel1" placeholder="Предел...">
                                     </div>
                                 </div>
                             </br>
@@ -205,15 +205,21 @@
         @endif
                 <!-- jQuery -->
         <script>
-            var cloneCount = 2;;
+            var cloneCount = 2;
+            var name = "";
             $(document).ready(function(){
-                $(".create").click(function(){
-                    $("#case1").clone().attr('name', 'case'+ cloneCount).appendTo(".cas");
-                    $("#case-from").attr('name', 'case-from'+ cloneCount);
-                    $("#case-to").attr('name', 'case-to'+ cloneCount);
-                    $("#u_text").attr('name', 'u_text'+ cloneCount);
-                    $("#predel").attr('name', 'predel'+ cloneCount);
-                    $("#number").attr('value',cloneCount);
+                $("#create").click(function(){
+                    name='case'+cloneCount;
+                    $("#case1").clone().attr('id', name).appendTo(".cas");
+                    $("#"+name+' #case-from1' ).attr('id', 'case-from'+ cloneCount);
+                        $("#case-from"+cloneCount).attr('name','case-from'+cloneCount);
+                    $("#"+name+' #case-to1' ).attr('id', 'case-to'+ cloneCount);
+                        $("#case-to"+cloneCount).attr('name', 'case-to'+cloneCount);
+                    $("#"+name+' #u_text1' ).attr('id', 'u_text'+ cloneCount);
+                        $('#u_text'+cloneCount).attr('name', 'u_text'+cloneCount);
+                    $("#"+name+' #predel1' ).attr('id', 'predel'+ cloneCount);
+                        $('#predel'+cloneCount).attr('name','predel'+cloneCount);
+                    $('#number').attr('value', cloneCount);
                     cloneCount++;
                 });
             });
