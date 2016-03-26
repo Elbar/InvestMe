@@ -18,7 +18,7 @@
     <link rel="stylesheet" type="text/css" href="<?=asset('bootstrap/css/full-slider.css')?>" />
     <link rel="stylesheet" type="text/css" href="<?=asset('bootstrap/css/main.css')?>" />
     <link rel="stylesheet" type="text/css" href="<?=asset('bootstrap/css/style.css')?>" />
-
+    <script src="{{asset('ckeditor/ckeditor.js')}}"></script>
 
     <style>
         body {

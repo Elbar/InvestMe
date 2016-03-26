@@ -175,7 +175,8 @@
         <div class="article">
             <div class="form-group">
                 <label for="text">Полное описание проекта:</label>
-                <textarea class="form-control" rows="20" id="text"></textarea>
+                <textarea class="form-control" rows="20" id="text12"></textarea>
+                <script> CKEDITOR.replace('text12');</script>
             </div>
 
             <form role="form">
