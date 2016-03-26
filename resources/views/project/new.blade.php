@@ -5,15 +5,17 @@
 
         <!-- Page Content -->
 <main>
+    <form role="form" action="/create" method="post" enctype="multipart/form-data">
     <div class="container-fluid sp-header">
         <div class="present-sp-header container">
-            <form role="form">
+
                 <div class="form-group">
                     <h4 class="text-center">Заглавие:</h4>
                     <input type="text" class="form-control center" id="project-title" placeholder="Введите название проекта">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 </div>
-            </form>
-            <h4 class="text-center"><small>Автор: G-Dragon</small></h4>
+
+            <h4 class="text-center"><small>Автор: {{Auth::user()->name}}</small></h4>
         </div>
         <br>
         <div class="container">
@@ -64,8 +66,8 @@
                             <img src="http://www.sbs.com.au/popasia/sites/sbs.com.au.popasia/files/styles/thumb_small/public/gd_fashion_black_white_704.jpg?itok=aOwps24I" class="img-circle" alt="" width="100" height="100">
                         </div>
                         <div class="col-sm-9 col-lg-9 col-md-9">
-                            <h4 class="">G-Dragon</h4>
-                            <a href="#" class="">Связаться</a>
+                            <h4 class="">{{Auth::user()->name}}</h4>
+                            <a href="/prof" class="">Связаться</a>
                         </div>
                     </div>
                 </div>
@@ -74,24 +76,21 @@
                     <hr>
                     <ol class="list-inline">
                         <li>
-                            <form class="form-horizontal" role="form">
                                 <div class="form-group">
                                     <label class="control-label col-sm-3" for="text"><span class="fa fa-map-marker"></span> </label>
                                     <div class="col-sm-9">
                                         <input type="text" class="form-control" id="case-to" placeholder="Место проведения">
                                     </div>
                                 </div>
-                            </form>
                         </li>
                         <li>
-                            <form class="form-horizontal" role="form">
+
                                 <div class="form-group">
                                     <label class="control-label col-sm-3" for="text"><span class="fa fa-tag"></span> </label>
                                     <div class="col-sm-9">
                                         <input type="text" class="form-control" id="case-to" placeholder="Теги">
                                     </div>
                                 </div>
-                            </form>
                         </li>
                     </ol>
 
@@ -115,50 +114,51 @@
             <h4>Условия:</h4>
             <div class="cas row">
                 <div class="col-sm-3 col-lg-3 col-md-3 create">
-                    <button class="btn btn-primary">Добавить еще условия</button>
+                    <button type="button" class="btn btn-primary">Добавить еще условия</button>
                 </div>
                 <!--  Условия  -->
                 <div id="case1" class="case col-sm-3 col-lg-3 col-md-3">
 
                     <div class="thumbnail cases">
 
+                        <div class="form-group">
                         <div class="caption">
-                            <form class="form-horizontal" role="form">
+
                                 <div class="form-group">
                                     <label class="control-label col-sm-3" for="text">От:</label>
                                     <div class="col-sm-9">
                                         <input type="text" class="form-control" id="case-from" placeholder="От...">
                                     </div>
                                 </div>
-                            </form>
 
-                            <form class="form-horizontal" role="form">
+
+
                                 <div class="form-group">
                                     <label class="control-label col-sm-3" for="text">До:</label>
                                     <div class="col-sm-9">
                                         <input type="text" class="form-control" id="case-to" placeholder="До...">
                                     </div>
                                 </div>
-                            </form>
+
                             <hr>
-                            <form  role="form">
+
                                 <div class="form-group">
                                     <label for="text">Плюшки:</label>
                                     <textarea class="form-control" rows="5" id="text"></textarea>
                                 </div>
-                            </form>
+
                             <hr>
 
-                            <form class="form-horizontal" role="form">
+
                                 <div class="form-group">
                                     <label class="control-label col-sm-3" for="text">Предел:</label>
                                     <div class="col-sm-9">
                                         <input type="text" class="form-control" id="case-to" placeholder="Предел...">
                                     </div>
                                 </div>
-                            </form>
+                            </br>
                         </div>
-
+                        </div>
                     </div>
                 </div>
 
@@ -180,12 +180,13 @@
             </div>
 
             <form role="form">
-                <button class="btn btn-primary text-centre">Отправить</button>
+                <input type="submit" class="btn btn-primary text-centre" value="Отправить">
             </form>
 
         </div>
     </div>
     <hr>
+    </form>
 </main>
 
 
