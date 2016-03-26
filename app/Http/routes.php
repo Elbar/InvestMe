@@ -49,7 +49,7 @@ Route::group(['middleware' => 'web'], function () {
         return view('index');
 
     });
-    Route::get('/new',['middleware'=>'auth','uses'=>'ProjectController@create']);
+    Route::get('/new',['middleware'=>'auth','uses'=>'ProjectController@add_new']);
     Route::get('/archive', function () {
         return view('project.archive');
     });

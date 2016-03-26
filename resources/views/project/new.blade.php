@@ -11,7 +11,7 @@
 
                 <div class="form-group">
                     <h4 class="text-center">Заглавие:</h4>
-                    <input type="text" class="form-control center" id="project-title" placeholder="Введите название проекта">
+                    <input type="text" class="form-control center" name="project-title" placeholder="Введите название проекта">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 </div>
 
@@ -25,13 +25,13 @@
                         <div class="form-group">
                             <label class="text" for="inputCover">Обложка:</label>
 
-                            <input type="file" class="form-control-file" id="inputCover1" >
-                            <input type="file" class="form-control-file" id="inputCover2" >
-                            <input type="file" class="form-control-file" id="inputCover3" >
+                            <input type="file" class="form-control-file" name="inputCover1" >
+                            <input type="file" class="form-control-file" name="inputCover2" >
+                            <input type="file" class="form-control-file" name="inputCover3" >
                             <small class="text-muted">Выберите файл для обложки вашего проекта 700*700 пикселей.</small>
                             <hr>
                             <label class="text" for="inputCover">Видео:</label>
-                            <input type="url" class="form-control center" id="project-video-cover" placeholder="Вставьте ссылку">
+                            <input type="url" class="form-control center" name="project-video-cover" placeholder="Вставьте ссылку">
 
                         </div>
                     </div>
@@ -40,12 +40,12 @@
                 <div class="col-sm-6 col-lg-6 col-md-6"> <!-- Presentation -->
                     <div class="form-group">
                         <label for="text">Краткое описание:</label>
-                        <textarea class="form-control" rows="8" id="text"></textarea>
+                        <textarea class="form-control" rows="8" name="text"></textarea>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="chooseCategory">Выберите категорию:</label>
                         <div class="col-sm-10">
-                            <select class="form-control" id="chooseCategory">
+                            <select class="form-control" name="chooseCategory">
                                 <option>Категория 1</option>
                                 <option>Категория 2</option>
                                 <option>Категория 3</option>
@@ -79,7 +79,7 @@
                                 <div class="form-group">
                                     <label class="control-label col-sm-3" for="text"><span class="fa fa-map-marker"></span> </label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="case-to" placeholder="Место проведения">
+                                        <input type="text" class="form-control" name="case-to" placeholder="Место проведения">
                                     </div>
                                 </div>
                         </li>
@@ -88,7 +88,7 @@
                                 <div class="form-group">
                                     <label class="control-label col-sm-3" for="text"><span class="fa fa-tag"></span> </label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="case-to" placeholder="Теги">
+                                        <input type="text" class="form-control" name="case-to" placeholder="Теги">
                                     </div>
                                 </div>
                         </li>
@@ -127,7 +127,7 @@
                                 <div class="form-group">
                                     <label class="control-label col-sm-3" for="text">От:</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="case-from" placeholder="От...">
+                                        <input type="text" class="form-control" id="case-from" name="case-from" placeholder="От...">
                                     </div>
                                 </div>
 
@@ -136,7 +136,7 @@
                                 <div class="form-group">
                                     <label class="control-label col-sm-3" for="text">До:</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="case-to" placeholder="До...">
+                                        <input type="text" class="form-control" id="case-to" name="case-to" placeholder="До...">
                                     </div>
                                 </div>
 
@@ -144,7 +144,7 @@
 
                                 <div class="form-group">
                                     <label for="text">Плюшки:</label>
-                                    <textarea class="form-control" rows="5" id="text"></textarea>
+                                    <textarea class="form-control" rows="5" id="u_text" name="u_text"></textarea>
                                 </div>
 
                             <hr>
@@ -153,7 +153,7 @@
                                 <div class="form-group">
                                     <label class="control-label col-sm-3" for="text">Предел:</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="case-to" placeholder="Предел...">
+                                        <input type="text" class="form-control" id="predel" name="predel" placeholder="Предел...">
                                     </div>
                                 </div>
                             </br>
@@ -175,12 +175,13 @@
         <div class="article">
             <div class="form-group">
                 <label for="text">Полное описание проекта:</label>
-                <textarea class="form-control" rows="20" id="text12"></textarea>
+                <textarea class="form-control" rows="20" name="text12"></textarea>
                 <script> CKEDITOR.replace('text12');</script>
             </div>
 
             <form role="form">
                 <input type="submit" class="btn btn-primary text-centre" value="Отправить">
+                <input type="hidden" id="number" name="number" value="1">
             </form>
 
         </div>
@@ -207,7 +208,13 @@
             var cloneCount = 2;;
             $(document).ready(function(){
                 $(".create").click(function(){
-                    $("#case1").clone().attr('id', 'case'+ cloneCount++).appendTo(".cas");
+                    $("#case1").clone().attr('name', 'case'+ cloneCount).appendTo(".cas");
+                    $("#case-from").attr('name', 'case-from'+ cloneCount);
+                    $("#case-to").attr('name', 'case-to'+ cloneCount);
+                    $("#u_text").attr('name', 'u_text'+ cloneCount);
+                    $("#predel").attr('name', 'predel'+ cloneCount);
+                    $("#number").attr('value',cloneCount);
+                    cloneCount++;
                 });
             });
         </script>

@@ -10,6 +10,10 @@ use App\Project;
 
 class ProjectController extends Controller
 {
+    public function add_new()
+    {
+        return  view('project.new');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -28,8 +32,8 @@ class ProjectController extends Controller
      */
     public function create(Request $Project)
     {
-        return  view('project.new');
 
+        dd($Project);
         dd(Auth::user()->isCreator);
 
         $error_msg = [
