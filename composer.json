@@ -9,7 +9,7 @@
         "laravel/framework": "5.2.*",
         "twbs/bootstrap": "^3.3",
         "illuminate/html": "^5.0",
-        "laravelcollective/html": "5.2.*"
+        "laravelcollective/html": "^5.2"
     },
     "require-dev": {
         "behat/behat": "~3.0",
