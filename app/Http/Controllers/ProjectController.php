@@ -69,17 +69,18 @@ class ProjectController extends Controller
             $fileName1 = $fname.rand(11111,99999).'.'.$fileType1;
             $fileName2 = $fname.rand(11111,99999).'.'.$fileType2;
             $fileName3 = $fname.rand(11111,99999).'.'.$fileType3;
+            ///
             $documentRoot = 'images/';
             $new_project = new Project();
             $new_project->title = $Project->project-title;
             $new_project->video_link = $Project->project-video-cover;
-            $new_project ->risk
+            $new_project ->risk;
             $new_project->creator_id =1 ;// Auth::User()->id;
             $new_project->category_id = 1;
-            $new_project->image =$fileName;
+            $new_project->image =$fileName1;
             $new_project->risk = $Project->textarea;
             $new_project->save();
-            $Project->file('file')->move($documentRoot,$fileName);
+            $Project->file('file')->move($documentRoot,$fileName1);
             $number= $new_project->id;
 
             return redirect ('/show/'.$number);
