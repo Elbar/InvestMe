@@ -41,11 +41,9 @@
                         <label class="control-label col-sm-2" for="chooseCategory">Выберите категорию:</label>
                         <div class="col-sm-10">
                             <select class="form-control" name="chooseCategory">
-                                <option>Категория 1</option>
-                                <option>Категория 2</option>
-                                <option>Категория 3</option>
-                                <option>Категория 4</option>
-                                <option>Категория 5</option>
+                                @foreach($categories as $category)
+                                    <option value="{{ $category->id }}">{{ $category->title }}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>

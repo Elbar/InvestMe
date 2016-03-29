@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Validator;
@@ -12,9 +13,11 @@ class ProjectController extends Controller
 {
     public function add_new()
     {
+        $categories = Category::all();
+        
         if (Auth::user()->isCreator == null)
             return redirect('/creator');
-        return  view('project.new');
+        return  view('project.new',compact('categories'));
     }
     /**
      * Display a listing of the resource.

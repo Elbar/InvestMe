@@ -30,7 +30,7 @@ Route::group(['middleware' => 'web'],function(){
     Route::get('admin/users/{id}',['middleware'=>'auth','as' => 'users_id', 'uses'=>'AdminController@users_id']);
     Route::post('admin/users/{id}',['middleware'=>'auth','as' => 'users_id_post', 'uses'=>'AdminController@users_id_post']);
     Route::get('admin/users/{id}/delete',['middleware'=>'auth','as' => 'users_delete', 'uses'=>'AdminController@users_delete']);
-    Route::get('prof',['middleware' => 'auth','uses'=>'UserController@index']);
+    Route::get('profile',['middleware' => 'auth','uses'=>'UserController@index']);
     Route::post('password','UserController@change');
     Route::post('information/{id}','UserController@info');
     Route::get('empty','MainController@empty1');
@@ -74,10 +74,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/settings', function () {
         return view('settings');
     });
-
-    Route::get('/profile', function () {
-        return view('profile');
-    });
+    
 });
 
 
