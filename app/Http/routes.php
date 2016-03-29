@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Routes File
@@ -46,15 +47,13 @@ Route::group(array('before' => 'admin'), function(){
 });
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
-
-
     Route::get('/', function () {
         return view('index');
 
     });
-    Route::get('/new', function () {
-        return view('project.new');
-    });
+    Route::get('/creator',['middleware'=>'auth','uses'=>'CreatorController@index']);
+    Route::post('/creator/add','CreatorController@add');
+    Route::get('/new',['middleware'=>'auth','uses'=>'ProjectController@add_new']);
     Route::get('/archive', function () {
         return view('project.archive');
     });

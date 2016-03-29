@@ -1,4 +1,4 @@
-.form-horizontal {
+/*.form-horizontal {
     padding : 50px;
 }
 .btn-group
@@ -10,10 +10,11 @@
     width: 100px;
 }
 
-/* registration,login and  project form */
+ registration,login and  project form
 .col-sm-8.project-form,.col-md-8.col-md-offset-2.reg-form, .col-md-8.col-md-offset-2.login-form {
     padding-top: 35px;
 }
 .panel-heading {
     text-align: center;
 }
+*/

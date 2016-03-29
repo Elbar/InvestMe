@@ -3,12 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Validator;
 use App\Http\Requests;
 use App\Project;
 
 class ProjectController extends Controller
 {
+    public function add_new()
+    {
+        if (Auth::user()->isCreator == null)
+            return redirect('/creator');
+        return  view('project.new');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -27,14 +34,24 @@ class ProjectController extends Controller
      */
     public function create(Request $Project)
     {
+
+        dd($Project->toArray());
+        dd(Auth::user()->isCreator);
+
         $error_msg = [
-            'name.required' => 'Проектин атын созсуз толтуруш керек.',
+            'project-title.required' => 'Проектин атын созсуз толтуруш керек.',
         ];
 
         $validator = Validator::make($Project->all(), [
-            'name' => 'required|max:25',
-            'textarea' => 'required|max:255',
-            'file' => 'required|max:2048|mimes:jpeg,bmp,png',
+            'project-title' => 'required|max:25',
+            'project-video-cover' => 'required|active_url',
+            'text_option' => 'required|max:200',
+            'text_option2' => 'required',
+            'inputCover1' => 'required|max:700|mimes:jpeg,bmp,png',
+            'inputCover2' => 'required|max:700|mimes:jpeg,bmp,png',
+            'inputCover3' => 'required|max:700|mimes:jpeg,bmp,png',
+            'case-mesto' => 'required',
+            'pod_razdel' => 'required',
         ],$error_msg);
 
         if ($validator->fails()) {
@@ -42,20 +59,28 @@ class ProjectController extends Controller
                 ->withInput()
                 ->withErrors($validator);
         }
-        if ($Project->hasFile('file')) {
-
-            $fileType = $Project->file('file')->getClientOriginalExtension();
-            $fileName = rand(11111,99999).'.'.$fileType;
+        if ($Project->hasFile('inputCover1') && $Project->hasFile('inputCover2')
+            && $Project->hasFile('inputCover3'))
+        {
+            $fileType1 = $Project->file('inputCover1')->getClientOriginalExtension();
+            $fileType2 = $Project->file('inputCover2')->getClientOriginalExtension();
+            $fileType3 = $Project->file('inputCover2')->getClientOriginalExtension();
+            $fname = Auth::user()->name.$Project->project-title;
+            $fileName1 = $fname.rand(11111,99999).'.'.$fileType1;
+            $fileName2 = $fname.rand(11111,99999).'.'.$fileType2;
+            $fileName3 = $fname.rand(11111,99999).'.'.$fileType3;
+            ///
             $documentRoot = 'images/';
             $new_project = new Project();
-            $new_project->title = $Project->name;
-            //dd($Project->category);
-            $new_project->creator_id = 1;
-            $new_project->category_id = rand(1,5);
-            $new_project->image =$fileName;
+            $new_project->title = $Project->project-title;
+            $new_project->video_link = $Project->project-video-cover;
+            $new_project ->risk;
+            $new_project->creator_id =1 ;// Auth::User()->id;
+            $new_project->category_id = 1;
+            $new_project->image =$fileName1;
             $new_project->risk = $Project->textarea;
             $new_project->save();
-            $Project->file('file')->move($documentRoot,$fileName);
+            $Project->file('file')->move($documentRoot,$fileName1);
             $number= $new_project->id;
 
             return redirect ('/show/'.$number);

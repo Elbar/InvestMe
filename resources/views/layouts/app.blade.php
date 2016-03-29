@@ -18,7 +18,8 @@
     <link rel="stylesheet" type="text/css" href="<?=asset('bootstrap/css/full-slider.css')?>" />
     <link rel="stylesheet" type="text/css" href="<?=asset('bootstrap/css/main.css')?>" />
     <link rel="stylesheet" type="text/css" href="<?=asset('bootstrap/css/style.css')?>" />
-
+    <script src="{{asset('ckeditor/ckeditor.js')}}"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.0.min.js"></script>
 
     <style>
         body {
@@ -38,14 +39,14 @@
 
                 <!-- Collapsed Hamburger -->
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                    <span class="sr-only">Toggle Navigation</span>
+                    <span class="sr-only">Навигация</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
 
                 <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand invest-nav" href="{{ url('/') }}">
                     InvestMe
                 </a>
             </div>
@@ -97,6 +98,8 @@
 
     @yield('content')
 
+@include('partials.footer')
+
     <!-- JavaScripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -105,6 +108,13 @@
         $('.carousel').carousel({
             interval: 5000 //changes the speed
         })
+        var cloneCount = 2;;
+        $(document).ready(function(){
+            $(".create").click(function(){
+                $("#case1").clone().attr('id', 'case'+ cloneCount++).appendTo(".cas");
+            });
+        });
     </script>
+
 </body>
 </html>
