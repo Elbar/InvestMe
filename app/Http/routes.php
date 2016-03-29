@@ -37,10 +37,12 @@ Route::group(['middleware' => 'web'],function(){
     Route::get('category/edit/{id}','CategoryController@edit');
     Route::post('category/{id}','CategoryController@update');
     Route::get('category/delete/{id}','CategoryController@destroy');
+    Route::get('categories/create','CategoryController@create');
+    Route::post('categories','CategoryController@store');
+    Route::post('backer_update/{id}','BackerController@update');
     Route::resource('backer','BackerController');
 });
 Route::group(array('before' => 'admin'), function(){
-    Route::resource('categories','CategoryController');
 });
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
