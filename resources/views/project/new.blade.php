@@ -29,7 +29,7 @@
                             <small class="text-muted">Выберите файл для обложки вашего проекта 700*700 пикселей.</small>
                             <hr>
                             <label class="text" for="inputCover">Видео:</label>
-                            <input type="url" class="form-control center" id="project-video-cover" placeholder="Вставьте ссылку">
+                            <input type="url" class="form-control center" id="inoutVideoCover" placeholder="Вставьте ссылку">
 
                         </div>
                     </div>
