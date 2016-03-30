@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Condition;
+use App\Image;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Validator;
@@ -38,22 +41,24 @@ class ProjectController extends Controller
     public function create(Request $Project)
     {
 
-        dd($Project->toArray());
-        dd(Auth::user()->isCreator);
-
+        //dd($Project);
+        //dd($Project['case_from1']);
+        $id_user = Auth::user()->id;
+        $id_creator = DB::table('creators')->where('user_id', $id_user)->first();
+        $id_creator = $id_creator->id;
         $error_msg = [
-            'project-title.required' => 'Проектин атын созсуз толтуруш керек.',
+            'project_title.required' => 'Проектин атын созсуз толтуруш керек.',
         ];
 
         $validator = Validator::make($Project->all(), [
-            'project-title' => 'required|max:25',
-            'project-video-cover' => 'required|active_url',
+            'project_title' => 'required|max:25',
+            'project_video_cover' => 'required|active_url',
             'text_option' => 'required|max:200',
             'text_option2' => 'required',
             'inputCover1' => 'required|max:700|mimes:jpeg,bmp,png',
             'inputCover2' => 'required|max:700|mimes:jpeg,bmp,png',
             'inputCover3' => 'required|max:700|mimes:jpeg,bmp,png',
-            'case-mesto' => 'required',
+            'case_mesto' => 'required',
             'pod_razdel' => 'required',
         ],$error_msg);
 
@@ -65,28 +70,55 @@ class ProjectController extends Controller
         if ($Project->hasFile('inputCover1') && $Project->hasFile('inputCover2')
             && $Project->hasFile('inputCover3'))
         {
+            $new_project = new Project();
+            $new_project->title = $Project->project_title;
+            $new_project->video_link = $Project->project_video_cover;
+            $new_project ->option1 = $Project->text_option;
+            $new_project ->option2 = $Project->text_option2;
+            $new_project ->mesto = $Project->case_mesto;
+            $new_project ->teg = $Project->pod_razdel;
+            $new_project->creator_id = $id_creator ;
+            $new_project->category_id = $Project->chooseCategory;
+            $new_project->save();
+
+            $id_project = $new_project->id;
+
             $fileType1 = $Project->file('inputCover1')->getClientOriginalExtension();
             $fileType2 = $Project->file('inputCover2')->getClientOriginalExtension();
             $fileType3 = $Project->file('inputCover2')->getClientOriginalExtension();
-            $fname = Auth::user()->name.$Project->project-title;
+            $fname = Auth::user()->name.$Project->title;
             $fileName1 = $fname.rand(11111,99999).'.'.$fileType1;
             $fileName2 = $fname.rand(11111,99999).'.'.$fileType2;
             $fileName3 = $fname.rand(11111,99999).'.'.$fileType3;
-            ///
             $documentRoot = 'images/';
-            $new_project = new Project();
-            $new_project->title = $Project->project-title;
-            $new_project->video_link = $Project->project-video-cover;
-            $new_project ->risk;
-            $new_project->creator_id =1 ;// Auth::User()->id;
-            $new_project->category_id = 1;
-            $new_project->image =$fileName1;
-            $new_project->risk = $Project->textarea;
-            $new_project->save();
-            $Project->file('file')->move($documentRoot,$fileName1);
-            $number= $new_project->id;
+            $Project->file('inputCover1')->move($documentRoot,$fileName1);
+            $Project->file('inputCover2')->move($documentRoot,$fileName2);
+            $Project->file('inputCover3')->move($documentRoot,$fileName3);
 
-            return redirect ('/show/'.$number);
+            $image1 = new Image;
+            $image1->image_name = $fileName1;
+            $image1->project_id = $id_project;
+            $image1->save();
+            $image2 = new Image;
+            $image2->image_name = $fileName2;
+            $image2->project_id = $id_project;
+            $image2->save();
+            $image3 = new Image;
+            $image3->image_name = $fileName3;
+            $image3->project_id = $id_project;
+            $image3->save();
+
+            for ($i = 1; $i <= $Project->number; $i++) {
+                $ob = new Condition();
+                $ob->startMoney = $Project['case_from'.$i];
+                $ob->endMoney = $Project['case_to'.$i];
+                $ob->description = $Project['u_text'.$i];
+                $ob->number = $Project['predel'.$i];
+                $ob->project_id = $id_project;
+                $ob->save();
+            }
+
+            return redirect ('/show/'.$id_project);
         }
 
         return redirect ('/new');

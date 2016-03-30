@@ -7,10 +7,24 @@
 <main>
     <form role="form" action="/create" method="post" enctype="multipart/form-data">
     <div class="container-fluid sp-header">
+        @if (count($errors) > 0)
+                <!-- Form Error List -->
+        <div class="alert alert-danger">
+            <strong>Whoops! Something went wrong!</strong>
+
+            <br><br>
+
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
         <div class="present-sp-header container">
                 <div class="form-group">
                     <h4 class="text-center">Заглавие:</h4>
-                    <input type="text" class="form-control center" name="project-title" placeholder="Введите название проекта">
+                    <input type="text" class="form-control center" name="project_title" placeholder="Введите название проекта">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 </div>
             <h4 class="text-center"><small>Автор: {{Auth::user()->name}}</small></h4>
@@ -28,7 +42,7 @@
                             <small class="text-muted">Выберите файл для обложки вашего проекта 700*700 пикселей.</small>
                             <hr>
                             <label class="text" for="inputCover">Видео:</label>
-                            <input type="url" class="form-control center" name="project-video-cover" placeholder="Вставьте ссылку">
+                            <input type="url" class="form-control center" name="project_video_cover" placeholder="Вставьте ссылку">
                         </div>
                     </div>
                 </div>
@@ -69,7 +83,7 @@
                                 <div class="form-group">
                                     <label class="control-label col-sm-3" for="text"><span class="fa fa-map-marker"></span> </label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" name="case-mesto" placeholder="Место проведения">
+                                        <input type="text" class="form-control" name="case_mesto" placeholder="Место проведения">
                                     </div>
                                 </div>
                         </li>
@@ -108,13 +122,13 @@
                                 <div class="form-group">
                                     <label class="control-label col-sm-3" for="text">От:</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="case-from1" name="case-from1" placeholder="От...">
+                                        <input type="text" class="form-control" id="case_from1" name="case_from1" placeholder="От...">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label col-sm-3" for="text">До:</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="case-to1" name="case-to1" placeholder="До...">
+                                        <input type="text" class="form-control" id="case_to1" name="case_to1" placeholder="До...">
                                     </div>
                                 </div>
                             <hr>
@@ -143,7 +157,7 @@
             <div class="form-group">
                 <label for="text">Полное описание проекта:</label>
                 <textarea class="form-control" rows="20" name="text_option2"></textarea>
-                <script> CKEDITOR.replace('text12');</script>
+                <script> CKEDITOR.replace('text_option2');</script>
             </div>
 
             <form role="form">
@@ -172,10 +186,10 @@
                 $("#create").click(function(){
                     name='case'+cloneCount;
                     $("#case1").clone().attr('id', name).appendTo(".cas");
-                    $("#"+name+' #case-from1' ).attr('id', 'case-from'+ cloneCount);
-                        $("#case-from"+cloneCount).attr('name','case-from'+cloneCount);
-                    $("#"+name+' #case-to1' ).attr('id', 'case-to'+ cloneCount);
-                        $("#case-to"+cloneCount).attr('name', 'case-to'+cloneCount);
+                    $("#"+name+' #case_from1' ).attr('id', 'case_from'+ cloneCount);
+                        $("#case_from"+cloneCount).attr('name','case_from'+cloneCount);
+                    $("#"+name+' #case_to1' ).attr('id', 'case_to'+ cloneCount);
+                        $("#case_to"+cloneCount).attr('name', 'case_to'+cloneCount);
                     $("#"+name+' #u_text1' ).attr('id', 'u_text'+ cloneCount);
                         $('#u_text'+cloneCount).attr('name', 'u_text'+cloneCount);
                     $("#"+name+' #predel1' ).attr('id', 'predel'+ cloneCount);

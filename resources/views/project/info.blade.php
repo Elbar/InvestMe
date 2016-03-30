@@ -14,7 +14,7 @@
                 <div class="row">
                     <div class="col-sm-6 col-lg-6 col-md-6">
                         <div class="thumbnail">
-                            <img src="{{asset('/images').'/'.$pr->image}}" alt="">
+                            <img src="{{asset('/images').'/image.png'}}" alt="">
                         </div>
                     </div>
                     <div class="col-sm-6 col-lg-6 col-md-6">
