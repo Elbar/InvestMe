@@ -122,26 +122,26 @@
                                 <div class="form-group">
                                     <label class="control-label col-sm-3" for="text">От:</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="case_from1" name="case_from1" placeholder="От...">
+                                        <input type="text" class="form-control" id="case_from1" name="case_from1" placeholder="От..." required="">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label col-sm-3" for="text">До:</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="case_to1" name="case_to1" placeholder="До...">
+                                        <input type="text" class="form-control" id="case_to1" name="case_to1" placeholder="До..." required="">
                                     </div>
                                 </div>
                             <hr>
                                 <div class="form-group">
                                     <label for="text">Плюшки:</label>
-                                    <textarea class="form-control" rows="5" id="u_text1" name="u_text1"></textarea>
+                                    <textarea class="form-control" rows="5" id="u_text1" name="u_text1" required=""></textarea>
                                 </div>
                             <hr>
 
                                 <div class="form-group">
                                     <label class="control-label col-sm-3" for="text">Предел:</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="predel1" name="predel1" placeholder="Предел...">
+                                        <input type="text" class="form-control" id="predel1" name="predel1" placeholder="Предел..." required="">
                                     </div>
                                 </div>
                             </br>
