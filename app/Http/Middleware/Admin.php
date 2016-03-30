@@ -21,6 +21,6 @@ class Admin
         if (Auth::user()->isAdmin || Auth::user()->isModer) {
             return $next($request);
         }
-        return Redirect::back();
+        return redirect('/');
     }
 }

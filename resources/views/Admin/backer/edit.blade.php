@@ -1,7 +1,7 @@
 @extends('Admin.backer.index')
 
 @section('edit')
-    <form class="form-group" method="post" action="{{ route('backer.update',$backer->id) }}">
+    <form class="form-group" method="post" action="{{ url('backer_update',$backer->id) }}">
         {{ Form::token() }}
         <table class="table table-striped">
             <tr>
