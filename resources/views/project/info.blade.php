@@ -47,6 +47,7 @@
                         <ol class="list-inline">
                             <li><h4> <small><span class="fa fa-map-marker"></span> Бишкек </small> </h4> </li>
                             <li><h4> <small><span class="fa fa-tag"></span> Проект</small> </h4> </li>
+                            <li><h4> <small><span class="fa fa-calendar"></span> Сбор продлится до 5 августа</small> </h4> </li>
                         </ol>
 
                         Поделиться:
