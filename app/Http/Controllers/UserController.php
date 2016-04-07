@@ -96,7 +96,7 @@ class UserController extends Controller
         if ($pass != $pw_c){
             return "sorry";
         }
-        return redirect('prof');
+        return redirect('profile');
     }
 
     /**
