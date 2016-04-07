@@ -98,7 +98,6 @@
                             </div>
                         </li>
                     </ol>
->>>>>>> nurik
                 </div>
             </div><!-- row -->
         </div> <!-- container -->
@@ -200,10 +199,22 @@
         @endif
                 <!-- jQuery -->
         <script>
-            var cloneCount = 2;;
+            var cloneCount = 2;
+            var name = "";
             $(document).ready(function(){
-                $(".create").click(function(){
-                    $("#case1").clone().attr('id', 'case'+ cloneCount++).appendTo(".cas");
+                $("#create").click(function(){
+                    name='case'+cloneCount;
+                    $("#case1").clone().attr('id', name).appendTo(".cas");
+                    $("#"+name+' #case_from1' ).attr('id', 'case_from'+ cloneCount);
+                    $("#case_from"+cloneCount).attr('name','case_from'+cloneCount);
+                    $("#"+name+' #case_to1' ).attr('id', 'case_to'+ cloneCount);
+                    $("#case_to"+cloneCount).attr('name', 'case_to'+cloneCount);
+                    $("#"+name+' #u_text1' ).attr('id', 'u_text'+ cloneCount);
+                    $('#u_text'+cloneCount).attr('name', 'u_text'+cloneCount);
+                    $("#"+name+' #predel1' ).attr('id', 'predel'+ cloneCount);
+                    $('#predel'+cloneCount).attr('name','predel'+cloneCount);
+                    $('#number').attr('value', cloneCount);
+                    cloneCount++;
                 });
             });
         </script>
