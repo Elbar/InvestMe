@@ -72,34 +72,33 @@
 
                 <div class="col-sm-6 col-lg-6 col-md-6 autor-hr">
                     <hr>
-
-                    <form class="form-horizontal" role="form">
-                        <div class="form-group">
-                            <label class="control-label col-sm-3" for="text"><span class="fa fa-map-marker"></span> </label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" id="case-to" placeholder="Место проведения">
+                    <ol class="list-inline">
+                        <li>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-3" for="text"><span class="fa fa-map-marker"></span> </label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" name="case_mesto" placeholder="Место проведения">
+                                    </div>
+                                </div>
+                        </li>
+                        <li>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-3" for="text"><span class="fa fa-tag"></span> </label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" name="pod_razdel" placeholder="Теги">
+                                    </div>
+                                </div>
+                        </li>
+                        <li>
+                            <div class="form-group">
+                                <label class="control-label col-sm-3" for="text"><span class="fa fa-tag"></span></label>
+                                <div class="col-sm-9">
+                                    <input type="date" class="form-control" name="date_okanchenie" placeholder="Date" required>
+                                </div>
                             </div>
-                        </div>
-                    </form>
-
-                    <form class="form-horizontal" role="form">
-                        <div class="form-group">
-                            <label class="control-label col-sm-3" for="text"><span class="fa fa-tag"></span> </label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" id="case-to" placeholder="Теги">
-                            </div>
-                        </div>
-                    </form>
-
-                    <form class="form-horizontal" role="form">
-                        <div class="form-group">
-                            <label class="control-label col-sm-3" for="text"><span class="fa fa-calendar"></span> </label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" id="case-to" placeholder="До какого числа продлится сбор">
-                            </div>
-                        </div>
-                    </form>
-
+                        </li>
+                    </ol>
+>>>>>>> nurik
                 </div>
             </div><!-- row -->
         </div> <!-- container -->
