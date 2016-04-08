@@ -107,12 +107,6 @@
     <script>
         $('.carousel').carousel({
             interval: 5000 //changes the speed
-        })
-        var cloneCount = 2;;
-        $(document).ready(function(){
-            $(".create").click(function(){
-                $("#case1").clone().attr('id', 'case'+ cloneCount++).appendTo(".cas");
-            });
         });
     </script>
 

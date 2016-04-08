@@ -2,7 +2,6 @@
 
 @section('content')
     @if(Auth::check())
-
         <!-- Page Content -->
 <main>
     <form role="form" action="/create" method="post" enctype="multipart/form-data">
