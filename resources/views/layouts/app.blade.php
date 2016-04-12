@@ -85,8 +85,8 @@
 
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="{{ url('/profile') }}"><i class="fa fa-btn fa-suitcase"></i> Личный кабинет</a></li>
-                                <li><a href="{{ url('/notification') }}"><i class="fa fa-btn fa-bolt"></i> Уведомления</a></li>
-                                <li><a href="{{ url('/settings') }}"> <i class="fa fa-wrench"></i></i> Настройки</a></li>
+                                <li><a href="{{ url('/#') }}"><i class="fa fa-btn fa-bolt"></i> Уведомления</a></li>
+                                <li><a href="{{ url('/#') }}"> <i class="fa fa-wrench"></i></i> Настройки</a></li>
                                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i> Выйти</a></li>
                             </ul>
                         </li>
@@ -107,14 +107,7 @@
     <script>
         $('.carousel').carousel({
             interval: 5000 //changes the speed
-        })
-        var cloneCount = 2;;
-        $(document).ready(function(){
-            $(".create").click(function(){
-                $("#case1").clone().attr('id', 'case'+ cloneCount++).appendTo(".cas");
-            });
         });
     </script>
-
 </body>
 </html>
