@@ -7,7 +7,6 @@
 }
 .invest-nav{
 	font-family: 'Lobster', cursive;;
-	color: #01DFD7;
 	font-size: 30px;
 }
 .caption,  .ratings{
@@ -39,8 +38,8 @@ footer{
 	margin-bottom: 0;
 }
 .progress, .progress-bar{
-	line-height: 10px;
-	height: 10px;
+	line-height: 8px;
+	height: 8px;
 }
 .present-sp-header{
 	margin-top:40px;
@@ -50,16 +49,15 @@ footer{
 	height: 100%;
 }
 .cases{
-	background-color: #A4DAEB;
+	background-color: #C9F8F7;
 
 }
 .cases:hover{
-	background-color: #67ACC1;
+	background-color: #85F2F1;
 }
-
 .sp-header{
-	background-color: rgb(230, 230, 235);
-	padding-bottom:20px;
+	background-color: #F4F4F4;
+	padding-bottom:40px;
 }
 .autor-hr hr{
 	border-top:1px solid #BDBDBD;
@@ -68,10 +66,10 @@ footer{
 	margin-top: 10px;
 	margin-bottom: 10px;
 	border: 0;
-	border-top: 1px solid #0080FF;
+	border-top: 1px solid #3BBDBB;
 }
 .badge-color{
-	background-color:rgb(200, 100, 130);
+	background-color:#BDBDBD;
 }
 .fa-twitter{
 	color:#04B4AE;
@@ -85,13 +83,62 @@ footer{
 .form-cover{
 	padding: 10px;
 }
+/* */
+.nav-pills{
+	border-bottom: 1px solid #A4A4A4;
+}
+.nav-pills > li > a{
+	color: #A4A4A4;
+}
 
+.nav-pills > li > a:hover{
+	background-color: #fff;
+	color: #088A85;
+}
+
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:hover,
+.nav-pills > li.active > a:focus {
+	color:#088A85;
+	background-color: #fff;
+	border-radius: 0px ;
+	border-bottom: 3px solid #04B4AE;
+
+}
+
+.progress, .progress-bar{
+	line-height: 8px;
+	height: 8px;
+}
+a
+{
+	color:#07BCB3;
+}
+a:hover{
+	color: #038780;
+}
+
+.progress-bar, .btn-primary{
+	background-color: #04B4AE;
+}
+.btn-primary{
+	border-color: #03877E;
+}
+.btn-primary:hover, .btn-primary:focus{
+	background-color: #0F958C;
+	border-color: #037068;
+}
+
+.btn-warning{
+	background-color: #EC9808;
+	border-color: #D79D0B;
+}
 
 
 /* */
 footer
 {
-	border-top: 1px solid blue;
+	border-top: 1px solid #037068;
 	margin-top: 30px;
 }
 .top-footer
@@ -119,7 +166,7 @@ footer
 	color: #686875;
 }
 .inl a:hover{
-	color:#00BFFF;
+	color:#07BCB3;
 }
 
 .bottom-footer{
