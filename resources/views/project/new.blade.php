@@ -2,7 +2,6 @@
 
 @section('content')
     @if(Auth::check())
-
         <!-- Page Content -->
 <main>
     <form role="form" action="/create" method="post" enctype="multipart/form-data">
@@ -95,13 +94,15 @@
                                     </div>
                                 </div>
                         </li>
+                        <li>
+                            <div class="form-group">
+                                <label class="control-label col-sm-3" for="text"><span class="fa fa-tag"></span></label>
+                                <div class="col-sm-9">
+                                    <input type="date" class="form-control" name="date_okanchenie" placeholder="Date" required>
+                                </div>
+                            </div>
+                        </li>
                     </ol>
-                    Поделиться:
-                    <div class="btn-group" role="group" aria-label="...">
-                        <button type="button" class="btn btn-default"><span class="fa fa-twitter"></span></button>
-                        <button type="button" class="btn btn-default"><span class="fa fa-facebook"></span></button>
-                        <button type="button" class="btn btn-default"><span class="fa fa-pinterest"></span></button>
-                    </div>
                 </div>
             </div><!-- row -->
         </div> <!-- container -->
