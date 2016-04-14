@@ -72,7 +72,7 @@
                         </div>
                         <div class="col-sm-9 col-lg-9 col-md-9">
                             <h4 class="">{{Auth::user()->name}}</h4>
-                            <a href="/prof" class="">Связаться</a>
+                            <a href="/profile" class="">Связаться</a>
                         </div>
                     </div>
                 </div>

@@ -42,6 +42,7 @@ Route::group(['middleware' => 'web'],function(){
     Route::post('categories','CategoryController@store');
     Route::post('backer_update/{id}','BackerController@update');
     Route::resource('backer','BackerController');
+    Route::resource('creators','AdminCreatorController');
 });
 Route::group(array('before' => 'admin'), function(){
 });
@@ -74,7 +75,5 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/settings', function () {
         return view('settings');
     });
-    
+
 });
-
-
