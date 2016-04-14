@@ -48,16 +48,11 @@ Route::group(array('before' => 'admin'), function(){
 });
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
-    Route::get('/', function () {
-        return view('index');
-
-    });
+    Route::get('/','ProjectController@index');
     Route::get('/creator',['middleware'=>'auth','uses'=>'CreatorController@index']);
     Route::post('/creator/add','CreatorController@add');
     Route::get('/new',['middleware'=>'auth','uses'=>'ProjectController@add_new']);
-    Route::get('/archive', function () {
-        return view('project.archive');
-    });
+    Route::get('/archive','ProjectController@archive');
 
     Route::get('/about', function () {
         return view('about');

@@ -30,8 +30,9 @@ class ProjectController extends Controller
      */
     public function index()
     {
-
-        //
+        $project = Project::all();
+        $active = Project::findOrFail(3);
+        return view('index',compact('project','active'));
     }
 
     /**
@@ -53,7 +54,7 @@ class ProjectController extends Controller
 
         $validator = Validator::make($Project->all(), [
             'project_title' => 'required|max:25',
-            'project_video_cover' => 'required|active_url',
+            'project_video_cover' => 'required',
             'text_option' => 'required|max:200',
             'text_option2' => 'required',
             'inputCover1' => 'required|max:700|mimes:jpeg,bmp,png',
@@ -145,9 +146,15 @@ class ProjectController extends Controller
      */
     public function show($id)
     {
-        $data = ['pr' => Project::findOrFail($id),];
+        $project = Project::findOrFail($id);
+        $data = ['pr' => Project::findOrFail($id),'image' =>  $project->image()->get()];
 
         return view('project.info')->with($data);
+    }
+    
+    public function archive(){
+        $archive = Project::all();
+        return view('project.archive',compact('archive'));
     }
 
     /**
