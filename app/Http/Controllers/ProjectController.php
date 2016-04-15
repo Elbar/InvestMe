@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Condition;
 use App\Image;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -25,18 +26,19 @@ class ProjectController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function index()
     {
-
-        //
+        $project = Project::all();
+        $active = Project::findOrFail(3);
+        return view('index',compact('project','active'));
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function create(Request $Project)
     {
@@ -52,7 +54,7 @@ class ProjectController extends Controller
 
         $validator = Validator::make($Project->all(), [
             'project_title' => 'required|max:25',
-            'project_video_cover' => 'required|active_url',
+            'project_video_cover' => 'required',
             'text_option' => 'required|max:200',
             'text_option2' => 'required',
             'inputCover1' => 'required|max:700|mimes:jpeg,bmp,png',
@@ -129,7 +131,7 @@ class ProjectController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function store(Request $request)
     {
@@ -140,20 +142,26 @@ class ProjectController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function show($id)
     {
-        $data = ['pr' => Project::findOrFail($id),];
+        $project = Project::findOrFail($id);
+        $data = ['pr' => Project::findOrFail($id),'image' =>  $project->image()->get()];
 
         return view('project.info')->with($data);
+    }
+    
+    public function archive(){
+        $archive = Project::all();
+        return view('project.archive',compact('archive'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function edit($id)
     {
@@ -165,7 +173,7 @@ class ProjectController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function update(Request $request, $id)
     {
@@ -176,7 +184,7 @@ class ProjectController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function destroy($id)
     {
