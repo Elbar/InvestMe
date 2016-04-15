@@ -36,8 +36,23 @@
                                 <img src="http://www.sbs.com.au/popasia/sites/sbs.com.au.popasia/files/styles/thumb_small/public/gd_fashion_black_white_704.jpg?itok=aOwps24I" class="img-circle" alt="" width="100" height="100">
                             </div>
                             <div class="col-sm-9 col-lg-9 col-md-9">
-                                <h4 class="">G-Dragon</h4>
-                                <a href="#" class="">Связаться</a>
+                                <div class="row">
+                                    <div class="col-md-6 col-lg-6">
+                                        <h4 class=""><b>G-Dragon BigBang TOP Seungri</b></h4>
+                                    </div>
+                                    <div class="col-md-6 col-lg-6">
+                                        <h4 class=""><small><b>56</b> вложился</small></h4>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 col-lg-6">
+                                        <a href="#" class=""><span class="fa fa-envelope"></span> Написать</a>
+                                    </div>
+                                    <div class="col-md-6 col-lg-6">
+                                        <a href="#" class=""><span class="fa fa-paw"></span> Посмотреть биографию</a>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>

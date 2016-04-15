@@ -1,8 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="col-sm-2"></div>
-    <div class="col-sm-8 project-form">
+    <div class="container auth-form">
+        <div class="row">
+            <div class="col-sm-8 project-form">
         <div class="panel panel-default">
             <div class="panel-heading">Is Creator</div>
             <div class="panel-body">
@@ -65,5 +66,6 @@
             </div>
         </div>
     </div>
-    <div class="col-sm-2"></div>
+        </div>
+    </div>
 @endsection
