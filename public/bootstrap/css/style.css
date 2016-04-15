@@ -135,17 +135,22 @@ a:hover{
 }
 
 
-/* */
+/* foooooter from Aza*/
+
+
 footer
 {
-	border-top: 1px solid #037068;
-	margin-top: 30px;
+	padding-top: 40px;
+	border-top: 1px #037068;
+	background-color:  #191C1F;
+	box-shadow: 2px -2px 4px #A4A4A4;
+
 }
 .top-footer
 {
 	min-height: 100px;
 	padding-top: 10px;
-	padding-bottom: 20px;
+	padding-bottom: 50px;
 	color: #5890ff;
 }
 .ul-footer
@@ -159,17 +164,18 @@ footer
 {
 
 	margin: auto;
-	color: #5890ff;
+	color: #8F8F8F;
 	padding-top: 10px;
 }
 .inl {
 	color: #686875;
 }
-.inl a:hover{
-	color:#07BCB3;
+.zag{
+	font-weight: bold;
+	color: #EAEAEA;
 }
 
 .bottom-footer{
-	border-top: 1px groove #9acfea;
+	border-top: 1px dashed #8F8F8F;
 	padding-top: 10px;
 }
