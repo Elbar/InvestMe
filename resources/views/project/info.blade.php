@@ -106,7 +106,7 @@
                 <!-- Описание сюда -->
                 <div class="article">
                     <h3>Название абзаца</h3>
-                    {{$pr->risk}}
+                    {!! $pr->option2 !!}
                 </div>
             </div> <!-- /.sp-description -->
         </div> <!-- /.container -->
