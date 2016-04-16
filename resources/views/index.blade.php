@@ -18,15 +18,9 @@
             <div class="fill" style="background-image:url({{asset('/images/'.$active->image[0]->image_name)}});"></div>
 
             <div class="carousel-caption">
-<<<<<<< HEAD
                 <h1>{{ $active->title }}</h1>
-                <h1><small>{{ $active->option1 }}</small></h1>
+                <h3>{{ $active->option1 }}</h3>
                 <a class="btn btn-primary" href="{{ url('show',$active->id) }}">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
-=======
-                <h1>Заглавие 1</h1>
-                <h3>Краткое описание</h3>
-                <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
->>>>>>> 63ec1fd80954de28950986047075e956e4a58c7d
             </div>
         </div>
 
@@ -82,7 +76,6 @@
             </ul>
             <br>
             <div class="row">
-<<<<<<< HEAD
                 @foreach($project as $pro)
                     <!--   popular SP item 1 -->
                     <div class="col-sm-4 col-lg-4 col-md-4">
@@ -102,26 +95,6 @@
                                     <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
                                         <span class="sr-only">40% Complete</span>
                                     </div>
-=======
-
-                <!--   popular SP item 1 -->
-                <div class="col-sm-4 col-lg-4 col-md-4">
-                    <div class="thumbnail">
-                        <img src="http://placehold.it/700x300" alt="">
-                        <div class="caption">
-                            <h4><a href="#">Первый проект</a></h4>
-                            <h4><small>Авторы:</small></h4>
-                            <ol class="list-inline">
-                                <li><h4> <small><span class="fa fa-map-marker"></span> Бишкек </small> </h4> </li>
-                                <li><h4> <small><span class="fa fa-tag"></span> Проект</small> </h4> </li>
-                            </ol>
-                            <p>Тут офигенное краткое описание, которое хочется прочитать более <a target="_blank" href="#">подробно... </a> </p>
-                        </div>
-                        <div class="ratings">
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
-                                    <span class="sr-only">40% Complete</span>
-                                </div>
                             </div>
                             <ol class="list-inline">
                                 <li><h4><span class="fa fa-percent icon-styled"></span> 40 <small>найдено</small> </h4> </li>
@@ -177,7 +150,6 @@
                             <div class="progress">
                                 <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
                                     <span class="sr-only">40% Complete</span>
->>>>>>> 63ec1fd80954de28950986047075e956e4a58c7d
                                 </div>
                                 <ol class="list-inline">
                                     <li><h4><span class="fa fa-percent icon-styled"></span> 40 <small>найдено</small> </h4> </li>
