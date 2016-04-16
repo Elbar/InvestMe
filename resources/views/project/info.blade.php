@@ -2,7 +2,6 @@
 
 
 @section('content')
-    @if(Auth::check()){
     <main>
         <div class="container-fluid sp-header">
             <div class="present-sp-header">
@@ -111,16 +110,6 @@
             </div> <!-- /.sp-description -->
         </div> <!-- /.container -->
     </main>
-    @else
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <div class="alert alert-warning">
-                    <strong>You're not authorized.<a href="/login"> Please log in  </a></strong>
-                </div>
-            </div>
-        </div>
-   @endif
-
 @endsection
 
 
