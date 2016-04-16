@@ -6,14 +6,13 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class NewProjectTest extends TestCase
 {
-
-
-
     public function testLinkLogin()
     {
         $this->visit('/')
             ->click('Создать проект')
-            ->seePageIs('/new');
+            ->seePageIs('/login')
+            ->seeStatusCode("200")
+            ->refreshApplication();
 
     }
 
@@ -21,11 +20,6 @@ class NewProjectTest extends TestCase
     {
         $this->withoutMiddleware()
             ->visit('/new')
-//            ->type('Lorem', 'name')
-//            ->check('Еда', 'category')
-//            ->attach('../img/c-text.png', 'file')
-//            ->type('secret123', 'password_confirmation')
-//            ->press('Сохранить')
             ->seePageIs('/new');
     }
 }
