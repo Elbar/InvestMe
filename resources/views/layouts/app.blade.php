@@ -29,6 +29,10 @@
         .fa-btn {
             margin-right: 6px;
         }
+        .image1 {
+            max-width: 220px;
+            max-height: 140px;
+        }
 
     </style>
 </head>
