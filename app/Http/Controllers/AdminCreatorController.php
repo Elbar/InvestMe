@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Creator;
+use Illuminate\Support\Facades\Session;
 
 class AdminCreatorController extends Controller
 {
@@ -74,7 +75,13 @@ class AdminCreatorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        return 'Update!';
+        Creator::updateOrCreate(['id'=>$id],[
+            'postcode' => $request['postcode'],
+            'country' => $request['country'],
+            'home_address' => $request['home_address'],
+        ]);
+        Session::flash('message','Successfully updated');
+        return redirect(url('creators'));
     }
 
     /**
@@ -85,6 +92,9 @@ class AdminCreatorController extends Controller
      */
     public function destroy($id)
     {
-        //
+       Creator::destroy($id);
+
+        Session::flash('message','Successfully deleted');
+        return redirect(url('creators'));
     }
 }

@@ -85,10 +85,10 @@
                                 <h4><a href="{{ url('show',$pro->id) }}">{{ $pro->title }}</a></h4>
                                 <h4><small>Авторы</small></h4>
                                 <ol class="list-inline">
-                                    <li><h4> <small><span class="fa fa-map-marker"></span> Бишкек </small> </h4> </li>
-                                    <li><h4> <small><span class="fa fa-tag"></span> Проект</small> </h4> </li>
+                                    <li><h4> <small><span class="fa fa-map-marker"></span> {{ $pro->mesto }}</small> </h4> </li>
+                                    <li><h4> <small><span class="fa fa-tag"></span> {{ $pro->teg }}</small> </h4> </li>
                                 </ol>
-                                <p>Тут офигенное краткое описание, которое хочется прочитать более <a target="_blank" href="#">подробно... </a> </p>
+                                <p>{{ $pro->option1 }} <a target="_blank" href="#">подробно... </a> </p>
                             </div>
                             <div class="ratings">
                                 <div class="progress">

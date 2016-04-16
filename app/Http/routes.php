@@ -42,6 +42,8 @@ Route::group(['middleware' => 'web'],function(){
     Route::post('categories','CategoryController@store');
     Route::post('backer_update/{id}','BackerController@update');
     Route::resource('backer','BackerController');
+    Route::post('creator_update/{id}','AdminCreatorController@update');
+    Route::get('creator_delete/{id}','AdminCreatorController@destroy');
     Route::resource('creators','AdminCreatorController');
 });
 Route::group(array('before' => 'admin'), function(){

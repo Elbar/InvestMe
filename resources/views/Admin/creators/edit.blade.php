@@ -1,7 +1,7 @@
 @extends('Admin.creators.index')
 
 @section('edit')
-{{ Form::model($creator,['route'=>['creators.update',$creator->id]])}}
+<form method="post" action="{{ url('creator_update',$creator->id) }}">
     {{ Form::token() }}
     <table class="table table-striped">
         <tr>
@@ -19,5 +19,5 @@
             <td><input type="submit" value="Update" class="btn btn-warning"></td>
         </tr>
     </table>
-{{ Form::close() }}
+</form>
 @endsection
