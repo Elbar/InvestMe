@@ -12,7 +12,7 @@
             <br>
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-6 col-lg-6 col-md-6">
+                    <div class="col-sm-6 col-lg-6 col-md-6" style="max-height: 600px; max-width: 600px;">
                         <div class="thumbnail">
                             <img src="{{asset('/images/'.$image[0]->image_name)}}" alt="">
                         </div>

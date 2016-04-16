@@ -54,7 +54,7 @@ return [
 
         'mysql' => [
             'driver'    => 'mysql',
-            'host'      => 'localhost',
+            'host'      => '52.36.164.12',
             'database'  => 'invest_db',
             'username'  => 'fukuro',
             'password'  => '12',
