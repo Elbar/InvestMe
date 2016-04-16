@@ -14,13 +14,11 @@
                 <div class="row">
                     <div class="col-sm-6 col-lg-6 col-md-6" style="max-height: 600px; max-width: 600px;">
                         <div class="thumbnail">
-                            <video class="has_webm landscape" preload="none">
-                                <source src="https://www.youtube.com/watch?v=_O5KUCNuc8k" type='video/mp4; codecs="avc1.64001E, mp4a.40.2"'>
-                                <source src="https://ksr-video.imgix.net/projects/2405101/video-652088-h264_base.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
-                                <source src="https://ksr-video.imgix.net/projects/2405101/video-652088-webm.webm" type="video/webm">
-                                You'll need an HTML5 capable browser to see this content.
-                            </video>
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="//www.youtube.com/embed/ePbKGoIGAXY"></iframe>
+                            </div>
                         </div>
+
                     </div>
                     <div class="col-sm-6 col-lg-6 col-md-6">
                         <h2><span class="fa fa-percent"></span> 40 <small>найдено</small></h2>
