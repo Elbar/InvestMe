@@ -31,7 +31,7 @@ class ProjectController extends Controller
     public function index()
     {
         $project = Project::all();
-        $active = Project::findOrFail(10);
+        $active = Project::findOrFail(5);
         return view('index',compact('project','active'));
     }
 
