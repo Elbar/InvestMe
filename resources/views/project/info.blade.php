@@ -15,7 +15,7 @@
                     <div class="col-sm-6 col-lg-6 col-md-6" style="max-height: 600px; max-width: 600px;">
                         <div class="thumbnail">
                             <div class="embed-responsive embed-responsive-16by9">
-                                <iframe class="embed-responsive-item" src="//www.youtube.com/embed/ePbKGoIGAXY"></iframe>
+                                <iframe class="embed-responsive-item" src="{{ $pr->video_link }}"></iframe>
                             </div>
                         </div>
 
