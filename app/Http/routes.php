@@ -68,6 +68,8 @@ Route::group(['middleware' => 'web'], function () {
     Route::post('/store','ProjectController@store');
     Route::get('/show/{id}','ProjectController@show')->where(['id'=>'[0-9]+']);
 
+    Route::get('/bookmark/{id}',['middleware'=>'auth','uses'=>'BookmartController@add'])->where(['id'=>'[0-9]+']);
+    Route::get('/bookmark/delete/{id}','BookmartController@add')->where(['id'=>'[0-9]+']);
 
     Route::get('/settings', function () {
         return view('settings');

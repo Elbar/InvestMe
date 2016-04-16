@@ -150,8 +150,19 @@ class ProjectController extends Controller
     public function show($id)
     {
         $project = Project::findOrFail($id);
-        $data = ['pr' => Project::findOrFail($id),'image' =>  $project->image()->get()];
+        $bookmark_id = "none";
 
+        if(Auth::check()) {
+            $id_user = Auth::user()->id;
+            $results = DB::select('select id from bookmark where project_id = ? AND user_id = ?', [$project->id,$id_user]);
+            if($results)
+            {
+                $bookmark_id = $results;
+            }
+        }
+
+        $data = ['pr' => Project::findOrFail($id),'image' =>  $project->image()->get(),'bookmark'=>$bookmark_id];
+        //dd($data);
         return view('project.info')->with($data);
     }
     
