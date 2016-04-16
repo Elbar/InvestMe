@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Project extends Model
 {
 
-    protected $table='projects';
+
     protected $fillable=['video_link','title','option1','option2','teg','mesto','duration','category_id','creator_id'];
 
     public function category(){
