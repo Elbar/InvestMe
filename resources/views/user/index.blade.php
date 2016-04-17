@@ -45,6 +45,17 @@
                             No backed projects
                         @endif
                     </ul>
+                    <h3>Bookmarks</h3>
+                    <ul>@if ($zagladki)
+                            @foreach($zagladki as $pr)
+                                <li>
+                                    {{ $pr->title }}
+                                </li>
+                            @endforeach
+                        @else
+                            No bookmarks
+                        @endif
+                    </ul>
                 </div>
             </div>
         </div>

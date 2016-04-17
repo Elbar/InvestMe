@@ -154,7 +154,7 @@ class ProjectController extends Controller
 
         if(Auth::check()) {
             $id_user = Auth::user()->id;
-            $results = DB::select('select id from bookmark where project_id = ? AND user_id = ?', [$project->id,$id_user]);
+            $results = DB::select('select id from bookmarks where project_id = ? AND user_id = ?', [$project->id,$id_user]);
             if($results)
             {
                 $bookmark_id = $results;

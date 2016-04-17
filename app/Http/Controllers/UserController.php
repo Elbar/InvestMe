@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 use App\Creator;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\DB;
 class UserController extends Controller
 {
     /**
@@ -20,7 +20,8 @@ class UserController extends Controller
         $user = Auth::user();
         $creator = $user->creator;
         $backer = $user->backer;
-        return view('user.index',compact('creator','backer'));
+        $zagladki = DB::select('select * from bookmarks where user_id = ?', [$user->id]);
+        return view('user.index',compact('creator','backer','zagladki'));
     }
 
     /**

@@ -12,7 +12,7 @@ class CreateBookmarkTable extends Migration
      */
     public function up()
     {
-        Schema::create('bookmark', function (Blueprint $table) {
+        Schema::create('bookmarks', function (Blueprint $table) {
             //
             $table->increments('id');
             $table->string('title',200);
@@ -31,6 +31,6 @@ class CreateBookmarkTable extends Migration
      */
     public function down()
     {
-        Schema::drop('bookmark');
+        Schema::drop('bookmarks');
     }
 }

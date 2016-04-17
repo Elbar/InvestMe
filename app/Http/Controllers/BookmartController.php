@@ -20,7 +20,7 @@ class BookmartController extends Controller
         $model -> project_id = $project -> id;
         $model ->save();
 
-        redirect('/show/'.$id);
+        return redirect('/show/'.$id);
 
     }
 
