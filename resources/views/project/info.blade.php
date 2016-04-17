@@ -42,7 +42,7 @@
                         <hr>
                         <div class="row">
                             <div class="col-sm-3 col-lg-3 col-md-3">
-                                <img src="http://www.sbs.com.au/popasia/sites/sbs.com.au.popasia/files/styles/thumb_small/public/gd_fashion_black_white_704.jpg?itok=aOwps24I" class="img-circle" alt="" width="100" height="100">
+                                <img src="{{asset('img/def_avatar2.jpg')}}" class="img-circle" alt="" width="100" height="100">
                             </div>
                             <div class="col-sm-9 col-lg-9 col-md-9">
                                 <div class="row">

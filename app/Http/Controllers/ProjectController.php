@@ -189,9 +189,10 @@ class ProjectController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function update(Request $request, $id)
+    public function update()
     {
         //
+        return view('project.update');
     }
 
     /**
