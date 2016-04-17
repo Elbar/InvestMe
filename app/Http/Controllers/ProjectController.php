@@ -76,7 +76,9 @@ class ProjectController extends Controller
             $new_project->title = $Project->project_title;
             $link = $Project->project_video_cover;
             $pos = strpos($link,"watch?v=");
-            $link = substr_replace($link,"embed/",$pos,8);
+            if ($pos != 0){
+                $link = substr_replace($link,"embed/",$pos,8);
+            }
             $new_project->video_link = $link;
             $new_project ->option1 = $Project->text_option;
             $new_project ->option2 = $Project->text_option2;
