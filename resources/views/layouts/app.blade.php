@@ -99,7 +99,7 @@
             </div>
         </div>
     </nav>
-
+    <br>
     @yield('content')
 
 @include('partials.footer')

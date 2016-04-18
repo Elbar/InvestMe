@@ -31,8 +31,13 @@ class ProjectController extends Controller
     public function index()
     {
         $project = Project::all();
-        $active = Project::findOrFail(5);
-        return view('index',compact('project','active'));
+        $data = [
+            'active1' => Project::findOrFail(2),
+            'active2' => Project::findOrFail(4),
+            'active3' => Project::findOrFail(10)
+        ];
+
+        return view('index',compact('project'))->with($data);
     }
 
     /**
@@ -86,6 +91,7 @@ class ProjectController extends Controller
             $new_project ->teg = $Project->pod_razdel;
             $new_project->creator_id = $id_creator ;
             $new_project->category_id = $Project->chooseCategory;
+            $new_project->duration = $Project->date_okanchenie;
             $new_project->save();
 
             $id_project = $new_project->id;
