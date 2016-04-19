@@ -200,6 +200,7 @@
             </div><!-- end Container-->
 
         </div><!-- end well-->
+        </div>
 
 </main>
 
