@@ -24,7 +24,7 @@
                 <div class="form-group">
                     <h4 class="text-center">Заглавие:</h4>
                     <input type="text" class="form-control center" name="project_title" placeholder="Введите название проекта">
-                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
                 </div>
             <h4 class="text-center"><small>Автор: {{Auth::user()->name}}</small></h4>
         </div>
@@ -162,12 +162,15 @@
             </div>
 
             <form role="form">
+
                 <input type="submit" class="btn btn-primary text-centre" value="Отправить">
+                <input type="hidden" name="_token" value="{!! csrf_token() !!}">
                 <input type="hidden" id="number" name="number" value="1">
             </form>
         </div>
     </div>
     <hr>
+        <input type="hidden" name="_token" value="{!! csrf_token() !!}">
     </form>
 </main>
       @else

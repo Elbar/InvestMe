@@ -15,34 +15,34 @@
         <div class="item active">
             <!-- Set the first background image using inline CSS below. -->
 
-            <div class="fill" style="background-image:url({{asset('/images/'.$active->image[0]->image_name)}});"></div>
+            <div class="fill" style="background-image:url({{asset('/images/'.$active1->image[0]->image_name)}});"></div>
 
             <div class="carousel-caption">
-                <h1>{{ $active->title }}</h1>
-                <h3>{{ $active->option1 }}</h3>
-                <a class="btn btn-primary" href="{{ url('show',$active->id) }}">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
+                <h1>{{ $active1->title }}</h1>
+                <h3>{{ $active1->option1 }}</h3>
+                <a class="btn btn-primary" href="{{ url('show',$active1->id) }}">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
             </div>
         </div>
 
         <div class="item">
             <!-- Set the second background image using inline CSS below. -->
-            <div class="fill" style="background-image:url({{asset('/images/'.$active->image[1]->image_name)}});"></div>
+            <div class="fill" style="background-image:url({{asset('/images/'.$active2->image[1]->image_name)}});"></div>
 
             <div class="carousel-caption">
-                <h1>Заглавие 2</h1>
-                <h3>Краткое описание</h3>
-                <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
+                <h1>{{ $active2->title }}</h1>
+                <h3>{{ $active2->option1 }}</h3>
+                <a class="btn btn-primary" href="{{ url('show',$active2->id) }}">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
             </div>
         </div>
         <div class="item">
             <!-- Set the third background image using inline CSS below. -->
 
-            <div class="fill" style="background-image:url({{asset('/images/'.$active->image[2]->image_name)}});"></div>
+            <div class="fill" style="background-image:url({{asset('/images/'.$active3->image[2]->image_name)}});"></div>
 
             <div class="carousel-caption">
-                <h1>Заглавие 3</h1>
-                <h3>Краткое описание</h3>
-                <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
+                <h1>{{ $active3->title }}</h1>
+                <h3>{{ $active3->option1 }}</h3>
+                <a class="btn btn-primary" href="{{ url('show',$active3->id) }}">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
             </div>
         </div>
     </div>
@@ -200,6 +200,7 @@
             </div><!-- end Container-->
 
         </div><!-- end well-->
+        </div>
 
 </main>
 
