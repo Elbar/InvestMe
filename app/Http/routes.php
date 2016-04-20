@@ -76,4 +76,6 @@ Route::group(['middleware' => 'web'], function () {
         return view('settings');
     });
 
+    Route::post('/search','SearchController@search');
+
 });

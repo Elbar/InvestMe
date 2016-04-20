@@ -64,11 +64,12 @@
                     <li><a href="{{ url('/about') }}">О нас</a></li>
                 </ul>
                 <!-- Search -->
-                <form class="navbar-form navbar-left" role="search">
+                <form class="navbar-form navbar-left" role="search" method="post" action="/search">
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Искать">
+                        <input type="hidden" name="_token" value="{!! csrf_token() !!}">
+                        <input type="text" name="search" class="form-control" placeholder="Искать">
                                 <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button">
+                                    <button class="btn btn-default" type="submit" value="">
                                         <span class="glyphicon glyphicon-search"></span>
                                     </button>
                                 </span>
