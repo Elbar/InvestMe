@@ -1,4 +1,3 @@
-<?php
 
 use Illuminate\Http\Request;
 /*
@@ -60,10 +59,11 @@ Route::group(['middleware' => 'web'], function () {
         return view('about');
     });
 
-    Route::get('/project','ProjectController@index');
+    Route::get('/project','ProjectController@update');
+
     Route::post('/create','ProjectController@create');
     Route::get('/edit/{id}','ProjectController@edit');
-    Route::post('/update/{id}','ProjectController@update');
+    //Route::post('/update/{id}','ProjectController@update');
     Route::get('/delete/{id}','ProjectController@delete');
     Route::post('/store','ProjectController@store');
     Route::get('/show/{id}','ProjectController@show')->where(['id'=>'[0-9]+']);
@@ -74,5 +74,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/settings', function () {
         return view('settings');
     });
+
+    Route::post('/search','SearchController@search');
 
 });

@@ -1,4 +1,3 @@
-<?php
 
 namespace App\Http\Controllers;
 
@@ -197,9 +196,10 @@ class ProjectController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function update(Request $request, $id)
+    public function update()
     {
         //
+        return view('project.update');
     }
 
     /**
@@ -213,3 +213,4 @@ class ProjectController extends Controller
         //
     }
 }
+>>>>>>> 38e1b5e88fab787b47cb3559b7d7dddf67965d0a
