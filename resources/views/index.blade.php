@@ -15,33 +15,34 @@
         <div class="item active">
             <!-- Set the first background image using inline CSS below. -->
 
-            <div class="fill" style="background-image:url('http://pre02.deviantart.net/d9f2/th/pre/f/2016/066/2/c/the_good_die_young_by_nanomortis-d9ua12s.png');"></div>
+            <div class="fill" style="background-image:url({{asset('/images/'.$active1->image[0]->image_name)}});"></div>
 
             <div class="carousel-caption">
-                <h1>Заглавие 1</h1>
-                <h1><small>Краткое описание</small></h1>
-                <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
+                <h1>{{ $active1->title }}</h1>
+                <h3>{{ $active1->option1 }}</h3>
+                <a class="btn btn-primary" href="{{ url('show',$active1->id) }}">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
             </div>
         </div>
+
         <div class="item">
             <!-- Set the second background image using inline CSS below. -->
-            <div class="fill" style="background-image:url('http://pre02.deviantart.net/d9f2/th/pre/f/2016/066/2/c/the_good_die_young_by_nanomortis-d9ua12s.png');"></div>
+            <div class="fill" style="background-image:url({{asset('/images/'.$active2->image[1]->image_name)}});"></div>
 
             <div class="carousel-caption">
-                <h1>Заглавие 2</h1>
-                <h1><small>Краткое описание</small></h1>
-                <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
+                <h1>{{ $active2->title }}</h1>
+                <h3>{{ $active2->option1 }}</h3>
+                <a class="btn btn-primary" href="{{ url('show',$active2->id) }}">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
             </div>
         </div>
         <div class="item">
             <!-- Set the third background image using inline CSS below. -->
 
-            <div class="fill" style="background-image:url('http://pre02.deviantart.net/d9f2/th/pre/f/2016/066/2/c/the_good_die_young_by_nanomortis-d9ua12s.png');"></div>
+            <div class="fill" style="background-image:url({{asset('/images/'.$active3->image[2]->image_name)}});"></div>
 
             <div class="carousel-caption">
-                <h1>Заглавие 3</h1>
-                <h1><small>Краткое описание</small></h1>
-                <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
+                <h1>{{ $active3->title }}</h1>
+                <h3>{{ $active3->option1 }}</h3>
+                <a class="btn btn-primary" href="{{ url('show',$active3->id) }}">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
             </div>
         </div>
     </div>
@@ -65,7 +66,7 @@
             <br>
              <h3>Популярные</h3>
 
-            <ul class="nav nav-tabs">
+            <ul class="nav nav-pills">
                 <li class="active"><a href="#">Категория 1</a></li>
                 <li><a href="#">Категория 2</a></li>
                 <li><a href="#">Категория 3</a></li>
@@ -75,25 +76,25 @@
             </ul>
             <br>
             <div class="row">
-
-                <!--   popular SP item 1 -->
-                <div class="col-sm-4 col-lg-4 col-md-4">
-                    <div class="thumbnail">
-                        <img src="http://placehold.it/700x300" alt="">
-                        <div class="caption">
-                            <h4><a href="#">Первый проект</a></h4>
-                            <h4><small>Авторы</small></h4>
-                            <ol class="list-inline">
-                                <li><h4> <small><span class="fa fa-map-marker"></span> Бишкек </small> </h4> </li>
-                                <li><h4> <small><span class="fa fa-tag"></span> Проект</small> </h4> </li>
-                            </ol>
-                            <p>Тут офигенное краткое описание, которое хочется прочитать более <a target="_blank" href="#">подробно... </a> </p>
-                        </div>
-                        <div class="ratings">
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
-                                    <span class="sr-only">40% Complete</span>
-                                </div>
+                @foreach($project as $pro)
+                    <!--   popular SP item 1 -->
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="{{asset('/images/'.$pro->image()->first()->image_name)}}" alt="">
+                            <div class="caption">
+                                <h4><a href="{{ url('show',$pro->id) }}">{{ $pro->title }}</a></h4>
+                                <h4><small>Авторы</small></h4>
+                                <ol class="list-inline">
+                                    <li><h4> <small><span class="fa fa-map-marker"></span> {{ $pro->mesto }}</small> </h4> </li>
+                                    <li><h4> <small><span class="fa fa-tag"></span> {{ $pro->teg }}</small> </h4> </li>
+                                </ol>
+                                <p>{{ $pro->option1 }} <a target="_blank" href="#">подробно... </a> </p>
+                            </div>
+                            <div class="ratings">
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
+                                        <span class="sr-only">40% Complete</span>
+                                    </div>
                             </div>
                             <ol class="list-inline">
                                 <li><h4><span class="fa fa-percent icon-styled"></span> 40 <small>найдено</small> </h4> </li>
@@ -102,151 +103,7 @@
                         </div>
                     </div>
                 </div>
-                <!--   / popular SP item 1 -->
-
-                <!--   popular SP item 2 -->
-                <div class="col-sm-4 col-lg-4 col-md-4">
-                    <div class="thumbnail">
-                        <img src="http://placehold.it/700x300" alt="">
-                        <div class="caption">
-                            <h4><a href="#">Первый проект</a></h4>
-                            <h4><small>Авторы</small></h4>
-                            <ol class="list-inline">
-                                <li><h4> <small><span class="fa fa-map-marker"></span> Бишкек </small> </h4> </li>
-                                <li><h4> <small><span class="fa fa-tag"></span> Проект</small> </h4> </li>
-                            </ol>
-                            <p>Тут офигенное краткое описание, которое хочется прочитать более <a target="_blank" href="#">подробно... </a> </p>
-                        </div>
-                        <div class="ratings">
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
-                                    <span class="sr-only">40% Complete</span>
-                                </div>
-                            </div>
-                            <ol class="list-inline">
-                                <li><h4><span class="fa fa-percent icon-styled"></span> 40 <small>найдено</small> </h4> </li>
-                                <li><h4><span class="fa fa-users icon-styled"></span> 215 <small> вложились</small> </h4> </li>
-                            </ol>
-                        </div>
-                    </div>
-                </div>
-                <!--   / popular SP item 2 -->
-
-                <!--   popular SP item 3 -->
-                <div class="col-sm-4 col-lg-4 col-md-4">
-                    <div class="thumbnail">
-                        <img src="http://placehold.it/700x300" alt="">
-                        <div class="caption">
-                            <h4><a href="#">Первый проект</a></h4>
-                            <h4><small>Авторы</small></h4>
-                            <ol class="list-inline">
-                                <li><h4> <small><span class="fa fa-map-marker"></span> Бишкек </small> </h4> </li>
-                                <li><h4> <small><span class="fa fa-tag"></span> Проект</small> </h4> </li>
-                            </ol>
-                            <p>Тут офигенное краткое описание, которое хочется прочитать более <a target="_blank" href="#">подробно... </a> </p>
-                        </div>
-                        <div class="ratings">
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
-                                    <span class="sr-only">40% Complete</span>
-                                </div>
-                            </div>
-                            <ol class="list-inline">
-                                <li><h4><span class="fa fa-percent icon-styled"></span> 40 <small>найдено</small> </h4> </li>
-                                <li><h4><span class="fa fa-users icon-styled"></span> 215 <small> вложились</small> </h4> </li>
-                            </ol>
-                        </div>
-                    </div>
-                </div>
-                <!-- / popular SP item 3 -->
-
-                <!--   popular SP item 4 -->
-                <div class="col-sm-4 col-lg-4 col-md-4">
-                    <div class="thumbnail">
-                        <img src="http://placehold.it/700x300" alt="">
-                        <div class="caption">
-                            <h4><a href="#">Первый проект</a></h4>
-                            <h4><small>Авторы</small></h4>
-                            <ol class="list-inline">
-                                <li><h4> <small><span class="fa fa-map-marker icon-styled"></span> Бишкек </small> </h4> </li>
-                                <li><h4> <small><span class="fa fa-tag icon-styled"></span> Проект</small> </h4> </li>
-                            </ol>
-                            <p>Тут офигенное краткое описание, которое хочется прочитать более <a target="_blank" href="#">подробно... </a> </p>
-                        </div>
-                        <div class="ratings">
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
-                                    <span class="sr-only">40% Complete</span>
-                                </div>
-                            </div>
-                            <ol class="list-inline">
-                                <li><h4><span class="fa fa-percent"></span> 40 <small>найдено</small> </h4> </li>
-                                <li><h4><span class="fa fa-users"></span> 215 <small> вложились</small> </h4> </li>
-                            </ol>
-                        </div>
-                    </div>
-                </div>
-                <!--   / popular SP item 4 -->
-
-                <!--   popular SP item 5 -->
-                <div class="col-sm-4 col-lg-4 col-md-4">
-                    <div class="thumbnail">
-                        <img src="http://placehold.it/700x300" alt="">
-                        <div class="caption">
-                            <h4><a href="#">Первый проект</a></h4>
-                            <h4><small>Авторы</small></h4>
-                            <ol class="list-inline">
-                                <li><h4> <small><span class="fa fa-map-marker"></span> Бишкек </small> </h4> </li>
-                                <li><h4> <small><span class="fa fa-tag"></span> Проект</small> </h4> </li>
-                            </ol>
-                            <p>Тут офигенное краткое описание, которое хочется прочитать более <a target="_blank" href="#">подробно... </a> </p>
-                        </div>
-                        <div class="ratings">
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
-                                    <span class="sr-only">40% Complete</span>
-                                </div>
-                            </div>
-                            <ol class="list-inline">
-                                <li><h4><span class="fa fa-percent icon-styled"></span> 40 <small>найдено</small> </h4> </li>
-                                <li><h4><span class="fa fa-users icon-styled"></span> 215 <small> вложились</small> </h4> </li>
-                            </ol>
-                        </div>
-                    </div>
-                </div>
-                <!--   / popular SP item 5 -->
-
-                <!--   popular SP item 6 -->
-                <div class="col-sm-4 col-lg-4 col-md-4">
-                    <div class="thumbnail">
-                        <img src="http://placehold.it/700x300" alt="">
-                        <div class="caption">
-                            <h4><a href="#">Первый проект</a></h4>
-                            <h4><small>Авторы</small></h4>
-                            <ol class="list-inline">
-                                <li><h4> <small><span class="fa fa-map-marker"></span> Бишкек </small> </h4> </li>
-                                <li><h4> <small><span class="fa fa-tag"></span> Проект</small> </h4> </li>
-                            </ol>
-                            <p>Тут офигенное краткое описание, которое хочется прочитать более <a target="_blank" href="#">подробно... </a> </p>
-                        </div>
-                        <div class="ratings">
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
-                                    <span class="sr-only">40% Complete</span>
-                                </div>
-                            </div>
-                            <ol class="list-inline">
-                                <li><h4><span class="fa fa-percent icon-styled"></span> 40 <small>найдено</small> </h4> </li>
-                                <li><h4><span class="fa fa-users icon-styled"></span> 215 <small> вложились</small> </h4> </li>
-                            </ol>
-                        </div>
-                    </div>
-                </div>
-                <!-- / popular SP item 6 -->
-
-            </div>
-
-
+                @endforeach
         </div> <!-- / #pop-sp -->
         <!-- / Popular SP -->
 
@@ -255,7 +112,7 @@
         <div id="new-sp">
             <br>
             <h3>Новые</h3>
-            <ul class="nav nav-tabs">
+            <ul class="nav nav-pills">
                 <li class="active"><a href="#">Категория 1</a></li>
                 <li><a href="#">Категория 2</a></li>
                 <li><a href="#">Категория 3</a></li>
@@ -266,31 +123,34 @@
             <br>
             <!-- Project One -->
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <a href="#">
                         <img class="img-responsive" src="http://placehold.it/700x300" alt="">
                     </a>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-8">
                     <div class="caption">
-                        <h4>Первый проект</h4>
-                        <h4><small>Авторы</small></h4>
+                        <h4>Лего для детей</h4>
+                        <h4><small>Авторы: T.O.P</small></h4>
                         <ol class="list-inline">
                             <li><h4> <small><span class="fa fa-map-marker"></span> Бишкек </small> </h4> </li>
-                            <li><h4> <small><span class="fa fa-tag"></span> Проект</small> </h4> </li>
+                            <li><h4> <small><span class="fa fa-tag"></span> Конструкции</small> </h4> </li>
+                            <li><h4> <small><span class="fa fa-calendar"></span> Сбор продлится до 5 августа</small> </h4> </li>
                         </ol>
-                        <p>Тут офигенное краткое описание, которое хочется прочитать более подробно... </p>
+                        <p>Glyphicons are icon fonts which you can use in your web projects. Glyphicons Halflings are not free and require licensing, however their creator has made them available for Bootstrap projects free of cost. It is  </p>
                         <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
+                        <button type="button" class="btn btn-warning"><span class="fa fa-bookmark-o fa-lg"></span>     В закладки</button>
                     </div>
                     <div class="ratings">
                         <div class="progress">
-                            <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
-                                <span class="sr-only">40% Complete</span>
+                            <div class="progress-bar" role="progressbar" aria-valuenow="48" aria-valuemin="0" aria-valuemax="100" style="width: 52%;">
+                                <span class="sr-only">52% Complete</span>
                             </div>
                         </div>
                         <ol class="list-inline">
-                            <li><h4><span class="fa fa-percent"></span> 40 <small>найдено</small> </h4> </li>
-                            <li><h4><span class="fa fa-users"></span> 215 <small> вложились</small> </h4> </li>
+                            <li><h4><span class="fa fa-percent"></span> 52 <small>найдено</small> </h4> </li>
+                            <li><h4><span class="fa fa-money"></span> 85 <small> сомов</small> </h4> </li>
+                            <li><h4><span class="fa fa-users"></span> 215 <small> вложились</small></h4></li>
                         </ol>
                     </div>
                 </div>
@@ -301,27 +161,47 @@
                 <div class="col-sm-12 col-lg-12 col-md-12">
                     <div class="list-group">
                         <a href="#" class="list-group-item">
-                            <h4>Кыргызский суперкар.<small> Мы созданем кыргызский суперкар красного цвета...</small></h4>
+                            <h5> Дверь в лето <small> Описание продолжается маленькое такое</small></h5>
                         </a>
                         <a href="#" class="list-group-item">
-                            <h4>Алтай-комикс.<small> Комикс про мальчика по имени Алтай - супергероя...</small></h4>
+                            <h5> Конец вечности<small> Описание продолжается маленькое такое</small></h5>
+
                         </a>
                         <a href="#" class="list-group-item">
-                            <h4>Бла-бла.<small> Комикс про мальчика по имени Алтай - супергероя...</small></h4>
-                        </a>
-                        <a href="#" class="list-group-item">
-                            <h4>Бла-бла.<small> Комикс про мальчика по имени Алтай - супергероя...</small></h4>
-                        </a>
-                        <a href="#" class="list-group-item">
-                            <h4>Бла-бла.<small> Комикс про мальчика по имени Алтай - супергероя...</small></h4>
+                            <h5> Сами боги <small> Описание продолжается маленькое такое</small></h5>
                         </a>
                     </div>
                 </div>
-            </div> <!-- .row -->
+            </div>  <!-- .row -->
 
         </div> <!-- .new-sp -->
         <!-- / Newest SP -->
-       </div> <!-- /.container -->
+    </div> <!-- /.container -->
+
+        <div class="well follow-well">
+            <div class="container text-center">
+                <h3>Subscribe for more free stuff</h3>
+                <p>Enter your name and email</p>
+
+                <form action="" class="form-inline">
+                    <div class="form-group">
+                        <label for="subscription">Subscribe</label>
+                        <input type="text" class="form-control" id="subscription" placeholder="Your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input type="text" class="form-control" id="email" placeholder="Enter your Email">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                    <hr>
+                </form>
+
+
+            </div><!-- end Container-->
+
+        </div><!-- end well-->
+        </div>
+
 </main>
 
 @endsection

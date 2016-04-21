@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Project extends Model
 {
 
-    protected $table='projects';
-    protected $fillable=['title','content','risk','image','category_id','creator_id'];
+
+    protected $fillable=['video_link','title','option1','option2','teg','mesto','duration','category_id','creator_id'];
 
     public function category(){
         return $this->belongsTo('App\Category');
@@ -20,6 +20,10 @@ class Project extends Model
 
     public function comment(){
         return $this->hasMany('App\Comment');
+    }
+
+    public function image(){
+        return $this->hasMany('App\Image');
     }
 
     public function condition(){

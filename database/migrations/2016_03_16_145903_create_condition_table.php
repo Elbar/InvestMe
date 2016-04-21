@@ -16,7 +16,7 @@ class CreateConditionTable extends Migration
             $table->increments('id');
             $table->integer('startMoney');
             $table->integer('endMoney');
-            $table->integer('number');
+            $table->integer('number')->nullable();
             $table->text('description');
             $table->integer('project_id')->unsigned();
             $table->timestamps();

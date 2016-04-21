@@ -17,13 +17,14 @@ class CreateProjectTable extends Migration
             $table->increments('id');
             $table->string('video_link',100);
             $table->string('title',50);
-            $table->text('risk');
-            $table->string('image');
+            $table->string('mesto',50);
+            $table->string('teg',50);
+            $table->text('option1');
+            $table->text('option2');
             $table->date('duration');
             $table->integer('category_id')->unsigned();
             $table->integer('creator_id')->unsigned();
             $table->timestamps();
-
             $table->foreign('creator_id')->references('id')->on('creators')->onDelete('cascade');
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
         });

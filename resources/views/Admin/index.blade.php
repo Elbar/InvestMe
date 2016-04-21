@@ -105,7 +105,7 @@
                     <!-- top row -->
                     <div class="row">
                         <div class="col-xs-12 connectedSortable">
-                            
+
                         </div><!-- /.col -->
                     </div>
                     <!-- /.row -->
@@ -188,7 +188,7 @@
                                     <h3 class="box-title"><i class="fa fa-comments-o"></i> Chat</h3>
                                     <div class="box-tools pull-right" data-toggle="tooltip" title="Status">
                                         <div class="btn-group" data-toggle="btn-toggle" >
-                                            <button type="button" class="btn btn-default btn-sm active"><i class="fa fa-square text-green"></i></button>                                            
+                                            <button type="button" class="btn btn-default btn-sm active"><i class="fa fa-square text-green"></i></button>
                                             <button type="button" class="btn btn-default btn-sm"><i class="fa fa-square text-red"></i></button>
                                         </div>
                                     </div>

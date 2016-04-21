@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +11,7 @@
     <!-- Fonts -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet' type='text/css'>
-
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <!-- Styles -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" rel="stylesheet">
     {{--<link href="{{ elixir('css/app.css') }}" rel="stylesheet">--}}
@@ -19,6 +20,7 @@
     <link rel="stylesheet" type="text/css" href="<?=asset('bootstrap/css/main.css')?>" />
     <link rel="stylesheet" type="text/css" href="<?=asset('bootstrap/css/style.css')?>" />
     <script src="{{asset('ckeditor/ckeditor.js')}}"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.0.min.js"></script>
 
     <style>
         body {
@@ -28,11 +30,16 @@
         .fa-btn {
             margin-right: 6px;
         }
+        .image1 {
+            max-width: 220px;
+            max-height: 140px;
+        }
 
     </style>
+
 </head>
 <body id="app-layout">
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
 
@@ -58,11 +65,12 @@
                     <li><a href="{{ url('/about') }}">О нас</a></li>
                 </ul>
                 <!-- Search -->
-                <form class="navbar-form navbar-left" role="search">
+                <form class="navbar-form navbar-left" role="search" method="post" action="/search">
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Искать">
+                        <input type="hidden" name="_token" value="{!! csrf_token() !!}">
+                        <input type="text" name="search" class="form-control" placeholder="Искать">
                                 <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button">
+                                    <button class="btn btn-default" type="submit" value="">
                                         <span class="glyphicon glyphicon-search"></span>
                                     </button>
                                 </span>
@@ -84,8 +92,8 @@
 
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="{{ url('/profile') }}"><i class="fa fa-btn fa-suitcase"></i> Личный кабинет</a></li>
-                                <li><a href="{{ url('/notification') }}"><i class="fa fa-btn fa-bolt"></i> Уведомления</a></li>
-                                <li><a href="{{ url('/settings') }}"> <i class="fa fa-wrench"></i></i> Настройки</a></li>
+                                <li><a href="{{ url('/#') }}"><i class="fa fa-btn fa-bolt"></i> Уведомления</a></li>
+                                <li><a href="{{ url('/#') }}"> <i class="fa fa-wrench"></i></i> Настройки</a></li>
                                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i> Выйти</a></li>
                             </ul>
                         </li>
@@ -94,7 +102,7 @@
             </div>
         </div>
     </nav>
-
+    <br>
     @yield('content')
 
 @include('partials.footer')
@@ -106,14 +114,8 @@
     <script>
         $('.carousel').carousel({
             interval: 5000 //changes the speed
-        })
-        var cloneCount = 2;;
-        $(document).ready(function(){
-            $(".create").click(function(){
-                $("#case1").clone().attr('id', 'case'+ cloneCount++).appendTo(".cas");
-            });
         });
     </script>
-
 </body>
 </html>
+>>>>>>> 38e1b5e88fab787b47cb3559b7d7dddf67965d0a

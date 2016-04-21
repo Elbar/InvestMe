@@ -1,21 +1,25 @@
+
 @extends('layouts.app')
 
 
 @section('content')
-    @if(Auth::check()){
+    <br>
     <main>
         <div class="container-fluid sp-header">
             <div class="present-sp-header">
                 <h2 class="text-center">{{$pr->title}}</h2>
-                <h4 class="text-center">Подназвание</h4>
+                <h4 class="text-center"><small>Автор: G-Dragon</small></h4>
             </div>
             <br>
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-6 col-lg-6 col-md-6">
+                    <div class="col-sm-6 col-lg-6 col-md-6" style="max-height: 600px; max-width: 600px;">
                         <div class="thumbnail">
-                            <img src="{{asset('/images').'/'.$pr->image}}" alt="">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="{{ $pr->video_link }}"></iframe>
+                            </div>
                         </div>
+
                     </div>
                     <div class="col-sm-6 col-lg-6 col-md-6">
                         <h2><span class="fa fa-percent"></span> 40 <small>найдено</small></h2>
@@ -23,7 +27,60 @@
                         <h2><span class="fa fa-users"></span> 215 <small> вложились</small></h2>
                         <p>Glyphicons are icon fonts which you can use in your web projects. Glyphicons Halflings are not free and require licensing, however their creator has made them available for Bootstrap projects free of cost. It is recommended, as a thank you, we ask you to include an optional link back to GLYPHICONS whenever practical. — Bootstrap Documentation
                         </p>
-                        <button type="button" class="btn btn-primary"><span class="fa fa-bookmark-o fa-lg"></span> В закладки</button>
+                        @if(($bookmark === 'none') and Auth::user())
+                                <a class="btn btn-primary" href="{{'/bookmark/'.$pr->id}}"><span class="fa fa-bookmark-o fa-lg"></span> В закладки</a>
+                        @elseif(!($bookmark === 'none') and Auth::user())
+                                <a class="btn btn-primary" href="#"><span class="fa fa-bookmark-o fa-lg"></span> В закладке</a>
+                        @else
+                            <a class="btn btn-primary" href="{{'/bookmark/'.$pr->id}}"><span class="fa fa-bookmark-o fa-lg"></span> В закладки</a>
+                        @endif
+                    </div>
+                </div><!-- row -->
+
+                <div class="row">
+
+                    <div class="col-sm-6 col-lg-6 col-md-6">
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3 col-lg-3 col-md-3">
+                                <img src="{{asset('img/def_avatar2.jpg')}}" class="img-circle" alt="" width="100" height="100">
+                            </div>
+                            <div class="col-sm-9 col-lg-9 col-md-9">
+                                <div class="row">
+                                    <div class="col-md-6 col-lg-6">
+                                        <h4 class=""><b>G-Dragon BigBang TOP Seungri</b></h4>
+                                    </div>
+                                    <div class="col-md-6 col-lg-6">
+                                        <h4 class=""><small><b>56</b> вложился</small></h4>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 col-lg-6">
+                                        <a href="#" class=""><span class="fa fa-envelope"></span> Написать</a>
+                                    </div>
+                                    <div class="col-md-6 col-lg-6">
+                                        <a href="#" class=""><span class="fa fa-paw"></span> Посмотреть биографию</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-6 col-md-6">
+                        <hr>
+                        <ol class="list-inline">
+                            <li><h4> <small><span class="fa fa-map-marker"></span> Бишкек </small> </h4> </li>
+                            <li><h4> <small><span class="fa fa-tag"></span> Проект</small> </h4> </li>
+                            <li><h4> <small><span class="fa fa-calendar"></span> Сбор продлится до 5 августа</small> </h4> </li>
+                        </ol>
+
+                        Поделиться:
+                        <div class="btn-group" role="group" aria-label="...">
+                            <button type="button" class="btn btn-default"><span class="fa fa-twitter"></span></button>
+                            <button type="button" class="btn btn-default"><span class="fa fa-facebook"></span></button>
+                            <button type="button" class="btn btn-default"><span class="fa fa-pinterest"></span></button>
+                        </div>
                     </div>
                 </div><!-- row -->
             </div>
@@ -59,24 +116,15 @@
                 <!-- Описание сюда -->
                 <div class="article">
                     <h3>Название абзаца</h3>
-                    {{$pr->risk}}
+                    {!! $pr->option2 !!}
                 </div>
             </div> <!-- /.sp-description -->
         </div> <!-- /.container -->
     </main>
-    @else
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <div class="alert alert-warning">
-                    <strong>You're not authorized.<a href="/login"> Please log in  </a></strong>
-                </div>
-            </div>
-        </div>
-   @endif
-
 @endsection
 
 
 
 
 
+>>>>>>> 38e1b5e88fab787b47cb3559b7d7dddf67965d0a
