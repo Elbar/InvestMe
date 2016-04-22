@@ -1,4 +1,4 @@
-
+<?php
 namespace App\Http\Controllers;
 
 use App\Category;
@@ -213,4 +213,3 @@ class ProjectController extends Controller
         //
     }
 }
->>>>>>> 38e1b5e88fab787b47cb3559b7d7dddf67965d0a
