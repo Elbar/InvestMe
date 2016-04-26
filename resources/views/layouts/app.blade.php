@@ -21,6 +21,8 @@
     <link rel="stylesheet" type="text/css" href="<?=asset('bootstrap/css/style.css')?>" />
     <script src="{{asset('ckeditor/ckeditor.js')}}"></script>
     <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
     <style>
         body {
@@ -116,6 +118,14 @@
             interval: 5000 //changes the speed
         });
     </script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.9.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".nav-tabs a").click(function(){
+                $(this).tab('show');
+            });
+        });
+    </script>
+@yield('script')
 </body>
 </html>
->>>>>>> 38e1b5e88fab787b47cb3559b7d7dddf67965d0a

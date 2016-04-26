@@ -48,7 +48,7 @@
                             <div class="col-sm-9 col-lg-9 col-md-9">
                                 <div class="row">
                                     <div class="col-md-6 col-lg-6">
-                                        <h4 class=""><b>G-Dragon BigBang TOP Seungri</b></h4>
+                                        <h4 class=""><b>{{ Auth::user()->name }}</b></h4>
                                     </div>
                                     <div class="col-md-6 col-lg-6">
                                         <h4 class=""><small><b>56</b> вложился</small></h4>
@@ -122,9 +122,3 @@
         </div> <!-- /.container -->
     </main>
 @endsection
-
-
-
-
-
->>>>>>> 38e1b5e88fab787b47cb3559b7d7dddf67965d0a

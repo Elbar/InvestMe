@@ -29,14 +29,16 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $project = Project::all();
+        
         $data = [
             'active1' => Project::findOrFail(1),
             'active2' => Project::findOrFail(1),
-            'active3' => Project::findOrFail(1)
+            'active3' => Project::findOrFail(1),
+            'project' => Project::all(),
+            'categories' => Category::all()
         ];
 
-        return view('index',compact('project'))->with($data);
+        return view('index')->with($data);
     }
 
     /**
