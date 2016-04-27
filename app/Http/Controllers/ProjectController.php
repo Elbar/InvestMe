@@ -1,4 +1,4 @@
-
+<?php 
 namespace App\Http\Controllers;
 
 use App\Category;
@@ -31,9 +31,9 @@ class ProjectController extends Controller
     {
         $project = Project::all();
         $data = [
-            'active1' => Project::findOrFail(2),
-            'active2' => Project::findOrFail(4),
-            'active3' => Project::findOrFail(10)
+            'active1' => Project::findOrFail(1),
+            'active2' => Project::findOrFail(1),
+            'active3' => Project::findOrFail(1)
         ];
 
         return view('index',compact('project'))->with($data);
@@ -213,4 +213,3 @@ class ProjectController extends Controller
         //
     }
 }
->>>>>>> 38e1b5e88fab787b47cb3559b7d7dddf67965d0a
