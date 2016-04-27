@@ -1,4 +1,4 @@
-<?php 
+<?php
 namespace App\Http\Controllers;
 
 use App\Category;
@@ -29,14 +29,16 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $project = Project::all();
+        
         $data = [
             'active1' => Project::findOrFail(1),
             'active2' => Project::findOrFail(1),
-            'active3' => Project::findOrFail(1)
+            'active3' => Project::findOrFail(1),
+            'project' => Project::all(),
+            'categories' => Category::all()
         ];
 
-        return view('index',compact('project'))->with($data);
+        return view('index')->with($data);
     }
 
     /**
@@ -191,10 +193,9 @@ class ProjectController extends Controller
 
     /**
      * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
      * @return Response
+     * @internal param Request $request
+     * @internal param int $id
      */
     public function update()
     {

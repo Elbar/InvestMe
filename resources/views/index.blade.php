@@ -67,18 +67,15 @@
              <h3>Популярные</h3>
 
             <ul class="nav nav-pills">
-                <li class="active"><a href="#">Категория 1</a></li>
-                <li><a href="#">Категория 2</a></li>
-                <li><a href="#">Категория 3</a></li>
-                <li><a href="#">Категория 4</a></li>
-                <li><a href="#">Категория 5</a></li>
-                <li><a href="#">Категория 6</a></li>
+                @foreach($categories as $category)
+                        <li><a data-toggle="tab" href="#{{ $category->title }}">{{ $category->title }}</a></li>
+                @endforeach
             </ul>
             <br>
             <div class="row">
                 @foreach($project as $pro)
                     <!--   popular SP item 1 -->
-                    <div class="col-sm-4 col-lg-4 col-md-4">
+                    <div id="{{ $pro->category->title }}" class="col-sm-4 col-lg-4 col-md-4 tab-pane fade in acitve" >
                         <div class="thumbnail">
                             <img src="{{asset('/images/'.$pro->image()->first()->image_name)}}" alt="">
                             <div class="caption">
@@ -205,4 +202,24 @@
 </main>
 
 @endsection
+@section('script')
+    <script>
+        // select first list item
+        //$("li:first").addClass("active");
 
+        // select third list item
+        var liToSelect = 3;
+        $(".nav.nav-pills li:eq("+(liToSelect-1)+")").addClass("active");
+
+        // dynamically activate list items when clicked
+        $(".nav.nav-pills li").on("click",function(){
+        $(".nav.nav-pills li").removeClass("active");
+        $(this).addClass("active");
+        });
+        $(document).ready(function(){
+            $(".nav-tabs a").click(function(){
+                $(this).tab('show');
+            });
+        });
+    </script>
+@endsection

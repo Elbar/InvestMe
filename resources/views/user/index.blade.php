@@ -6,20 +6,39 @@
     <section style="padding-bottom: 50px; padding-top: 50px;">
         <div class="row">
             <div class="col-md-4">
-                <img src="img/250x250.png" class="img-rounded img-responsive" />
+                <img src="{{ asset('images/user/'.Auth::user()->avatar) }}" class="img-rounded img-responsive" />
                 <br />
+                @if (count($errors) > 0)
+                        <!-- Form Error List -->
+                <div class="alert alert-danger">
+                    <strong>Whoops! Something went wrong!</strong>
+
+                    <br><br>
+
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
                 @if (Session::has('message'))
                     <div class="alert alert-success"> {{ Session::get('message') }} </div>
                 @endif
                 <br />
-                <form action="{{ url('information',Auth::user()->id) }}" method="post">
-                    {{ Form::token() }}
+                <form action="{{ url('information',Auth::user()->id) }}" method="post" enctype="multipart/form-data">
+
+                    <div class="form-group">
+                        <label class="text" for="inputCover">Photo profile:</label>
+                        <input type="file" class="form-control-file" name="image" >
+                    </div>
                     <label>Registered Username</label>
                     <input type="text" class="form-control" value="{{ Auth::user()->name }}" name="username">
                     <label>Registered Email</label>
                     <input type="text" class="form-control" value="{{ Auth::user()->email }}" name="email">
                     <br>
                     <button type="submit" class="btn btn-primary">Update Details</button>
+                    {{ Form::token() }}
                 </form>
                 <br /><br/>
             </div>
