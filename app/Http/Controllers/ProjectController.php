@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Condition;
 use App\Image;
+use App\Comment;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
@@ -169,9 +170,14 @@ class ProjectController extends Controller
                 $bookmark_id = $results;
             }
         }
+        $data = [
+            'pr' => Project::findOrFail($id),
+            'image' =>  $project->image()->get(),
+            'bookmark'=>$bookmark_id,
+            'comments' => Comment::where('project_id','=',$id)->get(),
+        ];
 
-        $data = ['pr' => Project::findOrFail($id),'image' =>  $project->image()->get(),'bookmark'=>$bookmark_id];
-        //dd($data);
+       // dd(Auth::user()->avatar);
         return view('project.info')->with($data);
     }
     
@@ -212,5 +218,28 @@ class ProjectController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+//    public function comment($id){
+//        $project = Project::findOrFail($id);
+//        $bookmark_id = "none";
+//        if(Auth::check()) {
+//            $id_user = Auth::user()->id;
+//            $results = DB::select('select id from bookmarks where project_id = ? AND user_id = ?', [$project->id,$id_user]);
+//            if($results)
+//            {
+//                $bookmark_id = $results;
+//            }
+//        }
+//        $data = ['pr' => Project::findOrFail($id),'image' =>  $project->image()->get(),'bookmark'=>$bookmark_id];
+//        return view('project.comment')->with($data);
+//    }
+    public function commentPost($id , Request $request){
+        $comment = new Comment();
+        $comment->user_id = Auth::user()->id;
+        $comment->project_id = $id;
+        $comment->text = $request['text'];
+        $comment->save();
+        return redirect(url('show',$id));
     }
 }
