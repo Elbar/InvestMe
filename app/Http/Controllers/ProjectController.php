@@ -193,10 +193,9 @@ class ProjectController extends Controller
 
     /**
      * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
      * @return Response
+     * @internal param Request $request
+     * @internal param int $id
      */
     public function update()
     {

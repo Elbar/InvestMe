@@ -25,8 +25,7 @@
                         <h2><span class="fa fa-percent"></span> 40 <small>найдено</small></h2>
                         <h2><span class="fa fa-money"></span> 23 056 <small> сомов</small></h2>
                         <h2><span class="fa fa-users"></span> 215 <small> вложились</small></h2>
-                        <p>Glyphicons are icon fonts which you can use in your web projects. Glyphicons Halflings are not free and require licensing, however their creator has made them available for Bootstrap projects free of cost. It is recommended, as a thank you, we ask you to include an optional link back to GLYPHICONS whenever practical. — Bootstrap Documentation
-                        </p>
+                        <p>{{ $pr->option1 }} </p>
                         @if(($bookmark === 'none') and Auth::user())
                                 <a class="btn btn-primary" href="{{'/bookmark/'.$pr->id}}"><span class="fa fa-bookmark-o fa-lg"></span> В закладки</a>
                         @elseif(!($bookmark === 'none') and Auth::user())
