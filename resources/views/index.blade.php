@@ -37,7 +37,7 @@
         <div class="item">
             <!-- Set the third background image using inline CSS below. -->
 
-            <div class="fill" style="background-image:url({{asset('/images/'.$active3->image[2]->image_name)}});"></div>
+            <div class="fill" style="background-image:url({{asset('/images/'.$active3->image[2]->image_name)}})"></div>
 
             <div class="carousel-caption">
                 <h1>{{ $active3->title }}</h1>
@@ -77,7 +77,7 @@
                     <!--   popular SP item 1 -->
                     <div id="{{ $pro->category->title }}" class="col-sm-4 col-lg-4 col-md-4 tab-pane fade in acitve" >
                         <div class="thumbnail">
-                            <img src="{{asset('/images/'.$pro->image()->first()->image_name)}}" alt="">
+                                <img src="{{asset('/images/'.$pro->image()->first()->image_name)}}" alt="">
                             <div class="caption">
                                 <h4><a href="{{ url('show',$pro->id) }}">{{ $pro->title }}</a></h4>
                                 <h4><small>Авторы</small></h4>
