@@ -14,7 +14,7 @@ class Project extends Model
         return $this->belongsTo('App\Category');
     }
 
-    public function creator(){
+    public function creator(){              
         return $this->belongsTo('App\Creator');
     }
 

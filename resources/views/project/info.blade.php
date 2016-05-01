@@ -1,7 +1,4 @@
-
 @extends('layouts.app')
-
-
 @section('content')
     <br>
     <main>
@@ -47,7 +44,7 @@
                             <div class="col-sm-9 col-lg-9 col-md-9">
                                 <div class="row">
                                     <div class="col-md-6 col-lg-6">
-                                        <h4 class=""><b>{{ Auth::user()->name }}</b></h4>
+                                        <h4 class=""><b>{{ $pr->creator->user->name }}</b></h4>
                                     </div>
                                     <div class="col-md-6 col-lg-6">
                                         <h4 class=""><small><b>56</b> вложился</small></h4>
@@ -90,7 +87,6 @@
                 <!--  Условия -->
                 <h4>Условия:</h4>
                 <div class="row">
-
                     <!--  Копировать вот это  -->
                     <div class="col-sm-3 col-lg-3 col-md-3">
 
@@ -120,4 +116,39 @@
             </div> <!-- /.sp-description -->
         </div> <!-- /.container -->
     </main>
+        @if (isset($comments))
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h3>Comments</h3>
+                        </div><!-- /col-sm-12 -->
+                    </div><!-- /row -->
+                    @foreach($comments as $comment)
+                    <div class="row">
+                        <div class="col-sm-1">
+                            <div class="thumbnail">
+                                @if($comment->user->avatar)
+                                    <img class="img-responsive user-photo" src="{{  asset('images/user/'.$comment->user->avatar) }}">
+                                @else
+                                    <img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
+                                @endif
+                            </div><!-- /thumbnail -->
+                        </div><!-- /col-sm-1 -->
+
+                        <div class="col-sm-5">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <strong>{{ $comment->user->name }}</strong> <span class="text-muted">commented {{ $comment->created_at }}</span>
+                                </div>
+                                <div class="panel-body">
+                                    {{ $comment->text }}
+                                </div><!-- /panel-body -->
+                            </div><!-- /panel panel-default -->
+                        </div><!-- /col-sm-5 -->
+                        </div>
+                    @endforeach
+                </div>
+        @endif
+
+        @include('project.comment')
 @endsection

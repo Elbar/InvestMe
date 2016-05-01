@@ -76,7 +76,7 @@ Route::group(['middleware' => 'web'], function () {
     });
 
     Route::post('/search','SearchController@search');
-    Route::get('a',function(){
-        return view('show');
-    });
+
+   // Route::get('comment/{id}','ProjectController@comment');
+    Route::post('comment/{id}',['middleware'=>'auth','as'=>'commentPost','uses'=>'ProjectController@commentPost']);
 });
