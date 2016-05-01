@@ -41,8 +41,6 @@
             </div>
         </div> <!-- /.container -->
     </div>
-
-
     <div class="bott-footer">
         <div class="container bottom-footer">
             <p class="inl pull-right">Мы в социальных сетях:

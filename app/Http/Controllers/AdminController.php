@@ -30,7 +30,8 @@ class AdminController extends Controller
         $categories = Category::all();
         $backers = Backer::all();
         $creators = Creator::all();
-        return view('Admin.index',compact('creators','count','projects','comments','categories','backers'));
+        $commentLast = Comment::all()->take(4);
+        return view('Admin.index',compact('creators','count','projects','comments','categories','backers','commentLast'));
     }
 
     /**

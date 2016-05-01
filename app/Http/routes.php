@@ -79,4 +79,9 @@ Route::group(['middleware' => 'web'], function () {
 
    // Route::get('comment/{id}','ProjectController@comment');
     Route::post('comment/{id}',['middleware'=>'auth','as'=>'commentPost','uses'=>'ProjectController@commentPost']);
+    Route::get('by_category/{id}','ProjectController@ByCategory');
+    Route::get('moderator',['middleware' => 'auth','uses'=>'Moderator\ModerController@index']);
+    Route::group(['prefix' => 'moderator','middleware'=>'auth'] ,function(){
+        Route::resource('project','Moderator\ProjectController'); 
+    });
 });

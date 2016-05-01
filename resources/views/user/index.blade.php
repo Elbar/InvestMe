@@ -6,14 +6,12 @@
     <section style="padding-bottom: 50px; padding-top: 50px;">
         <div class="row">
             <div class="col-md-4">
-                <img src="{{ asset('images/user/'.Auth::user()->avatar) }}" class="img-rounded img-responsive" />
-                <br />
                 @if (count($errors) > 0)
                         <!-- Form Error List -->
                 <div class="alert alert-danger">
                     <strong>Whoops! Something went wrong!</strong>
 
-                    <br><br>
+                    <br>
 
                     <ul>
                         @foreach ($errors->all() as $error)
@@ -22,15 +20,16 @@
                     </ul>
                 </div>
                 @endif
-                @if (Session::has('message'))
-                    <div class="alert alert-success"> {{ Session::get('message') }} </div>
-                @endif
-                <br />
                 <form action="{{ url('information',Auth::user()->id) }}" method="post" enctype="multipart/form-data">
 
                     <div class="form-group">
-                        <label class="text" for="inputCover">Photo profile:</label>
-                        <input type="file" class="form-control-file" name="image" >
+                        <div class="image-upload">
+                            <label for="file-input">
+                                <img src="{{ asset('images/user/'.Auth::user()->avatar) }}" class="img-rounded img-responsive" />
+                            </label>
+
+                            <input id="file-input" type="file" style="display:none" class="form-control-file" name="image"/>
+                        </div>
                     </div>
                     <label>Registered Username</label>
                     <input type="text" class="form-control" value="{{ Auth::user()->name }}" name="username">
@@ -40,6 +39,9 @@
                     <button type="submit" class="btn btn-primary">Update Details</button>
                     {{ Form::token() }}
                 </form>
+                @if (Session::has('message'))
+                    <div class="alert alert-success"> {{ Session::get('message') }} </div>
+                @endif
                 <br /><br/>
             </div>
             <div class="col-md-8">
@@ -123,5 +125,11 @@
 <!-- CORE JQUERY FILE -->
 <script data-rocketsrc="assets/js/jquery-1.11.1.js" type="text/rocketscript"></script>
 <!-- REQUIRED BOOTSTRAP SCRIPTS -->
-<script data-rocketsrc="assets/js/bootstrap.js" type="text/rocketscript"></script>
+<script data-rocketsrc="assets/js/bootstrap.js" type="text/rocketscript">
+
+</script>
+    <script>
+        document.getElementById("file-input").style.display="none";
+    </script>
+
 
