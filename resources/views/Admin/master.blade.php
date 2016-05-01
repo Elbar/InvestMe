@@ -320,6 +320,9 @@
                     <a href="{{ url('backer') }}">
                         <i class="fa   fa-money"></i> <span>Backers</span>
                     </a>
+                    <a href="{{ url('creators') }}">
+                        <i class="fa fa-user"></i> <span>Creators</span>
+                    </a>
                 </li>
 
             </ul>

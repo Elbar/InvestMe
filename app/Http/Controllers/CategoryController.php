@@ -29,7 +29,8 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::all();
+        return view('Admin.category.add',compact('categories'));
     }
 
     /**
@@ -40,7 +41,9 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-
+        Category::create($request->all());
+        Session::flash('message','Successfully added');
+        return redirect('category');
     }
 
     /**

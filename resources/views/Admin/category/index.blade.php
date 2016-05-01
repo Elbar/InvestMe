@@ -42,6 +42,13 @@ Categories
                             </tr>
                         @endforeach
                     </table>
+                    <div class="box-footer">
+                        <div class="col-md-offset-11">
+                            <a href="{{ url('categories/create') }}">
+                                <input style="width: 70px" type="button" class="btn btn-primary" value="Add">
+                            </a>
+                        </div>
+                    </div>
                     @yield('edit')
                 </div><!-- /.box-body -->
             </div><!-- /.box -->
