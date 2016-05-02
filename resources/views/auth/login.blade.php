@@ -72,7 +72,7 @@
                                 </button>
 
                                 <a class="btn btn-link" href="{{ url('/password/reset') }}">Забыли пароль?</a>
-                                <a href="redirect">Facebook</a>
+                                <a href="{{ url('redirect') }}">Login with Facebook</a>
 
 
                             </div>
