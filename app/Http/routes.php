@@ -53,6 +53,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/creator',['middleware'=>'auth','uses'=>'CreatorController@index']);
     Route::post('/creator/add','CreatorController@add');
     Route::get('/new',['middleware'=>'auth','uses'=>'ProjectController@add_new']);
+    Route::get('/random', ['middleware'=>'auth', 'uses' => 'ProjectController@random']);
     Route::get('/archive','ProjectController@archive');
 
     Route::get('/about', function () {

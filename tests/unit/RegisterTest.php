@@ -15,7 +15,9 @@ class RegisterTest extends TestCase
     {
         $this->visit('/')
             ->click('Регистрация')
-            ->seePageIs('/register');
+            ->seePageIs('/register')
+            ->refreshApplication();
+
     }
 
     public function testNewUserRegistration()
@@ -26,6 +28,8 @@ class RegisterTest extends TestCase
             ->type('secret123', 'password')
             ->type('secret123', 'password_confirmation')
             ->press('Регистрация')
-            ->seePageIs('/register');
+            ->seePageIs('/register')
+            ->seeStatusCode("200")
+            ->refreshApplication();
     }
 }

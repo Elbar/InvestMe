@@ -56,6 +56,25 @@ class ProjectController extends Controller
         return view('project.ByCategory',compact('project'))->with($data);
     }
 
+
+    /**
+     *
+     */
+
+    public function random()
+    {
+        $data = [
+
+            'active1' => Project::findOrFail(1),
+            'project' => Project::all()->random(3),
+        ];
+
+        return view('project.random')->with($data);
+    }
+
+
+
+
     /**
      * Show the form for creating a new resource.
      *
@@ -256,4 +275,6 @@ class ProjectController extends Controller
         $comment->save();
         return redirect(url('show',$id));
     }
+
+
 }

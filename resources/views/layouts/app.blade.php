@@ -64,6 +64,7 @@
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/new') }}">Создать проект</a></li>
                     <li><a href="{{ url('/archive') }}">Архив проектов</a></li>
+                    <li><a href="{{ url('/random') }}">Мне повезёт!</a> </li>
                     <li><a href="{{ url('/about') }}">О нас</a></li>
                 </ul>
                 <!-- Search -->
