@@ -55,6 +55,8 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/new',['middleware'=>'auth','uses'=>'ProjectController@add_new']);
     Route::get('/random', ['middleware'=>'auth', 'uses' => 'ProjectController@random']);
     Route::get('/archive','ProjectController@archive');
+    Route::get('/redirect', 'SocialAuthController@redirect');
+    Route::get('/callback', 'SocialAuthController@callback');
 
     Route::get('/about', function () {
         return view('about');
