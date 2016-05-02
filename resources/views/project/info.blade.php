@@ -1,7 +1,4 @@
-
 @extends('layouts.app')
-
-
 @section('content')
     <br>
     <main>
@@ -25,8 +22,7 @@
                         <h2><span class="fa fa-percent"></span> 40 <small>найдено</small></h2>
                         <h2><span class="fa fa-money"></span> 23 056 <small> сомов</small></h2>
                         <h2><span class="fa fa-users"></span> 215 <small> вложились</small></h2>
-                        <p>Glyphicons are icon fonts which you can use in your web projects. Glyphicons Halflings are not free and require licensing, however their creator has made them available for Bootstrap projects free of cost. It is recommended, as a thank you, we ask you to include an optional link back to GLYPHICONS whenever practical. — Bootstrap Documentation
-                        </p>
+                        <p>{{ $pr->option1 }} </p>
                         @if(($bookmark === 'none') and Auth::user())
                                 <a class="btn btn-primary" href="{{'/bookmark/'.$pr->id}}"><span class="fa fa-bookmark-o fa-lg"></span> В закладки</a>
                         @elseif(!($bookmark === 'none') and Auth::user())
@@ -48,7 +44,7 @@
                             <div class="col-sm-9 col-lg-9 col-md-9">
                                 <div class="row">
                                     <div class="col-md-6 col-lg-6">
-                                        <h4 class=""><b>G-Dragon BigBang TOP Seungri</b></h4>
+                                        <h4 class=""><b>{{ $pr->creator->user->name }}</b></h4>
                                     </div>
                                     <div class="col-md-6 col-lg-6">
                                         <h4 class=""><small><b>56</b> вложился</small></h4>
@@ -91,7 +87,6 @@
                 <!--  Условия -->
                 <h4>Условия:</h4>
                 <div class="row">
-
                     <!--  Копировать вот это  -->
                     <div class="col-sm-3 col-lg-3 col-md-3">
 
@@ -121,10 +116,39 @@
             </div> <!-- /.sp-description -->
         </div> <!-- /.container -->
     </main>
+        @if (isset($comments))
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h3>Comments</h3>
+                        </div><!-- /col-sm-12 -->
+                    </div><!-- /row -->
+                    @foreach($comments as $comment)
+                    <div class="row">
+                        <div class="col-sm-1">
+                            <div class="thumbnail">
+                                @if($comment->user->avatar)
+                                    <img class="img-responsive user-photo" src="{{  asset('images/user/'.$comment->user->avatar) }}">
+                                @else
+                                    <img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
+                                @endif
+                            </div><!-- /thumbnail -->
+                        </div><!-- /col-sm-1 -->
+
+                        <div class="col-sm-5">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <strong>{{ $comment->user->name }}</strong> <span class="text-muted">commented {{ $comment->created_at }}</span>
+                                </div>
+                                <div class="panel-body">
+                                    {{ $comment->text }}
+                                </div><!-- /panel-body -->
+                            </div><!-- /panel panel-default -->
+                        </div><!-- /col-sm-5 -->
+                        </div>
+                    @endforeach
+                </div>
+        @endif
+
+        @include('project.comment')
 @endsection
-
-
-
-
-
->>>>>>> 38e1b5e88fab787b47cb3559b7d7dddf67965d0a
