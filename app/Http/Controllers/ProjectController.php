@@ -31,15 +31,29 @@ class ProjectController extends Controller
     public function index()
     {
         
-        $data = [
-            'active1' => Project::findOrFail(1),
-            'active2' => Project::findOrFail(1),
-            'active3' => Project::findOrFail(1),
-            'project' => Project::all(),
-            'categories' => Category::all()
-        ];
+//        $data = [
+//            'active1' => Project::findOrFail(2),
+//            'active2' => Project::findOrFail(3),
+//            'active3' => Project::findOrFail(4),
+//            'categories' => Category::all()
+//        ];
+        return redirect(url('by_category',0));
+    }
 
-        return view('index')->with($data);
+    public function ByCategory($id){
+        $data = [
+            'active1' => Project::findOrFail(2),
+            'active2' => Project::findOrFail(3),
+            'active3' => Project::findOrFail(4),
+            'categories' => Category::all(),
+            'id' => $id,
+            ];
+        if ($id == 0){
+            $project = Project::all();
+        }
+        else
+            $project = Project::where('category_id','=',$id)->get();
+        return view('project.ByCategory',compact('project'))->with($data);
     }
 
 

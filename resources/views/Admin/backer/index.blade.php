@@ -2,8 +2,10 @@
     @section('title')
         Backers
     @endsection
+    @section('left')
+        @include('Admin.partials.leftSide')
+    @endsection
     @section('right')
-        <aside class="right-side">
             <section class="content">
                 <section class="col-lg-10 connectedSortable">
                     <div class="row">
@@ -55,5 +57,4 @@
                     </div><!-- /.box -->
                 </section>
             </section>
-        </aside>
     @endsection

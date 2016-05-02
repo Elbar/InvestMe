@@ -5,9 +5,15 @@
 
         @endsection
 
+        @section('headerRight')
+            @include('admin.partials.header')
+        @endsection
+        @section('left')
+            @include('Admin.partials.leftSide')
+        @endsection
         @section('right')
             <!-- Right side column. Contains the navbar and content of the page -->
-            <aside class="right-side">
+
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
@@ -170,7 +176,7 @@
                                                 <td>{{ $project->title }}</td>
                                                 <td>{{ $project->risk }}</td>
                                                 <td>{{ $project->duration }}</td>
-                                                <td>{{ $creator->created_at }}</td>
+                                                <td>{{ $project->created_at }}</td>
                                                 <td style="width: 50px;"><input type="button" class="btn btn-success" value="edit"></td>
                                                 <td style="width: 50px;"><input type="button" class="btn btn-danger" value="delete"></td>
                                             </tr>
@@ -197,7 +203,7 @@
                                     <!-- chat item -->
                                     @foreach($comments as $comment)
                                     <div class="item">
-                                        <img src="admin_bootstrap/img/avatar.png" alt="user image" class="online"/>
+                                        <img src="{{ asset('images/user/'.$comment->user->avatar) }}" alt="user image" class="online"/>
                                         <p class="message">
                                             <a href="#" class="name">
                                                 <small class="text-muted pull-right"><i class="fa fa-clock-o"></i> 2:15</small>
@@ -222,5 +228,4 @@
                     </div><!-- /.row (main row) -->
 
                 </section><!-- /.content -->
-            </aside><!-- /.right-side -->
         @endsection
