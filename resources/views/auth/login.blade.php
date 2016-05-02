@@ -1,5 +1,23 @@
 @extends('layouts.app')
 
+<script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '1327270043955066',
+            xfbml      : true,
+            version    : 'v2.6'
+        });
+    };
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+
 @section('content')
 <div class="container auth-form">
     <div class="row">
@@ -37,7 +55,6 @@
                                 @endif
                             </div>
                         </div>
-
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <div class="checkbox">
@@ -55,6 +72,9 @@
                                 </button>
 
                                 <a class="btn btn-link" href="{{ url('/password/reset') }}">Забыли пароль?</a>
+                                <a href="{{ url('redirect') }}">Login with Facebook</a>
+
+
                             </div>
                         </div>
                     </form>
