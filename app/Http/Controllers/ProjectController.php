@@ -33,19 +33,21 @@ class ProjectController extends Controller
         //$model = DB::table('projects','categories')->where('projects.category_id','=','categories.id');
         //dd($model->get());
         $data = [
-            'active1' => Project::findOrFail(2),
-            'active2' => Project::findOrFail(3),
-            'active3' => Project::findOrFail(4),
+            'active1' => Project::findOrFail(1),
+            'active2' => Project::findOrFail(2),
+            'active3' => Project::findOrFail(3),
             'categories' => Category::all()
         ];
+//        return view('index')->with($data);
+
         return redirect(url('by_category',0));
     }
 
     public function ByCategory($id){
         $data = [
-            'active1' => Project::findOrFail(5),
-            'active2' => Project::findOrFail(3),
-            'active3' => Project::findOrFail(4),
+            'active1' => Project::findOrFail(1),
+            'active2' => Project::findOrFail(2),
+            'active3' => Project::findOrFail(3),
             'categories' => Category::all(),
             'id' => $id,
             ];
