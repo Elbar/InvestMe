@@ -72,12 +72,15 @@
                 @endforeach
             </ul>
             <br>
-            <div class="row">
+            <div class="tab-content">
+                @foreach($categories as $cat)
+                <div id='{{$cat->title}}' class="tab-pane fade">
                 @foreach($project as $pro)
+                    @if($cat->id == $pro->category_id)
                     <!--   popular SP item 1 -->
-                    <div id="{{ $pro->category->title }}" class="col-sm-4 col-lg-4 col-md-4 tab-pane fade in acitve" >
+                    <div class="col-sm-4 col-lg-4 col-md-4" >
                         <div class="thumbnail">
-                                <img src="{{asset('/images/'.$pro->image()->first()->image_name)}}" alt="">
+                            <img src="{{asset('/images/'.$pro->image()->first()->image_name)}}" alt="">
                             <div class="caption">
                                 <h4><a href="{{ url('show',$pro->id) }}">{{ $pro->title }}</a></h4>
                                 <h4><small>Авторы</small></h4>
@@ -100,8 +103,12 @@
                         </div>
                     </div>
                 </div>
-                @endforeach
-        </div> <!-- / #pop-sp -->
+                @endif
+            @endforeach
+        </div>
+        @endforeach
+        </div>
+        <!-- / #pop-sp -->
         <!-- / Popular SP -->
 
 

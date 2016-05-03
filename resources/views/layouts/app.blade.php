@@ -20,9 +20,8 @@
     <link rel="stylesheet" type="text/css" href="<?=asset('bootstrap/css/main.css')?>" />
     <link rel="stylesheet" type="text/css" href="<?=asset('bootstrap/css/style.css')?>" />
     <script src="{{asset('ckeditor/ckeditor.js')}}"></script>
-    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.0.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/js/bootstrap.min.js"></script>
 
     <style>
         body {

@@ -30,11 +30,8 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $model = DB::table('projects')
-            ->join('categories', 'projects.category_id', '=', 'categories.id')->get();
-           // ->select('projects.id','categories.id','projects.category_id','projects.title' as 'prtitle','categories.title','mesto','teg','option1','duration');
-        dd($model);
-
+        //$model = DB::table('projects','categories')->where('projects.category_id','=','categories.id');
+        //dd($model->get());
         $data = [
             'active1' => Project::findOrFail(1),
             'active2' => Project::findOrFail(1),
