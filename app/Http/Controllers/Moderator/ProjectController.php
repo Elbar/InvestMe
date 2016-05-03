@@ -89,6 +89,8 @@ class ProjectController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $project = Project::findOrFail($id);
+        $project->delete();
+        return redirect(route('moderator.project.index'));
     }
 }

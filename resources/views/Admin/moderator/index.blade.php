@@ -9,6 +9,5 @@
 @endsection
 
 @section('right')
-    <h1>Moder page</h1>
     @yield('content')
 @endsection

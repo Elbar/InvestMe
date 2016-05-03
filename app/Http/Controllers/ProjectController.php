@@ -42,7 +42,7 @@ class ProjectController extends Controller
 
     public function ByCategory($id){
         $data = [
-            'active1' => Project::findOrFail(2),
+            'active1' => Project::findOrFail(5),
             'active2' => Project::findOrFail(3),
             'active3' => Project::findOrFail(4),
             'categories' => Category::all(),
@@ -208,8 +208,8 @@ class ProjectController extends Controller
             'image' =>  $project->image()->get(),
             'bookmark'=>$bookmark_id,
             'comments' => Comment::where('project_id','=',$id)->get(),
+            'conditions' => Condition::findOrFail($id),
         ];
-
        // dd(Auth::user()->avatar);
         return view('project.info')->with($data);
     }

@@ -17,11 +17,7 @@ class ModerController extends Controller
      */
     public function index()
     {
-//        $data = [
-//            'commentLast' => Comment::all()->take(4),
-//        ];
-        $commentLast = Comment::all()->sortByDesc('id')->take(4);
-        return view('Admin.moderator.index',compact('commentLast'));
+        return redirect(route('moderator.project.index'));
     }
 
     /**
