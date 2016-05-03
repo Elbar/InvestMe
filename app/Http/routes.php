@@ -53,7 +53,10 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/creator',['middleware'=>'auth','uses'=>'CreatorController@index']);
     Route::post('/creator/add','CreatorController@add');
     Route::get('/new',['middleware'=>'auth','uses'=>'ProjectController@add_new']);
+    Route::get('/random', ['middleware'=>'auth', 'uses' => 'ProjectController@random']);
     Route::get('/archive','ProjectController@archive');
+    Route::get('/redirect', 'SocialAuthController@redirect');
+    Route::get('/callback', 'SocialAuthController@callback');
 
     Route::get('/about', function () {
         return view('about');
@@ -79,4 +82,9 @@ Route::group(['middleware' => 'web'], function () {
 
    // Route::get('comment/{id}','ProjectController@comment');
     Route::post('comment/{id}',['middleware'=>'auth','as'=>'commentPost','uses'=>'ProjectController@commentPost']);
+    Route::get('by_category/{id}','ProjectController@ByCategory');
+    Route::get('moderator',['middleware' => 'auth','uses'=>'Moderator\ModerController@index']);
+    Route::group(['prefix' => 'moderator','middleware'=>'auth'] ,function(){
+        Route::resource('project','Moderator\ProjectController'); 
+    });
 });

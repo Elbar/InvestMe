@@ -33,17 +33,49 @@ class ProjectController extends Controller
         //$model = DB::table('projects','categories')->where('projects.category_id','=','categories.id');
         //dd($model->get());
         $data = [
-            'active1' => Project::findOrFail(1),
-            'active2' => Project::findOrFail(1),
-            'active3' => Project::findOrFail(1),
-            'project' => Project::all(),
+            'active1' => Project::findOrFail(2),
+            'active2' => Project::findOrFail(3),
+            'active3' => Project::findOrFail(4),
             'categories' => Category::all()
         ];
-
-
-
-        return view('index')->with($data);
+        return redirect(url('by_category',0));
     }
+
+    public function ByCategory($id){
+        $data = [
+            'active1' => Project::findOrFail(2),
+            'active2' => Project::findOrFail(3),
+            'active3' => Project::findOrFail(4),
+            'categories' => Category::all(),
+            'id' => $id,
+            ];
+        if ($id == 0){
+            $project = Project::all();
+        }
+        else
+            $project = Project::where('category_id','=',$id)->get();
+        return view('project.ByCategory',compact('project'))->with($data);
+    }
+
+
+    /**
+     *
+     */
+
+    public function random()
+    {
+        $data = [
+
+            'active1' => Project::findOrFail(1),
+            'project' => Project::all()->random(3),
+        ];
+
+        return view('project.random')->with($data);
+
+    }
+
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -245,4 +277,6 @@ class ProjectController extends Controller
         $comment->save();
         return redirect(url('show',$id));
     }
+
+
 }

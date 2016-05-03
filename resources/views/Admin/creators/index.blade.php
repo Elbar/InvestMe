@@ -1,7 +1,8 @@
 @extends('Admin.master')
-
+@section('left')
+    @include('Admin.partials.leftSide')
+@endsection
 @section('right')
-<aside class="right-side">
     <section class="content">
         <section class="col-lg-10 connectedSortable">
             <div class="row">
@@ -52,5 +53,4 @@
 
         </section>
     </section>
-</aside>
 @endsection

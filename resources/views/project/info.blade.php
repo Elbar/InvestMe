@@ -116,7 +116,7 @@
             </div> <!-- /.sp-description -->
         </div> <!-- /.container -->
     </main>
-        @if (isset($comments))
+        @if ($comments->count()>0)
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-12">

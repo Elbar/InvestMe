@@ -1,6 +1,5 @@
 /vendor
-/composer.lock
-/composer.json
+composer.lock
 /node_modules
 /public/storage
 Homestead.yaml
