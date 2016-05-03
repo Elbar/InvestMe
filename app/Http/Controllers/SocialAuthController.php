@@ -2,14 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Auth;
-
 use Illuminate\Http\Request;
-use Socialite;
-
 
 use App\Http\Requests;
-
+use App\SocialAccountService;
+use Socialite;
 class SocialAuthController extends Controller
 {
     public function  redirect() {
@@ -17,7 +14,12 @@ class SocialAuthController extends Controller
 
     }
 
-    public function  callback() {
+    public function callback(SocialAccountService $service)
+        {
+            $user = $service->createOrGetUser(Socialite::driver('facebook')->user());
 
-    }
+            auth()->login($user);
+
+            return redirect()->to('/');
+        }
 }
