@@ -16,7 +16,7 @@
                                 <th>Title</th>
                                 <th>Duration</th>
                                 <th>Created at</th>
-                                <th>Show</th>
+                                <th>Delete</th>
                             </tr>
                             @foreach($projects as $project)
                                 <tr>
@@ -26,7 +26,13 @@
                                     <td>{{ $project->title }}</td>
                                     <td>{{ $project->duration }}</td>
                                     <td>{{ $project->created_at }}</td>
-                                    <td style="width: 50px;"><input type="checkbox" class="btn btn-success" value=1></td>
+                                    <td style="width: 50px;">
+
+                                        {{ Form::open(array('route'=>['moderator.project.destroy' , $project->id], 'class' => 'pull-right')) }}
+                                            {{ Form::hidden('_method', 'DELETE') }}
+                                            {{ Form::submit('Delete', array('class' => 'btn btn-warning')) }}
+                                        {{ Form::close() }}
+                                    </td>
                                 </tr>
                             @endforeach
                         </table>
@@ -36,4 +42,19 @@
         </div>
         </div>
 
+    @endsection
+    @section('script')
+        <script>
+        function checkDelete(id) {
+            if (confirm('Really delete?')) {
+                $.ajax({
+                    type: "DELETE",
+                    url: '/<resource>/' + id,
+                    success: function(result) {
+                       // do something
+                    }
+                    });
+                }
+            }
+        </script>
     @endsection

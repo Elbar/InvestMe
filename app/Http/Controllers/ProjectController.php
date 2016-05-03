@@ -30,7 +30,8 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        
+        //$model = DB::table('projects','categories')->where('projects.category_id','=','categories.id');
+        //dd($model->get());
         $data = [
             'active1' => Project::findOrFail(1),
             'active2' => Project::findOrFail(2),
@@ -72,6 +73,7 @@ class ProjectController extends Controller
         ];
 
         return view('project.random')->with($data);
+
     }
 
 
@@ -210,8 +212,8 @@ class ProjectController extends Controller
             'image' =>  $project->image()->get(),
             'bookmark'=>$bookmark_id,
             'comments' => Comment::where('project_id','=',$id)->get(),
+            'conditions' => Condition::findOrFail($id),
         ];
-
        // dd(Auth::user()->avatar);
         return view('project.info')->with($data);
     }

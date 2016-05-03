@@ -37,7 +37,7 @@
         <div class="item">
             <!-- Set the third background image using inline CSS below. -->
 
-            <div class="fill" style="background-image:url({{asset('/images/'.$active3->image[2]->image_name)}});"></div>
+            <div class="fill" style="background-image:url({{asset('/images/'.$active3->image[2]->image_name)}})"></div>
 
             <div class="carousel-caption">
                 <h1>{{ $active3->title }}</h1>
@@ -73,7 +73,9 @@
                 @endforeach
             </ul>
             <br>
+
             @yield('ByCategory')
+
         <!-- / Popular SP -->
 
 
