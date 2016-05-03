@@ -30,13 +30,14 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        
-//        $data = [
-//            'active1' => Project::findOrFail(2),
-//            'active2' => Project::findOrFail(3),
-//            'active3' => Project::findOrFail(4),
-//            'categories' => Category::all()
-//        ];
+        //$model = DB::table('projects','categories')->where('projects.category_id','=','categories.id');
+        //dd($model->get());
+        $data = [
+            'active1' => Project::findOrFail(2),
+            'active2' => Project::findOrFail(3),
+            'active3' => Project::findOrFail(4),
+            'categories' => Category::all()
+        ];
         return redirect(url('by_category',0));
     }
 
@@ -70,6 +71,7 @@ class ProjectController extends Controller
         ];
 
         return view('project.random')->with($data);
+
     }
 
 
