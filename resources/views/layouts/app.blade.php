@@ -118,7 +118,7 @@
             interval: 5000 //changes the speed
         });
     </script>
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.js"></script>
     <script>
         $(document).ready(function(){
             $(".nav-tabs a").click(function(){

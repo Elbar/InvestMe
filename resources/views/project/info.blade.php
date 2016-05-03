@@ -84,29 +84,28 @@
 
         <div class="container">
             <div id="sp-description">
-                <!--  Условия -->
-                <h4>Условия:</h4>
-                <div class="row">
-                    <!--  Копировать вот это  -->
-                    <div class="col-sm-3 col-lg-3 col-md-3">
+                    <!--  Условия -->
+                    <h4>Условия:</h4>
+                    <div class="row">
+                        <!--  Копировать вот это  -->
+                        <div class="col-sm-3 col-lg-3 col-md-3">
 
-                        <div class="thumbnail cases">
+                            <div class="thumbnail cases">
 
-                            <div class="caption">
-                                <b>От: </b> 100 сомов
-                                <hr>
-                                <h5>Я Вам дам шоколадку в обертке Наруто</h5>
-                                <hr>
-                                <b>Предел: </b> первые 50 человек
-                                <span class="badge pull-right badge-color">21</span>
+                                <div class="caption">
+                                    <b>От: </b> {{ $conditions->startMoney }} сом
+                                    <hr>
+                                    <h5>{{ $conditions->description }}</h5>
+                                    <hr>
+                                    <b>Предел: </b> первые 50 человек
+                                    <span class="badge pull-right badge-color">21</span>
+                                </div>
+
                             </div>
-
                         </div>
+                        <!--  копировать до сюда -->
+
                     </div>
-                    <!--  копировать до сюда -->
-
-                </div>
-
                 <hr>
                 <!-- Описание сюда -->
                 <div class="article">
