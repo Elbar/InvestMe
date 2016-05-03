@@ -31,12 +31,12 @@ class ProjectController extends Controller
     public function index()
     {
         
-//        $data = [
-//            'active1' => Project::findOrFail(2),
-//            'active2' => Project::findOrFail(3),
-//            'active3' => Project::findOrFail(4),
-//            'categories' => Category::all()
-//        ];
+        $data = [
+            'active1' => Project::findOrFail(2),
+            'active2' => Project::findOrFail(3),
+            'active3' => Project::findOrFail(4),
+            'categories' => Category::all()
+        ];
         return redirect(url('by_category',0));
     }
 
