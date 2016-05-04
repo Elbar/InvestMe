@@ -90,10 +90,6 @@ class ProjectController extends Controller
         $id_user = Auth::user()->id;
         $id_creator = DB::table('creators')->where('user_id', $id_user)->first();
         $id_creator = $id_creator->id;
-        $error_msg = [
-            'project_title.required' => 'Проектин атын созсуз толтуруш керек.',
-        ];
-
         $validator = Validator::make($Project->all(), [
             'project_title' => 'required|max:25',
             'project_video_cover' => 'required',
@@ -104,7 +100,7 @@ class ProjectController extends Controller
             'inputCover3' => 'required|max:700|mimes:jpeg,bmp,png',
             'case_mesto' => 'required',
             'pod_razdel' => 'required',
-        ],$error_msg);
+        ]);
 
         if ($validator->fails()) {
             return redirect('/new')

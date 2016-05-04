@@ -1,4 +1,6 @@
-
+<?php
+use Illuminate\Support\Facades\DB;
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
