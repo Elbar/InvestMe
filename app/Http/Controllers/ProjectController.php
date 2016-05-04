@@ -33,19 +33,21 @@ class ProjectController extends Controller
         //$model = DB::table('projects','categories')->where('projects.category_id','=','categories.id');
         //dd($model->get());
         $data = [
-            'active1' => Project::findOrFail(2),
-            'active2' => Project::findOrFail(3),
-            'active3' => Project::findOrFail(4),
+            'active1' => Project::findOrFail(1),
+            'active2' => Project::findOrFail(2),
+            'active3' => Project::findOrFail(3),
             'categories' => Category::all()
         ];
+//        return view('index')->with($data);
+
         return redirect(url('by_category',0));
     }
 
     public function ByCategory($id){
         $data = [
-            'active1' => Project::findOrFail(2),
-            'active2' => Project::findOrFail(3),
-            'active3' => Project::findOrFail(4),
+            'active1' => Project::findOrFail(1),
+            'active2' => Project::findOrFail(2),
+            'active3' => Project::findOrFail(3),
             'categories' => Category::all(),
             'id' => $id,
             ];
@@ -90,10 +92,6 @@ class ProjectController extends Controller
         $id_user = Auth::user()->id;
         $id_creator = DB::table('creators')->where('user_id', $id_user)->first();
         $id_creator = $id_creator->id;
-        $error_msg = [
-            'project_title.required' => 'Проектин атын созсуз толтуруш керек.',
-        ];
-
         $validator = Validator::make($Project->all(), [
             'project_title' => 'required|max:25',
             'project_video_cover' => 'required',
@@ -104,7 +102,7 @@ class ProjectController extends Controller
             'inputCover3' => 'required|max:700|mimes:jpeg,bmp,png',
             'case_mesto' => 'required',
             'pod_razdel' => 'required',
-        ],$error_msg);
+        ]);
 
         if ($validator->fails()) {
             return redirect('/new')
