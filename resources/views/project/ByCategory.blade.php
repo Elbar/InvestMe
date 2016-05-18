@@ -14,6 +14,7 @@
                         <li><h4> <small><span class="fa fa-tag"></span> {{ $pro->teg }}</small> </h4> </li>
                     </ol>
                     <p>{{ $pro->option1 }} <a target="_blank" href="#">подробно... </a> </p>
+
                 </div>
                 <div class="ratings">
                     <div class="progress">
@@ -24,6 +25,8 @@
                     <ol class="list-inline">
                         <li><h4><span class="fa fa-percent icon-styled"></span> 40 <small>найдено</small> </h4> </li>
                         <li><h4><span class="fa fa-users icon-styled"></span> 215 <small> вложились</small> </h4> </li>
+                        <li> <h4><span class="fa  fa-credit-card icon-styled"></span> <small>Пожертвовать</small></h4></li>
+
                     </ol>
                 </div>
             </div>
@@ -31,3 +34,18 @@
         @endforeach
     </div> <!-- / #pop-sp -->
     @endsection
+
+
+
+@section('script')
+    <script>
+        $('.fa-credit-card').hover(function(){
+            $('.fa-credit-card').css('color', 'green');
+        }, function() {
+            $('.fa-credit-card').css('color', '');
+        });
+
+    </script>
+
+
+@endsection
