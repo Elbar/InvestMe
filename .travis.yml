@@ -6,7 +6,6 @@ php:
   - hhvm
 
 before_script:
-  - php artisan key:generate
   - curl -s http://getcomposer.org/installer | php
   - php composer.phar install --dev
 
