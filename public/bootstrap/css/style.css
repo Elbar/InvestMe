@@ -16,7 +16,9 @@
 #pop-sp, #new-sp, #sp-description{
 	margin-top: 20px;
 }
-
+.sp-description{
+	margin-bottom: 100px;
+}
 .carousel-control.right{
 	background-image: none;
 }
