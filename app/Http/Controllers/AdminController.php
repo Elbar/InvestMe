@@ -9,8 +9,6 @@ use App\Creator;
 use App\Project;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
-
-use App\Http\Requests;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 

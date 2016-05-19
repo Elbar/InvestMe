@@ -34,6 +34,8 @@
                     <ol class="list-inline">
                         <li><h4><span class="fa fa-percent icon-styled"></span> 40 <small>найдено</small> </h4> </li>
                         <li><h4><span class="fa fa-users icon-styled"></span> 215 <small> вложились</small> </h4> </li>
+                        <li> <h4><span class="fa  fa-credit-card icon-styled"></span> <small>Пожертвовать</small></h4></li>
+
                     </ol>
                 </div>
             </div>
@@ -41,5 +43,18 @@
         @endforeach
     </div> <!-- / #pop-sp -->
     <!-- / Popular SP -->
+
+@endsection
+
+@section('script')
+    <script>
+        $('.fa-credit-card').hover(function(){
+            $('.fa-credit-card').css('color', 'green');
+        }, function() {
+            $('.fa-credit-card').css('color', '');
+        });
+
+    </script>
+
 
 @endsection
