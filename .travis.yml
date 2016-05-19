@@ -8,6 +8,9 @@ php:
 before_script:
   - curl -s http://getcomposer.org/installer | php
   - php composer.phar install --dev
-  - php artisan key:generate
+env:
+  global:
+  - APP_ENV=testing
+  - APP_KEY=base64:khBtkBk/FBcy6BkdvfJ5VJrZTDltRY5lCyGUg9tefVA=
 
 
