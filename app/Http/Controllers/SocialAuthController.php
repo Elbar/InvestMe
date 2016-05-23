@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\SocialAccountService;
-use Socialite;
+use Laravel\Socialite\Facades\Socialite;
+
 class SocialAuthController extends Controller
 {
     public function  redirect() {
