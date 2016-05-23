@@ -16,7 +16,9 @@
 #pop-sp, #new-sp, #sp-description{
 	margin-top: 20px;
 }
-
+.sp-description{
+	margin-bottom: 100px;
+}
 .carousel-control.right{
 	background-image: none;
 }
@@ -178,4 +180,23 @@ footer
 .bottom-footer{
 	border-top: 1px dashed #8F8F8F;
 	padding-top: 10px;
+}
+
+
+/* Majit */
+
+.clearfix-content{
+	margin-left: 50px;
+	padding-left: 10px;
+}
+.wallet{
+	color: #333;
+}
+.panel-danger .panel-heading{
+	color: white;
+	background-color: #E31E35;
+	border-color: #E31E35;
+}
+.panel-danger{
+	border-color: #E31E35;
 }

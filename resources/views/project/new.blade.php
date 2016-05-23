@@ -114,35 +114,37 @@
             <div class="cas row">
                 <div class="col-sm-3 col-lg-3 col-md-3 ">
                     <dev  class="btn btn-primary" id="create">Добавить еще условия</dev>
+                    <p></p>
+                    <dev id="delete" class="btn btn-primary">Удалить</dev>
                 </div>
                 <!--  Условия  -->
-                <div id="case1" class="case col-sm-3 col-lg-3 col-md-3">
+                <div id="case" class="case col-sm-3 col-lg-3 col-md-3">
                     <div class="thumbnail cases">
                         <div class="form-group">
                         <div class="caption">
-                                <div class="form-group">
-                                    <label class="control-label col-sm-3" for="text">От:</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="case_from1" name="case_from1" placeholder="От..." required="">
-                                    </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-3" for="text">От:</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="case_from" name="case_from" placeholder="От..." required="">
                                 </div>
+                            </div>
                                 <div class="form-group">
                                     <label class="control-label col-sm-3" for="text">До:</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="case_to1" name="case_to1" placeholder="До..." required="">
+                                        <input type="text" class="form-control" id="case_to" name="case_to" placeholder="До..." required="">
                                     </div>
                                 </div>
                             <hr>
                                 <div class="form-group">
                                     <label for="text">Плюшки:</label>
-                                    <textarea class="form-control" rows="5" id="u_text1" name="u_text1" required=""></textarea>
+                                    <textarea class="form-control" rows="5" id="u_text" name="u_text" required=""></textarea>
                                 </div>
                             <hr>
 
                                 <div class="form-group">
                                     <label class="control-label col-sm-3" for="text">Предел:</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="predel1" name="predel1" placeholder="Предел..." required="">
+                                        <input type="text" class="form-control" id="predel" name="predel" placeholder="Предел..." required="">
                                     </div>
                                 </div>
                             </br>
@@ -184,24 +186,27 @@
         @endif
                 <!-- jQuery -->
         <script>
-            var cloneCount = 2;
+            var cloneCount = 0;
             var name = "";
             $(document).ready(function(){
                 $("#create").click(function(){
                     name='case'+cloneCount;
-                    $("#case1").clone().attr('id', name).appendTo(".cas");
-                    $("#"+name+' #case_from1' ).attr('id', 'case_from'+ cloneCount);
+                    $("#case").clone().attr('id', name).appendTo(".cas");
+                    $("#"+name+' #case_from' ).attr('id', 'case_from'+ cloneCount);
                         $("#case_from"+cloneCount).attr('name','case_from'+cloneCount);
-                    $("#"+name+' #case_to1' ).attr('id', 'case_to'+ cloneCount);
+                    $("#"+name+' #case_to' ).attr('id', 'case_to'+ cloneCount);
                         $("#case_to"+cloneCount).attr('name', 'case_to'+cloneCount);
-                    $("#"+name+' #u_text1' ).attr('id', 'u_text'+ cloneCount);
+                    $("#"+name+' #u_text' ).attr('id', 'u_text'+ cloneCount);
                         $('#u_text'+cloneCount).attr('name', 'u_text'+cloneCount);
-                    $("#"+name+' #predel1' ).attr('id', 'predel'+ cloneCount);
+                    $("#"+name+' #predel' ).attr('id', 'predel'+ cloneCount);
                         $('#predel'+cloneCount).attr('name','predel'+cloneCount);
                     $('#number').attr('value', cloneCount);
                     cloneCount++;
                 });
             });
+            $("#delete").click(function(){
+                $("#case" + (cloneCount--)).remove();
+            })
         </script>
 @endsection
 
