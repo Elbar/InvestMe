@@ -82,31 +82,196 @@
             </div>
         </div>
 
-        <div class="container">
-            <div id="sp-description">
-                <!--  Условия -->
-                <h4>Условия:</h4>
-                <div class="row">
-                    <!--  Копировать вот это  -->
-                    <div class="col-sm-3 col-lg-3 col-md-3">
+        <div class="documentStream__shelfContainer">
+            <div class="documentStream__shelf">
 
-                        <div class="thumbnail cases">
+                <div class="documentStream__document">
+                    <div class="thumbnail cases">
 
-                            <div class="caption">
-                                <b>От: </b> 100 сомов
-                                <hr>
-                                <h5>Я Вам дам шоколадку в обертке Наруто</h5>
-                                <hr>
-                                <b>Предел: </b> первые 50 человек
-                                <span class="badge pull-right badge-color">21</span>
-                            </div>
-
+                        <div class="caption">
+                            <b>От: </b> 100 сомов <b> До: </b> 200 сомов
+                            <hr>
+                            <h5>Я Вам дам шоколадку в обертке Наруто</h5>
+                            <hr>
+                            <b>Предел: </b> первые 50 человек
+                            <span class="badge pull-right badge-color">21</span>
                         </div>
-                    </div>
-                    <!--  копировать до сюда -->
 
+                    </div>
                 </div>
 
+                <div class="documentStream__document">
+                    <div class="thumbnail cases">
+
+                        <div class="caption">
+                            <b>От: </b> 100 сомов <b> До: </b> 200 сомов
+                            <hr>
+                            <h5>Я Вам дам шоколадку в обертке Наруто</h5>
+                            <hr>
+                            <b>Предел: </b> первые 50 человек
+                            <span class="badge pull-right badge-color">21</span>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="documentStream__document">
+                    <div class="thumbnail cases">
+
+                        <div class="caption">
+                            <b>От: </b> 100 сомов <b> До: </b> 200 сомов
+                            <hr>
+                            <h5>Я Вам дам шоколадку в обертке Наруто</h5>
+                            <hr>
+                            <b>Предел: </b> первые 50 человек
+                            <span class="badge pull-right badge-color">21</span>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="documentStream__document">
+                    <div class="thumbnail cases">
+
+                        <div class="caption">
+                            <b>От: </b> 100 сомов <b> До: </b> 200 сомов
+                            <hr>
+                            <h5>Я Вам дам шоколадку в обертке Наруто</h5>
+                            <hr>
+                            <b>Предел: </b> первые 50 человек
+                            <span class="badge pull-right badge-color">21</span>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="documentStream__document">
+                    <div class="thumbnail cases">
+
+                        <div class="caption">
+                            <b>От: </b> 100 сомов <b> До: </b> 200 сомов
+                            <hr>
+                            <h5>Я Вам дам шоколадку в обертке Наруто</h5>
+                            <hr>
+                            <b>Предел: </b> первые 50 человек
+                            <span class="badge pull-right badge-color">21</span>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="documentStream__document">
+                    <div class="thumbnail cases">
+
+                        <div class="caption">
+                            <b>От: </b> 100 сомов <b> До: </b> 200 сомов
+                            <hr>
+                            <h5>Я Вам дам шоколадку в обертке Наруто</h5>
+                            <hr>
+                            <b>Предел: </b> первые 50 человек
+                            <span class="badge pull-right badge-color">21</span>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="documentStream__document">
+                    <div class="thumbnail cases">
+
+                        <div class="caption">
+                            <b>От: </b> 100 сомов <b> До: </b> 200 сомов
+                            <hr>
+                            <h5>Я Вам дам шоколадку в обертке Наруто</h5>
+                            <hr>
+                            <b>Предел: </b> первые 50 человек
+                            <span class="badge pull-right badge-color">21</span>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="documentStream__document">
+                    <div class="thumbnail cases">
+
+                        <div class="caption">
+                            <b>От: </b> 100 сомов <b> До: </b> 200 сомов
+                            <hr>
+                            <h5>Я Вам дам шоколадку в обертке Наруто</h5>
+                            <hr>
+                            <b>Предел: </b> первые 50 человек
+                            <span class="badge pull-right badge-color">21</span>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="documentStream__document">
+                    <div class="thumbnail cases">
+
+                        <div class="caption">
+                            <b>От: </b> 100 сомов <b> До: </b> 200 сомов
+                            <hr>
+                            <h5>Я Вам дам шоколадку в обертке Наруто</h5>
+                            <hr>
+                            <b>Предел: </b> первые 50 человек
+                            <span class="badge pull-right badge-color">21</span>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="documentStream__document">
+                    <div class="thumbnail cases">
+
+                        <div class="caption">
+                            <b>От: </b> 100 сомов <b> До: </b> 200 сомов
+                            <hr>
+                            <h5>Я Вам дам шоколадку в обертке Наруто</h5>
+                            <hr>
+                            <b>Предел: </b> первые 50 человек
+                            <span class="badge pull-right badge-color">21</span>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="documentStream__document">
+                    <div class="thumbnail cases">
+
+                        <div class="caption">
+                            <b>От: </b> 100 сомов <b> До: </b> 200 сомов
+                            <hr>
+                            <h5>Я Вам дам шоколадку в обертке Наруто</h5>
+                            <hr>
+                            <b>Предел: </b> первые 50 человек
+                            <span class="badge pull-right badge-color">21</span>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="documentStream__document">
+                    <div class="thumbnail cases">
+
+                        <div class="caption">
+                            <b>От: </b> 100 сомов <b> До: </b> 200 сомов
+                            <hr>
+                            <h5>Я Вам дам шоколадку в обертке Наруто</h5>
+                            <hr>
+                            <b>Предел: </b> первые 50 человек
+                            <span class="badge pull-right badge-color">21</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="container sp-description">
+            <div id="sp-description">
                 <hr>
                 <!-- Описание сюда -->
                 <div class="article">
